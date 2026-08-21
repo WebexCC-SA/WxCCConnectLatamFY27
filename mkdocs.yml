@@ -36,7 +36,7 @@ theme:
   favicon: template_assets/webex75.png
 extra:
   generator: false
-  repo: "https://github.com/WebexCC-SA/WebexCC-SA/multilingual_CCAI.git"
+  repo: "https://github.com/WebexCC-SA/WxCCConnectLatamFY27.git"
   site_event: test
 extra_css:
   - stylesheets/extra.css
