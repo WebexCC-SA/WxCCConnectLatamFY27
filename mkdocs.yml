@@ -1,6 +1,6 @@
 ---
-site_name: "LTRCCT-2001: Demystifying Multilingual Omnichannel Experiences with Webex Contact Center AI" # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
-site_description: "LTRCCT-2001: Demystifying Multilingual Omnichannel Experiences with Webex Contact Center AI" # must be same as "site_name"
+site_name: "LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
+site_description: "LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" # must be same as "site_name"
 site_author: Carolina Morales
 copyright: Copyright &copy; 2026 Cisco
 theme:
@@ -47,7 +47,7 @@ plugins:
   - search
   - macros
   # with-pdf:
-  #    cover_title: CCTLTR-2001
+  #    cover_title: LABCOL-1217
   #    cover_subtitle: Demystifying
   #    cover_logo: template_assets/exclamation.png
   - glightbox:
@@ -86,14 +86,14 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav: 
-  - Overview:
-        - Your Mission: overview.md
-  - Activities:
+  - Descripción:
+        - La misión: overview.md
+  - Actividades:
       - Getting Started: getting_started.md
       - Lab 1 - Multilingual Voice AI: voice.md
       - Lab 2 - Digital Patient Journey: digital.md
       - Lab 3 - Intelligent AI Assistant: AI_Assistant.md 
       - Lab 4 - Bonus - Analytics: bonus.md
-  - Share Your Feedback!: wrap.md
+  - Comparta su opinión!: wrap.md
   
  
