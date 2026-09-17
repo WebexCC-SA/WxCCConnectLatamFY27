@@ -1,0 +1,3145 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC">
+      
+      
+        <meta name="author" content="Carolina Morales">
+      
+      
+      
+        <link rel="prev" href="../getting_started/">
+      
+      
+        <link rel="next" href="../digital/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 1 - Multilingual Voice AI - LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-1-orchestrating-multilingual-voice-ai" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-header__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 1 - Multilingual Voice AI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Descripción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wrap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparta su opinión!
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-nav__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Descripción
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La misión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Multilingual Voice AI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Multilingual Voice AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#section-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-creating-an-autonomous-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Creating an Autonomous AI Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Creating an Autonomous AI Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-access-collaboration-control-hub-ai-agent-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Access Collaboration Control Hub &amp; AI Agent Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-create-the-autonomous-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Create the Autonomous AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-configure-the-ai-agent-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Configure the AI Agent Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-create-the-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Create the Knowledge Base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-associate-the-knowledge-base-to-the-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Associate the Knowledge Base to the AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-disable-agent-handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Disable Agent Handover
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-explore-language-voice-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Explore Language &amp; Voice Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-building-the-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Building the Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Building the Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-create-the-webex-connect-flow-customer_details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Create the Webex Connect Flow - customer_details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configure-the-ai-agent-event-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Configure the AI Agent Event Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-configure-the-http-request-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Configure the HTTP Request Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-configure-flow-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Configure Flow Outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-create-the-customer_details-action-in-ai-agent-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Create the customer_details Action in AI Agent Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-import-the-create_appointment-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Import the create_appointment Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-create-the-create_appointment-action-in-ai-agent-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Create the create_appointment Action in AI Agent Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-test-the-ai-agent-full-actions-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Test the AI Agent — Full Actions Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-voice-flow-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Voice Flow Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Voice Flow Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-export-import-the-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Export &amp; Import the Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-edit-the-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Edit the Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-configure-the-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Configure the Channel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-update-the-welcome-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Update the Welcome Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-live-call-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Live Call Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Live Call Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-english-path-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 English Path Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-spanish-path-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Spanish Path Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-1-complete-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 1 Complete — Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Digital Patient Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Intelligent AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bonus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - Bonus - Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparta su opinión!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#section-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-creating-an-autonomous-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Creating an Autonomous AI Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Creating an Autonomous AI Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-access-collaboration-control-hub-ai-agent-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Access Collaboration Control Hub &amp; AI Agent Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-create-the-autonomous-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Create the Autonomous AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-configure-the-ai-agent-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Configure the AI Agent Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-create-the-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Create the Knowledge Base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-associate-the-knowledge-base-to-the-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Associate the Knowledge Base to the AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-disable-agent-handover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Disable Agent Handover
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-explore-language-voice-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Explore Language &amp; Voice Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-building-the-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Building the Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Building the Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-create-the-webex-connect-flow-customer_details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Create the Webex Connect Flow - customer_details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configure-the-ai-agent-event-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Configure the AI Agent Event Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-configure-the-http-request-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Configure the HTTP Request Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-configure-flow-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Configure Flow Outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-create-the-customer_details-action-in-ai-agent-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Create the customer_details Action in AI Agent Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-import-the-create_appointment-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Import the create_appointment Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-create-the-create_appointment-action-in-ai-agent-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Create the create_appointment Action in AI Agent Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-test-the-ai-agent-full-actions-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Test the AI Agent — Full Actions Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-voice-flow-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Voice Flow Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Voice Flow Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-export-import-the-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Export &amp; Import the Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-edit-the-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Edit the Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-configure-the-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Configure the Channel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-update-the-welcome-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Update the Welcome Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-live-call-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Live Call Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Live Call Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-english-path-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 English Path Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-spanish-path-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Spanish Path Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-1-complete-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 1 Complete — Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-1-orchestrating-multilingual-voice-ai">Lab 1 - Orchestrating Multilingual Voice AI</h1>
+<hr>
+<h2 id="section-agenda">Section Agenda</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Task</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Create the Autonomous AI Agent</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Build &amp; Import Actions in Webex Connect</td>
+<td>25 min</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Voice Flow Configuration &amp; Channel Setup</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Live Call Testing — English &amp; Spanish</td>
+<td>25 min</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Welcome to our first AI Agent activity at Cisco Live! In this lab, we will work with
+<strong>Cumulus Hospital</strong> — a multinational private hospital offering diagnostic services
+and medical specialties across the USA and Mexico.</p>
+<p>Imagine this: a patient calls from Las Vegas or from Mexico City, needs a specialist,
+and wants to book an appointment, <strong>right now</strong>, in their own language. Your mission
+is to make that possible.</p>
+<details class="info" open="open">
+<summary>Key Learning</summary>
+<p>You will build an <strong>Autonomous AI Agent from scratch</strong> using the Webex AI Agent
+Studio, serving patients in both <strong>English and Spanish</strong> — handling information
+requests, validating schedules, and confirming appointments via SMS.</p>
+</details>
+<details class="warning" open="open">
+<summary>The PodID Discipline</summary>
+<p>Always replace <strong>XXX</strong> with your assigned <strong>3-digit ID (e.g., 001, 002)</strong>. Your naming
+convention must start with the prefix <strong>Pod</strong> followed by your PodID <strong>(PodXXX)</strong>. If you
+do not follow this convention exactly, you will overwrite your neighbor's work. Stay
+disciplined with your naming convention!</p>
+</details>
+<details class="important" open="open">
+<summary>PodID as Patient ID</summary>
+<p>Always use the <strong>PodID</strong> as the <strong>Patient ID</strong>, <em>(e.g., 001, 010, 060, 050)</em>.</p>
+</details>
+<hr>
+<hr>
+<h2 id="phase-1-creating-an-autonomous-ai-agent">Phase 1: Creating an Autonomous AI Agent</h2>
+<h3 id="11-access-collaboration-control-hub-ai-agent-studio">1.1 Access Collaboration Control Hub &amp; AI Agent Studio</h3>
+<ol>
+<li>
+<p>Using <strong>Chrome</strong>, select the <strong>Admin_Lab Chrome Profile</strong> to open a new window.</p>
+</li>
+<li>
+<p>Navigate to <a href="https://admin.webex.com">admin.webex.com</a> and log in with your
+   <strong>Admin POD credentials</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pro-Tip</p>
+<p>You can save the password on this Chrome Profile to make future login processes
+easier. Make sure you are using your <strong>POD credentials</strong> since all students are
+sharing the same tenant!</p>
+</div>
+<details class="- tip">
+<summary>See how to access Collaboration Control Hub</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/launching_control_hub.gif" data-title="Launch Collaboration Control Hub" data-desc-position="top"><img alt="Launch Collaboration Control Hub" loading="lazy" src="../assets/launching_control_hub.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>In the left panel on Collaboration Control Hub, navigate to <strong>Services &gt; Contact Center</strong> to open
+   the Webex Contact Center administration.</p>
+<div class="admonition note">
+<p class="admonition-title">Important</p>
+<p>This navigation path is always required to access any Webex Contact Center
+configuration in this lab. We will <strong>NOT</strong> repeat this instruction again.</p>
+</div>
+</li>
+<li>
+<p>On the main page, navigate to <strong>Quick Links</strong>, find and click on <strong>Webex AI Agent</strong>
+   to launch the AI Agent Studio in a new browser tab.</p>
+<details class="- tip">
+<summary>See how to navigate to AI Agent Studio</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ControlHubAIAgentLaunch.gif" data-title="Collaboration Control Hub AI Agent Launch" data-desc-position="top"><img alt="Collaboration Control Hub AI Agent Launch" loading="lazy" src="../assets/ControlHubAIAgentLaunch.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="12-create-the-autonomous-ai-agent">1.2 Create the Autonomous AI Agent</h3>
+<ol>
+<li>
+<p>In the AI Agent Studio, click the black <strong>+ Create agent</strong> button.</p>
+<div class="admonition tip">
+<p class="admonition-title">Pro-Tip</p>
+<p>The AI Agent Studio offers templates to speed up initial bot creation. Since we
+are building from the ground up, we will start from scratch.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Start from scratch</strong> and then <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Autonomous</strong> as the agent type and fill in the fields as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent Name</strong></td>
+<td>PodXXX_UseCase1_CumulusScheduler <em>(Replace XXX with your PodID)</em></td>
+</tr>
+<tr>
+<td><strong>System ID</strong></td>
+<td><em>(Leave the one provided automatically by the system)</em></td>
+</tr>
+<tr>
+<td><strong>AI Engine</strong></td>
+<td><em>(Leave the default — Webex AI Pro 1.0)</em></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>In the <strong>Agent's Goal</strong> field, copy and paste the following:</p>
+<div class="highlight"><pre><span></span><code>You are the virtual agent for Cumulus Hospital. Your primary goal is to identify
+the user's intent and provide accurate information based on the configured
+Knowledge Base (KB). You will also assist the patient with appointment management
+– scheduling and canceling medical appointments. Always be polite and professional
+with the patients.
+</code></pre></div>
+<p>Click <strong>Create</strong>.</p>
+<details class="- tip">
+<summary>See how to create the AI Agent</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAgentCreation.gif" data-title="AI Agent Creation" data-desc-position="top"><img alt="AI Agent Creation" loading="lazy" src="../assets/AIAgentCreation.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="13-configure-the-ai-agent-profile">1.3 Configure the AI Agent Profile</h3>
+<p>Once the agent is created, it will open automatically in the configuration page.
+Configure each section as follows:</p>
+<p><strong>Profile Tab</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Time Zone</strong></td>
+<td>America/Los_Angeles</td>
+</tr>
+<tr>
+<td><strong>Welcome Message</strong></td>
+<td>Welcome to Cumulus Hospital. How can I help you today?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Instructions</strong> — copy and paste the following into the Instructions box:</p>
+<div class="highlight"><pre><span></span><code>A: Identity
+You are the virtual assistant for the hospital. Your role is to identify the patient's
+intent and perform actions accordingly. Examples of actions include: assisting patients
+in scheduling, canceling, or rescheduling medical appointments; providing information on
+services, hospital locations, facilities, medical laboratory and specialties offered by
+the Hospital based on the Knowledge Base. Be empathetic, friendly, polite, and professional.
+
+B: Task / Action
+MANDATORY INITIAL ACTION: ALWAYS perform the [customer_details] action at the start of
+the interaction to obtain the patient's name "PersonaName". Use these data for the
+actions below:
+
+Scheduling an Appointment:
+
+1. Greet the patient by "PersonaName" and ask for the desired medical specialty "Type".
+   You also need to ask for the desired date "Time_Slot" and time "Time" for this
+   appointment.
+
+2. Consult the KB and offer to the patient the locations where the desired medical
+   specialty "Type" or medical service is provided. Collect the desired "Location" from
+   the patient. Verify if the "Type" is provided into the chosen "Location", otherwise
+   propose the correct options to the patient.
+
+3. Ask for the desired date and time for the appointment. You need to guarantee that the
+   day chosen by the patient is a weekday for June 2026 and the desired hour follows the
+   KB rules (DO NOT allow the patient to choose weekend days). Guarantee those rules are
+   being followed before creating the appointment. Otherwise, propose different options
+   to the patient based on the KB rules about time and days.
+
+4. Create appointment: Convert the "Time_slot" into format "YYYY-MM-DD" (using current
+   2026 year) and use the [create_appointment] action with the collected details to create
+   the appointment. Use variable {{ PersonaANI }} you got from flow. DO NOT mention SMS confirmation if you don't have customer ANI {{ PersonaANI }} value . If you have {{ PersonaANI }} value, you can mention that an SMS will be sent shortly with the schedule confirmation.
+
+C: Response Guidelines
+
+- Be clear and simple: use short, clear sentences.
+- Avoid complex, long, or ambiguous structures.
+- Maintain a fluid, natural conversation similar to human speech, using intonation
+  and pauses.
+- When the client is interacting via voice, avoid using numbering, bullet points, or
+  list formats; use continuous text, especially for numbers and facts.
+- Avoid speaking web addresses like http://.
+- Use the correct number format, such as speaking phone numbers digit by digit.
+- For currency, use the correct format
+  (e.g., 50.99 = fifty dollars and ninety-nine cents).
+- When speaking dates, state the full month name and the full year.
+- Make sure that the response does not contain any irrelevant text or formatting like
+  newline characters, asterisks, dashes, or other special characters.
+- DO NOT respond in markdown. Do not provide medical advice.
+- You don't need to repeat the entire address every time you mention a "Location".
+  If you have already mentioned the full address once, just mention the city.
+- When the customer is using a digital channel, use numbering or bullet points to
+  list options and put each option on a different line.
+
+D: Error Handling and Alternative Responses
+
+- Clarifications: Ask again when unsure of the patient's intent.
+- Fallback Responses: If an action fails: "I am sorry, we were unable to process
+  your request. Shall we try again?"
+- Inform the patient about alternatives from the KB to help with scheduling availability.
+</code></pre></div>
+<p>Click <strong>Save changes</strong>.</p>
+<details class="- tip">
+<summary>See how to configure the AI Agent Profile</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAgentConfig.gif" data-title="AI Agent Config" data-desc-position="top"><img alt="AI Agent Config" loading="lazy" src="../assets/AIAgentConfig.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="14-create-the-knowledge-base">1.4 Create the Knowledge Base</h3>
+<p>Before configuring the <strong>Knowledge</strong> tab, we need to upload the KB document that
+will be used by our AI Agent.</p>
+<div class="admonition note">
+<p class="admonition-title">Prerequisite</p>
+<p>Ensure you have downloaded the Knowledge Base document to your local machine.
+Right-click the link below, select <strong>Open in New Tab</strong>, and save the file to your
+<strong>Desktop</strong> as <code>UseCase1_AIAgentCumulus.pdf</code>.</p>
+<p><a href="https://qaemailmedia.s3.amazonaws.com/ba7f153c-fb89-4dbf-a6f6-2a6628dfde7c/UseCase1_AIAgentCumulus_5131824007205709.pdf">📄 Download Knowledge Base Document</a></p>
+</div>
+<ol>
+<li>
+<p>On the left panel of the AI Agent Studio, click <strong>Knowledge</strong> to open the KB page.</p>
+</li>
+<li>
+<p>Click <strong>+ Create knowledge base</strong> and fill in the following:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Base Name</strong></td>
+<td>PodXXX_UseCase1_AIAgentCumulus <em>(Replace XXX with your PodID)</em></td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Upload Files</strong>, then <strong>Add file</strong>.</p>
+</li>
+<li>
+<p>From your computer, select the file: <code>UseCase1_AIAgentCumulus.pdf</code></p>
+</li>
+<li>
+<p>Click <strong>Open</strong> to upload the file, then click <strong>Process Files</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Close and keep processing</strong> to return to the AI Agent configuration.</p>
+<details class="- tip">
+<summary>See how to create the Knowledge Base</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/KBcreation.gif" data-title="KB Creation" data-desc-position="top"><img alt="KB Creation" loading="lazy" src="../assets/KBcreation.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<h3 id="15-associate-the-knowledge-base-to-the-ai-agent">1.5 Associate the Knowledge Base to the AI Agent</h3>
+<ol>
+<li>
+<p>Go back to <strong>AI Agent</strong> on the left panel and click on your AI Agent to open
+   its configuration.</p>
+</li>
+<li>
+<p>Navigate to the <strong>Knowledge</strong> tab and select your Knowledge Base from the dropdown:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Base</strong></td>
+<td>PodXXX_UseCase1_AIAgentCumulus</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Remember to replace XXX with your PodID</p>
+<p>Each student has their own Knowledge Base. Selecting the wrong one will break
+another student's lab.</p>
+</div>
+</li>
+</ol>
+<hr>
+<h3 id="16-disable-agent-handover">1.6 Disable Agent Handover</h3>
+<p>This use case is designed as a <strong>fully automated service</strong> — there will be 
+no option for customers to escalate to a live agent.</p>
+<p>To disable this option:</p>
+<ol>
+<li>Navigate to the <strong>Actions</strong> tab in the AI Agent configuration.</li>
+<li><strong>Uncheck</strong> the <strong>Agent Handover</strong> option.</li>
+<li>
+<p>Click <strong>Save</strong>, then click <strong>Publish</strong>. Add a note "V1" in the Publish window and click
+   <strong>Publish</strong> again.</p>
+<details class="- tip">
+<summary>See how to associate the Knowledge Base</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAgentassociateKB.gif" data-title="AI Agent Associate KB" data-desc-position="top"><img alt="AI Agent Associate KB" loading="lazy" src="../assets/AIAgentassociateKB.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="16-explore-language-voice-settings">1.6 Explore Language &amp; Voice Settings</h3>
+<ol>
+<li>
+<p>Go to the <strong>Conversation</strong> tab on your AI Agent configuration.</p>
+<details class="info" open="open">
+<summary>Key Learning — Language &amp; Voice</summary>
+<p>By default, the AI Agent is created in <strong>English</strong> using the <strong>Jennifer</strong> voice.
+You can explore other languages and voices by changing the values in this tab.</p>
+<blockquote>
+<p>💡 When making a live voice call using the Flow Builder, the language and voice
+settings configured in the flow will <strong>overwrite</strong> the values set here. This is
+how we can <strong>reuse the same bot in different languages</strong> for AI Agent voice calls.</p>
+</blockquote>
+</details>
+<details class="- tip">
+<summary>See how to change language settings</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ChangingLanguageAIAgent.gif" data-title="Changing Language AI Agent" data-desc-position="top"><img alt="Changing Language AI Agent" loading="lazy" src="../assets/ChangingLanguageAIAgent.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h2 id="phase-2-building-the-actions">Phase 2: Building the Actions</h2>
+<h3 id="21-create-the-webex-connect-flow-customer_details">2.1 Create the Webex Connect Flow - customer_details</h3>
+<p>Now we will create the <strong>Actions</strong> for this AI Agent. First, we need to launch
+<strong>Webex Connect</strong>, where the Action flows will be created and used inside the
+Autonomous AI Agent.</p>
+<ol>
+<li>
+<p>Navigate to <strong>Collaboration Control Hub &gt; Contact Center &gt; Quick Links &gt; Webex Connect</strong> to
+   launch a new Chrome tab.</p>
+</li>
+<li>
+<p>In Webex Connect, locate your Service named <strong>PodXXX_LTRCCT2001_CUMULUS</strong> and click to enter it.</p>
+</li>
+<li>
+<p>Click on <strong>Flows</strong> and then <strong>Create Flow</strong>.</p>
+</li>
+<li>
+<p>Fill in the following and click <strong>Create</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flow Name</strong></td>
+<td>UseCase1_AIAgent_customer_details</td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td>New Flow</td>
+</tr>
+<tr>
+<td><strong>Template</strong></td>
+<td>Start from Scratch</td>
+</tr>
+</tbody>
+</table>
+<details class="- tip">
+<summary>See how to create the flow in Webex Connect</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAgentWXConnectNewFlow.gif" data-title="AI Agent WX Connect New Flow" data-desc-position="top"><img alt="AI Agent WX Connect New Flow" loading="lazy" src="../assets/AIAgentWXConnectNewFlow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="22-configure-the-ai-agent-event-node">2.2 Configure the AI Agent Event Node</h3>
+<ol>
+<li>
+<p>From the <strong>Integrations</strong> window, click on <strong>AI Agent</strong>.</p>
+</li>
+<li>
+<p>Copy and paste the following JSON in the <strong>Configure AI Agent Event</strong> field, you should replace the default existing JSON:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"PersonaID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Click <strong>Parse</strong> and then <strong>Save</strong>.</p>
+</li>
+</ol>
+<hr>
+<h3 id="23-configure-the-http-request-node">2.3 Configure the HTTP Request Node</h3>
+<ol>
+<li>
+<p>Click and drag the <strong>HTTP Request</strong> node to the canvas, positioning it beside
+   the AI Agent node.</p>
+</li>
+<li>
+<p>Click the green circle from the <strong>AI Agent Event</strong> to connect it to the
+   <strong>HTTP Request</strong> node.</p>
+<details class="- tip">
+<summary>See how to connect the nodes</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/WxConnectHTTP.gif" data-title="Webex Connect HTTP" data-desc-position="top"><img alt="Webex Connect HTTP" loading="lazy" src="../assets/WxConnectHTTP.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>Double-click the <strong>HTTP Request</strong> node to open its configuration and fill in
+   the following:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method</strong></td>
+<td>GET</td>
+</tr>
+<tr>
+<td><strong>Endpoint URL</strong></td>
+<td><code>https://api.airtable.com/v0/appvCQpTfOVVLcRmR/tblLGr9Ibkh79FPaD?filterByFormula={PersonaID}='$(n2.aiAgent.PersonaID)'</code></td>
+</tr>
+<tr>
+<td><strong>Header</strong></td>
+<td>Authorization</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td><code>`Provided by your proctor in the Credentials guide — copy and paste the full token including the word Bearer</code></td>
+</tr>
+<tr>
+<td><strong>Connection Timeout</strong></td>
+<td>5000</td>
+</tr>
+<tr>
+<td><strong>Request Timeout</strong></td>
+<td>5000</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>+ Add Another Header</strong> and fill in the second pair:</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content-Type</strong></td>
+<td>application/json</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Test the HTTP node</strong>: Click <strong>Test</strong> and enter your <strong>3-digit POD number</strong> as
+   the input. Verify the return is a valid JSON response. Click <strong>Save</strong>.</p>
+<details class="- tip">
+<summary>See how to test the HTTP node</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/HTTPTEST.gif" data-title="HTTP Test" data-desc-position="top"><img alt="HTTP Test" loading="lazy" src="../assets/HTTPTEST.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="24-configure-flow-outcomes">2.4 Configure Flow Outcomes</h3>
+<ol>
+<li>
+<p>Click on the <strong>Configuration</strong> icon and select <strong>Flow Outcomes</strong>.</p>
+<details class="- tip">
+<summary>See how to configure Flow Outcomes</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/flow_outcomes.gif" data-title="Config - Flow Outcomes" data-desc-position="top"><img alt="Config - Flow Outcomes" loading="lazy" src="../assets/flow_outcomes.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>Verify that the first line <strong>Notify</strong> is <strong>Enabled</strong>.</p>
+</li>
+<li>
+<p>Click the arrow to open <strong>Last Execution Status</strong> and configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Notification Settings</strong></td>
+<td>Notify AI Agent</td>
+</tr>
+<tr>
+<td><strong>Define JSON</strong></td>
+<td>Enter JSON</td>
+</tr>
+</tbody>
+</table>
+<p>Copy and paste the following JSON, you should replace the default existing JSON:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"transactionID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(transid)"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"flowname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(flowname)"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"serviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(serviceName)"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"httpStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(n3.http.statusCode)"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"httpResponse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(n3.http.responseBody)"</span>
+<span class="p">}</span>
+</code></pre></div>
+<details class="- tip">
+<summary>See how to configure Flow Outcomes</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAgentReturn.gif" data-title="AI Agent Return" data-desc-position="top"><img alt="AI Agent Return" loading="lazy" src="../assets/AIAgentReturn.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>Click <strong>Save</strong> and then click <strong>Make Live</strong> in the top-right corner to publish
+   the flow.</p>
+<div class="admonition note">
+<p class="admonition-title">Expected Warnings</p>
+<p>You will see warnings advising the HTTP node has no termination — you can
+safely ignore them and click <strong>Make Live</strong> again. The flow will be published
+and ready to be used by your AI Agent.</p>
+</div>
+</li>
+</ol>
+<hr>
+<h3 id="25-create-the-customer_details-action-in-ai-agent-studio">2.5 Create the customer_details Action in AI Agent Studio</h3>
+<ol>
+<li>
+<p>Navigate back to the <strong>Webex AI Agent Studio</strong> tab in Chrome.</p>
+</li>
+<li>
+<p>Make sure you are on your AI Agent configuration. Go to <strong>Actions</strong> and click
+   <strong>+ Add actions</strong>. Select <strong>Fulfillment</strong> from the <strong>Create new action</strong> option.</p>
+<div class="admonition warning">
+<p class="admonition-title">Critical — Use Exact Names</p>
+<p>Use <strong>exactly</strong> the action name and entity names specified below. Otherwise,
+your bot will not identify which action needs to be performed.</p>
+</div>
+</li>
+<li>
+<p>Fill in the fields as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Action Name</strong></td>
+<td>customer_details</td>
+</tr>
+<tr>
+<td><strong>Action Description</strong></td>
+<td>Ask Patient ID and use customer provided as "PersonaID" to get customer data like "PersonaName", "PersonaEmail".</td>
+</tr>
+</tbody>
+</table>
+<details class="- tip">
+<summary>See how to create the action</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Action_Creation.gif" data-title="Action Creation" data-desc-position="top"><img alt="Action Creation" loading="lazy" src="../assets/Action_Creation.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>Click <strong>+ New input entity</strong> and fill in the following:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>PersonaID</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>3-digit customer ID / Patient ID to be used as "PersonaID"</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Fulfillment</strong> section, make sure <strong>Use Webex Connect Flow Builder</strong> is
+   selected and configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Select Service</strong></td>
+<td>PodXXX_LTRCCT2001_CUMULUS <em>(Replace XXX with your PodID)</em></td>
+</tr>
+<tr>
+<td><strong>Select Flow</strong></td>
+<td>UseCase1_AIAgent_customer_details</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Add</strong>.</p>
+<details class="- tip">
+<summary>See how to complete the action</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Action_Continue.gif" data-title="Action Continue" data-desc-position="top"><img alt="Action Continue" loading="lazy" src="../assets/Action_Continue.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="26-import-the-create_appointment-flow">2.6 Import the create_appointment Flow</h3>
+<p>Due to time constraints, we will import the remaining action flow from an
+existing template.</p>
+<ol>
+<li>
+<p>Navigate to the <strong>Webex Connect</strong> tab. Find the Service
+   <strong>ADMIN_LTRCCT2001_CUMULUS</strong> and click to enter it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do NOT modify anything inside this service</p>
+<p>This service is shared across all students. Only <strong>Export</strong> the flow —
+do not change any configuration.</p>
+</div>
+</li>
+<li>
+<p>Navigate to <strong>Flows</strong> inside <strong>ADMIN_LTRCCT2001_CUMULUS</strong>. Find the flow
+   <strong>UseCase1_AIAgent_create_appointment</strong>, click on the <strong>Actions</strong> arrow and
+   choose <strong>Export</strong>. Download the JSON file to your computer.</p>
+<details class="- tip">
+<summary>See how to export the flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ExportWxConnectFlow.gif" data-title="Export WX Connect Flow" data-desc-position="top"><img alt="Export WX Connect Flow" loading="lazy" src="../assets/ExportWxConnectFlow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>Go back to <strong>Services</strong> and find your Service named <strong>PodXXX_LTRCCT2001_CUMULUS</strong>. Enter it,
+   navigate to <strong>Flows</strong>, and click <strong>Create Flow</strong>.</p>
+</li>
+<li>
+<p>Fill in the name <code>UseCase1_AIAgent_create_appointment</code>, select "Upload a flow" from "Method" and select the .workflow file you just exported to import it. Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>Wait until the flow opens. Click <strong>Parse</strong> and <strong>Save</strong> on the first node.</p>
+<details class="- tip">
+<summary>See how to import the flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ImportWxConnectFlow.gif" data-title="Import WX Connect Flow" data-desc-position="top"><img alt="Import WX Connect Flow" loading="lazy" src="../assets/ImportWxConnectFlow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<details class="info" open="open">
+<summary>Flow Architecture — What's Inside?</summary>
+<p>Take a moment to explore the nodes but <strong>do NOT change anything</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Node 1</strong></td>
+<td>Data passed by AI Agent to this flow</td>
+</tr>
+<tr>
+<td><strong>Node 2</strong></td>
+<td>Airtable POST that creates the scheduling / appointment</td>
+</tr>
+<tr>
+<td><strong>Remaining nodes</strong></td>
+<td>Send SMS confirmation based on customer language</td>
+</tr>
+</tbody>
+</table>
+</details>
+</li>
+<li>
+<p>Double-click each <strong>SMS</strong> node, select <code>CONNCT</code> from the <strong>From Number</strong> dropdown, and click <strong>Save</strong>. Repeat this for all <strong>4 SMS nodes</strong> in the flow.</p>
+<details class="- tip">
+<summary>See how to import the flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Connect.png" data-title="SMS Node Modification" data-desc-position="top"><img alt="SMS Node Modification" loading="lazy" src="../assets/Connect.png" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>Click <strong>Make Live</strong> to publish your flow.</p>
+</li>
+</ol>
+<hr>
+<h3 id="27-create-the-create_appointment-action-in-ai-agent-studio">2.7 Create the create_appointment Action in AI Agent Studio</h3>
+<ol>
+<li>
+<p>Navigate back to the <strong>Webex AI Agent Studio</strong> tab. Go to <strong>Actions</strong> and click
+   <strong>+ Add actions</strong>. Select <strong>Fulfillment</strong> from the <strong>Create new action</strong> option.</p>
+<div class="admonition warning">
+<p class="admonition-title">Critical — Use Exact Names</p>
+<p>Use <strong>exactly</strong> the action name and entity names specified below.</p>
+</div>
+</li>
+<li>
+<p>Fill in the fields as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Action Name</strong></td>
+<td>create_appointment</td>
+</tr>
+<tr>
+<td><strong>Action Description</strong></td>
+<td>Create an appointment for the patient using "PersonaID" value , "PersonaName" value at the preferred day and time chosen by the patient. Yo got "PersonaName" from previous action [customer_details]. You must convert the date provided by the patient in the following format prior to executing the action: YYYY-MM-DD</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <strong>+ New input entity</strong> for each entity below: <br>
+<code>use the arrow &gt; to navigate from Entity 1 to Entity 8</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:8"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><input id="__tabbed_1_7" name="__tabbed_1" type="radio"><input id="__tabbed_1_8" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Entity 1 — PersonaID</label><label for="__tabbed_1_2">Entity 2 — PersonaName</label><label for="__tabbed_1_3">Entity 3 — Hours</label><label for="__tabbed_1_4">Entity 4 — Time_slot</label><label for="__tabbed_1_5">Entity 5 — Type</label><label for="__tabbed_1_6">Entity 6 — Location</label><label for="__tabbed_1_7">Entity 7 — Language</label><label for="__tabbed_1_8">Entity 8 — PersonaANI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>PersonaID</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>3-digit customer ID / Patient ID to be used as "PersonaID"</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>✅ Required</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 1: PersonaID</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/PersonaID.png" data-title="Entity 1 - PersonaID" data-desc-position="top"><img alt="Entity 1 - PersonaID" src="../assets/PersonaID.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>PersonaName</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>This is the Patient name — use "PersonaName" value you got from action customer_details</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>✅ Required</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 2: PersonaName</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/PersonaName.png" data-title="Entity 2 - PersonaName" data-desc-position="top"><img alt="Entity 2 - PersonaName" src="../assets/PersonaName.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>Hours</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>Time for the scheduling meeting chosen by the customer</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>✅ Required</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 3: Hours</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Hours.png" data-title="Entity 3 - phone_number" data-desc-position="top"><img alt="Entity 3 - phone_number" src="../assets/Hours.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>Time_slot</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>Date</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>Date for the appointment chosen by the customer. Use the format YYYY-MM-DD</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td>YYYY-mm-dd</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>✅ Required</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 4: Time_slot</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Time_slot.png" data-title="Entity 4 - Time_slot" data-desc-position="top"><img alt="Entity 4 - Time_slot" src="../assets/Time_slot.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>Type</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>Type of scheduling service desired by the patient that is offered by Cumulus Hospital. Consult KB to double check type and offer the location accordingly.</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>✅ Required</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 5: Type</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Type.png" data-title="Entity 5 - Type" data-desc-position="top"><img alt="Entity 5 - Type" src="../assets/Type.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>Location</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>Hospital location (city and address) where the customer chose to take the medical service. It must match the Cumulus locations and service offers in this location according to the KB.</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>✅ Required</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 6: Location</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Location.png" data-title="Entity 6 - Location" data-desc-position="top"><img alt="Entity 6 - Location" src="../assets/Location.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>Language</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>Global_Language being used by this interaction. Use value <code>{{ Global_Language }}</code>. If you don't have this value, use the language configured in this BOT.</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>✅ Required</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 7: Language</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/language.png" data-title="Entity 6 - Language" data-desc-position="top"><img alt="Entity 6 - Language" src="../assets/language.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity Name</strong></td>
+<td>PersonaANI</td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Entity Description</strong></td>
+<td>Patient ANI to be used for sending SMS confirmation. Use the variable {{ PersonaANI }} you got from the flow, don't ask it to end customer</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>✅ Required</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 8: PersonaANI</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/PersonaANI.png" data-title="Entity 8 - PersonaANI" data-desc-position="top"><img alt="Entity 8 - PersonaANI" src="../assets/PersonaANI.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>In the <strong>Fulfillment</strong> section, make sure <strong>Use Webex Connect Flow Builder</strong> is
+   selected and configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Select Service</strong></td>
+<td>PodXXX_LTRCCT2001_CUMULUS <em>(Replace XXX with your PodID)</em></td>
+</tr>
+<tr>
+<td><strong>Select Flow</strong></td>
+<td>UseCase1_AIAgent_create_appointment</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Add</strong>.</p>
+</li>
+</ol>
+<p><strong>Save changes</strong></p>
+<hr>
+<h3 id="28-test-the-ai-agent-full-actions-validation">2.8 Test the AI Agent — Full Actions Validation</h3>
+<div class="admonition warning">
+<p class="admonition-title">Before You Begin</p>
+<p>Make sure your <strong>headset is connected</strong> to your computer before starting the preview.</p>
+</div>
+<p>It's <strong>TEST time</strong>! Click <strong>Preview</strong> and <strong>Start a call</strong>.</p>
+<p>Inside <strong>PodXXX_UseCase1_CumulusScheduler</strong> verify the following:</p>
+<ul>
+<li><strong>Identity Capture</strong>: The agent performs the <code>[customer_details]</code> action at the
+  start of every interaction.</li>
+<li><strong>Location &amp; Services</strong>: The agent consults the KB to offer correct locations for
+  the requested specialty.</li>
+<li><strong>Facilities</strong>: The agent answers questions about hospital facilities.</li>
+<li><strong>Preparation Information</strong>: The agent provides preparation instructions for procedures.</li>
+<li><strong>Date &amp; Time Validation</strong>: The agent only accepts <strong>weekdays in June 2026</strong>,
+  between <strong>8am and 6pm</strong>.</li>
+<li><strong>Appointment Creation</strong>: The agent creates the appointment and confirms the details
+  using <code>[create_appointment]</code>.</li>
+<li><strong>SMS Confirmation</strong>: If calling from a valid cell phone, an SMS confirmation
+  is received.</li>
+<li><strong>Language Consistency</strong>: The entire interaction follows the configured language.</li>
+</ul>
+<details class="- tip">
+<summary>Need help? See the full test script — English</summary>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Welcome to Cumulus Hospital. How can I help you today?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>I need to schedule an appointment</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent performs <code>customer_details</code> action — asks for Patient ID)</em></td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>My ID is 001</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hello [PatientName], what type of medical specialty are you looking for?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>I need a cardiologist</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent consults KB and offers available locations for cardiology)</em></td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>New York</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>What date and time would you prefer?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>June 10th at 10am</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent creates appointment and confirms SMS will be sent)</em></td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Do you provide parking at the hospital?</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Yes, Cumulus Hospital in New York offers paid parking for patients. The cost is twenty dollars per hour, or one hundred fifty dollars for a twenty-four hour period. Is there anything else I can assist you with?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>What is the preparation for the appointment?</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>he general preparation guidelines for your appointment:.....</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>After testing, <strong>Publish your AI Agent</strong> with comment <code>V2</code>, so we can proceed to Task 3 and test it with a real live call.</p>
+</div>
+<p><strong>Session Inspection</strong>: Click on <strong>Sessions</strong> and select the transaction you just
+   made to open the transcription window. When finished, close the session window and
+   return to the <strong>Configuration</strong> tab of your AI Agent.</p>
+<details class="- tip">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/PreviewAIAgent.gif" data-title="Preview AI Agent" data-desc-position="top"><img alt="Preview AI Agent" loading="lazy" src="../assets/PreviewAIAgent.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<details class="- tip">
+<summary>Do you want to try in Spanish? See the full test script</summary>
+<p>Once you've switched the language to Spanish en-US, go ahead and update the welcome message to:</p>
+<div class="highlight"><pre><span></span><code>```
+Gracias por llamar al hospital Cumulus, ¿cómo te ayudo hoy?
+```
+
+| Role | Use | Message |
+|---|---|---|
+| 👤 **User** | Location | ¿Cuáles son las ubicaciones del hospital? |
+| 👤 **User** | Services | ¿Qué servicios tenemos en la ubicación de Nueva York? |
+| 👤 **User** | Facilities | ¿Ofrecen estacionamiento en el hospital? |
+| 👤 **User** | Preparation | ¿Cuál es la preparación para un análisis de sangre? |
+| 👤 **User** | Specialty | ¿Qué ubicaciones ofrecen un cardiólogo? |
+</code></pre></div>
+</details>
+<hr>
+<h2 id="phase-3-voice-flow-configuration">Phase 3: Voice Flow Configuration</h2>
+<h3 id="31-export-import-the-voice-flow">3.1 Export &amp; Import the Voice Flow</h3>
+<ol>
+<li>
+<p>Navigate to <strong>Collaboration Control Hub &gt; Contact Center &gt; Flows</strong>.</p>
+</li>
+<li>
+<p>Find the flow <strong>ADMIN_TEMPLATE_UseCase1_CumulusScheduling</strong>, click on the <strong>dots</strong>
+   on the right and select <strong>Export</strong> to save the JSON file to your computer.</p>
+<details class="- tip">
+<summary>See how to export the Voice Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ExportVoiceFlow.gif" data-title="Export Voice Flow" data-desc-position="top"><img alt="Export Voice Flow" loading="lazy" src="../assets/ExportVoiceFlow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>In <strong>Collaboration Control Hub &gt; Flows</strong>, click <strong>Manage Flows</strong>, then <strong>Create Flows</strong> from
+   the dropdown menu.</p>
+</li>
+<li>
+<p>In the new window, choose <strong>Import Flow</strong> and select the JSON file from the
+   previous step. Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Give the unique name <code>PodXXX_UseCase1Cumulus</code> to this flow <em>(Replace XXX with
+   your PodID)</em> and click <strong>Create Flow</strong>.</p>
+</li>
+<li>
+<p>The new flow window will open. Click <strong>Get Started</strong> to begin editing.</p>
+<details class="- tip">
+<summary>See how to import the Voice Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/VoiceFlowImport.gif" data-title="Voice Flow Import" data-desc-position="top"><img alt="Voice Flow Import" loading="lazy" src="../assets/VoiceFlowImport.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="32-edit-the-voice-flow">3.2 Edit the Voice Flow</h3>
+<ol>
+<li>Verify <strong>Edit Mode</strong> is <strong>ON</strong> on the top toolbar.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">You're Testing Something New! 🚀</p>
+<p>In this flow, you have access to a <strong>new autonomous model</strong> (beta).</p>
+<p>This is the <strong>AI Agent node</strong> named <strong>"Concierge"</strong> — when you place your test call, 
+the <strong>Concierge will answer</strong> and handle the interaction autonomously.</p>
+<p>No manual routing rules needed — it will:</p>
+<ul>
+<li>🌐 <strong>Automatically detect</strong> the customer's language</li>
+<li>🔀 <strong>Route the interaction</strong> based on the request and detected language</li>
+</ul>
+</div>
+<ol>
+<li>Find the node <strong>VirtualAgent_UseCase1Cumulus</strong> and click on it to edit.</li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Important – Correct Node Selection</p>
+<p>Select the <strong>Virtual Agent</strong> node on the <strong>right side</strong> of the flow.<br>
+❌ Do <strong>not</strong> modify the <strong>Concierge</strong> node — they look similar but serve different purposes.</p>
+</div>
+<ol>
+<li>
+<p>In the <strong>Virtual Agent</strong> dropdown, select your Autonomous AI Agent:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Virtual Agent</strong></td>
+<td>PodXXX_UseCase1_CumulusScheduler</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>In the <strong>State Event</strong> section, open the dropdown and fill in the <strong>Event Data</strong>
+   field with the following JSON:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">'WelcomeMsg'</span><span class="p">:</span> <span class="s1">'{{WelcomeMsg}}'</span><span class="p">,</span> <span class="s1">'PersonaANI'</span><span class="p">:</span> <span class="s1">'{{PersonaANI}}'</span><span class="p">,</span> <span class="s1">'Global_Language'</span><span class="p">:</span> <span class="s1">'{{Global_Language}}'</span><span class="p">}</span>
+</code></pre></div>
+<details class="info" open="open">
+<summary>Why Are We Passing These Variables?</summary>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WelcomeMsg</code></td>
+<td>Passes the welcome message from the flow to the AI Agent</td>
+</tr>
+<tr>
+<td><code>PersonaANI</code></td>
+<td>Passes the caller's phone number for SMS confirmation</td>
+</tr>
+<tr>
+<td><code>Global_Language</code></td>
+<td>Passes the language selected by the patient in the IVR</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="- tip">
+<summary>See how to edit the Voice Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/EditVoiceFlow.gif" data-title="Edit Voice Flow" data-desc-position="top"><img alt="Edit Voice Flow" loading="lazy" src="../assets/EditVoiceFlow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>Toggle <strong>Validation</strong> to <strong>ON</strong> to ensure no configuration errors exist.</p>
+</li>
+<li>
+<p>Click <strong>Publish</strong>. Ensure the version label is set to <strong>latest</strong>, then click
+   <strong>Publish flow</strong>.</p>
+</li>
+</ol>
+<hr>
+<h3 id="33-configure-the-channel">3.3 Configure the Channel</h3>
+<ol>
+<li>
+<p>In <strong>Collaboration Control Hub &gt; Contact Center</strong>, find <strong>Channels</strong>.</p>
+</li>
+<li>
+<p>Find your Channel <strong>PodXXX_Cumulus_Voice</strong> and click to edit. Configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Routing Flow</strong></td>
+<td>PodXXX_UseCase1Cumulus</td>
+</tr>
+<tr>
+<td><strong>Music on Hold</strong></td>
+<td>defaultmusic_on_hold.wav</td>
+</tr>
+<tr>
+<td><strong>Version Label</strong></td>
+<td>Latest</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Save</strong>.</p>
+<details class="- tip">
+<summary>See how to configure the Channel</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/EditChannelVoice.gif" data-title="Edit Channel Voice" data-desc-position="top"><img alt="Edit Channel Voice" loading="lazy" src="../assets/EditChannelVoice.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="34-update-the-welcome-message">3.4 Update the Welcome Message</h3>
+<ol>
+<li>
+<p>Navigate back to the <strong>AI Agent Studio</strong> tab and click on your AI Agent to open
+   its configuration.</p>
+</li>
+<li>
+<p>In the <strong>Profile</strong> tab, update the <strong>Welcome Message</strong> field: <br> 
+<em>copy and paste the complete value</em>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Welcome Message</strong></td>
+<td><code>{{WelcomeMsg}}</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <strong>Save Changes</strong>, then click <strong>Publish</strong>. Add a comment <code>V3</code> and click <strong>Publish</strong> again.</p>
+<details class="- tip">
+<summary>See how to update the Welcome Message</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/UpdateWelcomeMessage.gif" data-title="Update Welcome Message" data-desc-position="top"><img alt="Update Welcome Message" loading="lazy" src="../assets/UpdateWelcomeMessage.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h2 id="phase-4-live-call-testing">Phase 4: Live Call Testing</h2>
+<h3 id="41-english-path-validation">4.1 English Path Validation</h3>
+<p><strong>Step 1 — Initiate Call</strong></p>
+<p>Dial your assigned <strong>Channel number</strong> from your mobile device or Webex App. <em>(you can find it under the lab access instructions)</em>.</p>
+<blockquote>
+<p>🔗 You can use your <strong>cell phone</strong> or log in to the <strong>Webex App</strong> using the supervior
+user assigned to your POD to make the call.</p>
+</blockquote>
+<p><code>Note: For detailed guidance, refer to the Getting Started section.</code></p>
+<hr>
+<p><strong>Step 2 — Language Selection</strong></p>
+<p>When the concierge prompts for language, answer <strong>I´m ok with English</strong>.</p>
+<hr>
+<p><strong>Step 3 — Triage Interaction</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Test Script — English</p>
+<ul>
+<li>Provide your <strong>Patient ID</strong> when asked <em>(e.g., 001)</em> - <em>(you can find it under the lab access instructions)</em>.</li>
+<li>Request an appointment: <em>"I need to schedule an appointment with a cardiologist"</em></li>
+<li>Choose your preferred <strong>location</strong> from the options provided by the AI Agent</li>
+<li>Select a date: <em>Any </em><em>weekday</em><em> in June 2026, between </em><em>8am and 6pm</em>**</li>
+<li>Confirm the appointment details</li>
+<li><em>(If calling from a valid cell phone)</em> → Verify the <strong>SMS confirmation</strong> is received ✅</li>
+</ul>
+<details class="- tip">
+<summary>Need help? See the full test script — English</summary>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Welcome to Cumulus Hospital. How can I help you today?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>I need to schedule an appointment</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent performs <code>customer_details</code> action — asks for Patient ID)</em></td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>My ID is 001</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hello [PatientName], what type of medical specialty are you looking for?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>I need a cardiologist</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent consults KB and offers available locations for cardiology)</em></td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>New York</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>What date and time would you prefer?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>June 10th at 10am</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent creates appointment and confirms SMS will be sent)</em></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<hr>
+<h3 id="42-spanish-path-validation">4.2 Spanish Path Validation</h3>
+<p><strong>Step 1 — Initiate Call</strong></p>
+<p>Dial your assigned <strong>Channel number</strong> from your mobile device or Webex App. <em>(you can find it under the lab access instructions)</em>.</p>
+<hr>
+<p><strong>Step 2 — Language Selection</strong></p>
+<p>When the concierge prompts for language, answer <strong>Quiero hablar en español</strong>.</p>
+<hr>
+<p><strong>Step 3 — Triage Interaction (Spanish)</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Test Script — Spanish</p>
+<ul>
+<li>Provide your <strong>Patient ID - ID De Paciente</strong> when asked <em>(e.g., 001)</em></li>
+<li>Request an appointment: <em>"Necesito agendar una cita con un cardiólogo"</em></li>
+<li>Choose your preferred <strong>location</strong> from the options provided by the AI Agent</li>
+<li>Select a date: <em>Any </em><em>weekday</em><em> in June 2026, between </em><em>8am and 6pm</em>**</li>
+<li>Confirm the appointment details</li>
+<li><em>(If calling from a valid cell phone)</em> → Verify the <strong>SMS confirmation</strong>
+  is received in <strong>Spanish</strong> ✅</li>
+</ul>
+<details class="- tip">
+<summary>Need help? See the full test script — Spanish</summary>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Bienvenido a Cumulus Hospital. ¿En qué puedo ayudarle hoy?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Necesito agendar una cita</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent performs <code>customer_details</code> action — asks for Patient ID)</em></td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Mi ID es 001</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hola [NombrePaciente], ¿qué tipo de especialidad médica está buscando?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Necesito un cardiólogo</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent consults KB and offers available locations for cardiology in Spanish)</em></td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Ciudad de México</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>¿Qué fecha y hora prefiere?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>10 de junio a las 10am</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td><em>(Agent creates appointment and confirms SMS will be sent in Spanish)</em></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<hr>
+<h2 id="lab-1-complete-congratulations">🏁 Lab 1 Complete — Congratulations! 🎉</h2>
+<p>You have successfully completed <strong>Lab 1 — Orchestrating Multilingual Voice AI</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autonomous AI Agent</td>
+<td>Created from scratch in AI Agent Studio</td>
+</tr>
+<tr>
+<td>Knowledge Base</td>
+<td>Uploaded, processed and associated to AI Agent</td>
+</tr>
+<tr>
+<td><code>customer_details</code> Action</td>
+<td>Flow created in Webex Connect and linked to AI Agent</td>
+</tr>
+<tr>
+<td><code>create_appointment</code> Action</td>
+<td>Flow imported, published and linked to AI Agent</td>
+</tr>
+<tr>
+<td>Voice Flow</td>
+<td>Imported, configured and published with multilingual support</td>
+</tr>
+<tr>
+<td>Channel Configuration</td>
+<td>Routing flow mapped to your assigned DID</td>
+</tr>
+<tr>
+<td>Welcome Message</td>
+<td>Updated to use dynamic variable from Voice Flow</td>
+</tr>
+<tr>
+<td>End-to-End Testing (EN + ES)</td>
+<td>All scenarios validated — KB, scheduling &amp; SMS confirmation</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>Lab authored for Cisco Live 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../getting_started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Getting Started
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../digital/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 2 - Digital Patient Journey">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 2 - Digital Patient Journey
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.sections", "navigation.collapse", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

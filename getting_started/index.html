@@ -1,0 +1,1408 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC">
+      
+      
+        <meta name="author" content="Carolina Morales">
+      
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../voice/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Getting Started - LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-header__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Descripción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wrap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparta su opinión!
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-nav__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Descripción
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La misión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Disclaimer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lab-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Lab Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Lab Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-chrome-profile-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Chrome Profile Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Chrome Profile Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#profiles-to-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiles to Create
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lab-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Lab Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Lab Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-lab-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Lab Credentials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Lab Credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#your-credentials-file-also-includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your credentials file also includes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-making-test-calls-webex-app-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Making Test Calls - Webex App Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Making Test Calls - Webex App Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-can-make-us-pstn-calls-from-your-mobile-skip-this-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If you can make US PSTN Calls from your mobile skip this section
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-lab-quick-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Lab Quick Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-lab-environment-pre-configured-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Lab Environment — Pre-Configured Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Multilingual Voice AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Digital Patient Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Intelligent AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bonus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - Bonus - Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparta su opinión!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Disclaimer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lab-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Lab Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Lab Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-chrome-profile-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Chrome Profile Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Chrome Profile Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#profiles-to-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiles to Create
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lab-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Lab Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Lab Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-lab-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Lab Credentials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Lab Credentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#your-credentials-file-also-includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your credentials file also includes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-making-test-calls-webex-app-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Making Test Calls - Webex App Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Making Test Calls - Webex App Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-can-make-us-pstn-calls-from-your-mobile-skip-this-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If you can make US PSTN Calls from your mobile skip this section
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-lab-quick-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Lab Quick Links
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-lab-environment-pre-configured-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Lab Environment — Pre-Configured Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="getting-started">Getting Started</h1>
+<div class="admonition note">
+<p class="admonition-title">Modular by Design</p>
+<p>Each lab in this session is <strong>fully independent</strong>. You can complete them 
+in any order based on your interests and available time.</p>
+</div>
+<h2 id="1-disclaimer">1 Disclaimer</h2>
+<p>Although the lab design and configuration examples provided throughout this session can be used as a reference, for design-related questions please consult the official documentation at <a href="https://help.webex.com">help.webex.com</a>.</p>
+<h2 id="2-lab-preparation">2 Lab Preparation</h2>
+<h3 id="21-chrome-profile-setup">2.1 Chrome Profile Setup</h3>
+<p>To avoid browser login and cache errors, you will work with dedicated Chrome Profiles
+representing the different user roles throughout the labs.</p>
+<h4 id="profiles-to-create">Profiles to Create</h4>
+<table>
+<thead>
+<tr>
+<th>Profile Name</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Admin_Lab</code></td>
+<td>Administrator</td>
+</tr>
+<tr>
+<td><code>Supervisor_Lab</code></td>
+<td>Supervisor</td>
+</tr>
+<tr>
+<td><code>Agent_Lab</code></td>
+<td>Agent</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="steps">Steps</h3>
+<ol>
+<li>Launch <strong>Chrome</strong> and locate the <strong>person icon</strong> near the top-right corner of the browser.</li>
+</ol>
+<details class="- note">
+<summary>Chrome Profile icon</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ChromeProfile_image.png" data-title="Chrome Profile" data-desc-position="top"><img alt="Chrome Profile" loading="lazy" src="../assets/ChromeProfile_image.png" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+  <figcaption>Chrome profile icon — top-right corner</figcaption>
+</figure><p></p>
+</details>
+<ol>
+<li>Click the icon and select <strong>Add Chrome Profile</strong>, then choose <strong>Stay Signed out</strong>.</li>
+<li>Select a color, enter the profile name (e.g. <code>Admin_Lab</code>) and click <strong>Done</strong>.</li>
+<li>Repeat <strong>steps 2 and 3</strong> to create the two remaining profiles — <code>Supervisor_Lab</code>
+   and <code>Agent_Lab</code>.</li>
+</ol>
+<details class="- info">
+<summary>See How It Works</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ChromeProfile.gif" data-title="Chrome Profile Setup" data-desc-position="top"><img alt="Chrome Profile Setup" loading="lazy" src="../assets/ChromeProfile.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+  <figcaption>Creating the three Chrome Profiles for the lab</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h2 id="3-lab-access">3 Lab Access</h2>
+<div class="admonition warning">
+<p class="admonition-title">The Pod Discipline — Read Before You Start</p>
+<p>Throughout all labs, you will be working on a <strong>shared tenant</strong> with all other students
+in this session.</p>
+<p>To keep the environment stable for everyone, please follow these rules:</p>
+<ul>
+<li>Always replace <strong>XXX</strong> with your assigned <strong>3-digit Pod ID (e.g., 001, 002)</strong></li>
+<li>Your naming convention must always start with the prefix <strong>Pod</strong> followed by your
+  ID — <strong>(PodXXX)</strong></li>
+<li><strong>Always use the exact name indicated in the lab guide</strong> — do not use different
+  names, do not alter the suggested name, do not add extra characters</li>
+<li><strong>Do not modify, delete, or overwrite</strong> any resource labeled <strong>ADMIN</strong> or
+  <strong>DO NOT DELETE</strong> — those are shared configurations that support the entire lab</li>
+<li>If you do not follow this convention exactly, you will overwrite your neighbor's
+  work</li>
+</ul>
+<p>Stay disciplined. Your Pod ID is your workspace.</p>
+</div>
+<hr>
+<h3 id="31-lab-credentials">3.1 Lab Credentials</h3>
+<p>All credentials for this session have been pre-provisioned by the lab proctors. <br></p>
+<p>Your <strong>pod</strong> has been pre-assigned to a desktop. Please use <strong>one</strong> of the following options to retrieve your credentials: <br></p>
+<p><strong>Option 1 – Lab Assistant (Primary)</strong><br>
+  If not already open, navigate to the following link in your browser: 
+  <a href="https://lab-assistant.com/">https://lab-assistant.com/</a></p>
+<p><strong>Option 2 – Credentials File (Backup)</strong><br>
+  Open the file <strong><code>LTRCCT-2001_Credentials_PODXXX.txt</code></strong> located on the <strong>Desktop</strong> of your lab machine.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Administrator</td>
+<td><code>wxcclabs+admin_IDXXX@gmail.com</code></td>
+<td>Provided in the LTRCCT-2001_Credentials file</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td><code>wxcclabs+agent_IDXXX@gmail.com</code></td>
+<td>Provided in the LTRCCT-2001_Credentials file</td>
+</tr>
+<tr>
+<td>Supervisor</td>
+<td><code>wxcclabs+supvr_XXX@gmail.com</code></td>
+<td>Provided in the LTRCCT-2001_Credentials file</td>
+</tr>
+</tbody>
+</table>
+<h4 id="your-credentials-file-also-includes">Your credentials file also includes</h4>
+<ul>
+<li>🪪 Your <strong>Pod ID</strong></li>
+<li>📞 Your <strong>PSTN Channel Number</strong></li>
+<li>🔑 Your <strong>Airtable Authorization Token</strong></li>
+</ul>
+<hr>
+<div class="admonition info">
+<p class="admonition-title">Action Required — Webex Space</p>
+<p>Before starting labs, post a message in the <strong>Webex space assigned for this lab</strong>
+with your <strong>Pod ID + Full Name</strong> (e.g., <code>Pod 001 — Jane Doe</code>).</p>
+<p>This allows proctors to track assignments and assist you faster throughout the session.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Lost your Airtable Token?</p>
+<p>If you need your <strong>Airtable Authorization Token</strong> again at any point during the lab,
+request it directly from a proctor in the <strong>Webex lab space</strong>.</p>
+</div>
+<hr>
+<h3 id="32-making-test-calls-webex-app-setup">3.2 Making Test Calls - Webex App Setup</h3>
+<h4 id="if-you-can-make-us-pstn-calls-from-your-mobile-skip-this-section">If you can make US PSTN Calls from your mobile skip this section</h4>
+<p>If you are unable to place test calls from your mobile device, you can use the <strong>Webex App</strong> pre-installed on your lab machine as your PSTN calling device.
+<br></p>
+<ol>
+<li>On your lab machine <strong>Desktop</strong>, locate the <strong>Webex App</strong> icon and double-click
+   to open it.</li>
+<li>Sign in using your <strong>Supervisor credentials</strong> from <code>LTRCCT-2001_Credentials</code>.</li>
+<li>Once logged in, navigate to the <strong>Calling</strong> menu on the left panel.</li>
+<li>Dial your assigned <strong>Channel PSTN Number</strong> to place a test call into the lab flow.</li>
+</ol>
+<details class="- info">
+<summary>See How It Works</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/WebexApp.gif" data-title="Webex App" data-desc-position="top"><img alt="Webex App" loading="lazy" src="../assets/WebexApp.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+  <figcaption>Webex App for PSTN Calls</figcaption>
+</figure><p></p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Earbuds Available at Your Seat</p>
+<p>A pair of wired earbuds has been provided at your workstation, use them if needed to place calls through the <strong>Webex App</strong> or to handle interactions as an Agent during <strong>Lab 3</strong>.
+🎧 <strong>Keep them — they're yours to take home!</strong></p>
+</div>
+<h3 id="33-lab-quick-links">3.3 Lab Quick Links</h3>
+<p>Bookmark these URLs — you will use them throughout all labs.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Collaboration Control Hub</strong></td>
+<td><a href="https://admin.webex.com">admin.webex.com</a></td>
+</tr>
+<tr>
+<td><strong>Agent / Supervisor Desktop</strong></td>
+<td><a href="https://desktop.wxcc-us1.cisco.com/?ciClusterId=P0A1">desktop.wxcc-us1.cisco.com</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-lab-environment-pre-configured-components">4 Lab Environment — Pre-Configured Components</h2>
+<p>To maximize your lab time, the following components have been pre-configured by the
+proctors. <strong>You do not need to set these up.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Site</strong></td>
+<td>One site pre-created for the lab environment</td>
+</tr>
+<tr>
+<td><strong>Cisco PSTN</strong></td>
+<td>Applied to the lab environment</td>
+</tr>
+<tr>
+<td><strong>Teams &amp; Queues</strong></td>
+<td>Pre-created for each Pod</td>
+</tr>
+<tr>
+<td><strong>Desktop Profile &amp; Layout</strong></td>
+<td>Pre-configured for the lab environment</td>
+</tr>
+<tr>
+<td><strong>Webex Connect Services</strong></td>
+<td>Pre-provisioned for each Pod</td>
+</tr>
+<tr>
+<td><strong>Webex Connect Web Chat Asset</strong></td>
+<td>Pre-provisioned for each Pod</td>
+</tr>
+<tr>
+<td><strong>Users &amp; Licenses</strong></td>
+<td>Agent and Supervisor users with Contact Center licenses applied for each Pod</td>
+</tr>
+<tr>
+<td><strong>Multimedia Profile</strong></td>
+<td>Pre-configured for the lab environment</td>
+</tr>
+<tr>
+<td><strong>Wrap-up &amp; Idle Codes</strong></td>
+<td>Pre-configured for the lab environment</td>
+</tr>
+<tr>
+<td><strong>AI Assistant Features</strong></td>
+<td>Generated summaries, sentiment analysis, and real-time transcription enabled for the lab environment</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Lab-Specific Assets</p>
+<p>Depending on the lab, additional assets such as <strong>flows, knowledge bases, AI Agents, and other configurations</strong> have been pre-created for each specific use case. These items are explained in detail in the corresponding lab section.</p>
+</div>
+<hr>
+<p><em>Lab authored for Cisco Live 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: La misión">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                La misión
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../voice/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 1 - Multilingual Voice AI">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 1 - Multilingual Voice AI
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.sections", "navigation.collapse", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

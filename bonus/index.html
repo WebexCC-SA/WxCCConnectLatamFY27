@@ -1,0 +1,1541 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC">
+      
+      
+        <meta name="author" content="Carolina Morales">
+      
+      
+      
+        <link rel="prev" href="../AI_Assistant/">
+      
+      
+        <link rel="next" href="../wrap/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 4 - Bonus - Analytics - LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-4-bonus-ai-analytics-quality-management-for-supervisors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-header__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 4 - Bonus - Analytics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Descripción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wrap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparta su opinión!
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-nav__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Descripción
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La misión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Multilingual Voice AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Digital Patient Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Intelligent AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - Bonus - Analytics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - Bonus - Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#section-agenda-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Agenda - 15 Minutes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-analyzing-ai-assistant-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — Analyzing AI Assistant Dashboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1 — Analyzing AI Assistant Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-launch-the-supervisor-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Launch the Supervisor Desktop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-explore-the-overview-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Explore the Overview Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-launch-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Launch Analyzer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-run-the-cisco-live-ai-assistant-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Run the Cisco Live AI Assistant Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-analyzing-insights-from-interactions-with-ai-quality-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — Analyzing Insights from Interactions with AI Quality Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2 — Analyzing Insights from Interactions with AI Quality Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-review-completed-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Review Completed Interactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-view-an-individual-interaction-english" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 — View an Individual Interaction (English)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-view-an-individual-interaction-spanish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 — View an Individual Interaction (Spanish)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-explore-the-evaluation-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 — Explore the Evaluation Forms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-explore-the-manual-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 — Explore the Manual Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-perform-a-manual-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 — Perform a Manual Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-review-the-final-evaluation-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 — Review the Final Evaluation Score
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-complete-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab Complete — Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparta su opinión!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#section-agenda-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Agenda - 15 Minutes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-analyzing-ai-assistant-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — Analyzing AI Assistant Dashboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1 — Analyzing AI Assistant Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-launch-the-supervisor-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Launch the Supervisor Desktop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-explore-the-overview-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Explore the Overview Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-launch-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Launch Analyzer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-run-the-cisco-live-ai-assistant-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Run the Cisco Live AI Assistant Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-analyzing-insights-from-interactions-with-ai-quality-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — Analyzing Insights from Interactions with AI Quality Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2 — Analyzing Insights from Interactions with AI Quality Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-review-completed-interactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Review Completed Interactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-view-an-individual-interaction-english" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 — View an Individual Interaction (English)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-view-an-individual-interaction-spanish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 — View an Individual Interaction (Spanish)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-explore-the-evaluation-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 — Explore the Evaluation Forms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-explore-the-manual-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 — Explore the Manual Form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-perform-a-manual-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 — Perform a Manual Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-review-the-final-evaluation-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 — Review the Final Evaluation Score
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-complete-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab Complete — Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-4-bonus-ai-analytics-quality-management-for-supervisors">Lab 4 - Bonus: AI Analytics &amp; Quality Management for Supervisors</h1>
+<hr>
+<h2 id="section-agenda-15-minutes">Section Agenda - 15 Minutes</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Task</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Phase 1 — Analyzing AI Assistant Dashboard</td>
+<td>5 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Phase 2 — Analyzing Insights from Interactions with AI Quality Management</td>
+<td>10 min</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Now that you have successfully deployed and tested your AI Agent and AI Assistant, it is time
+to transition into your role as a <strong>Supervisor</strong> and see <strong>the full picture</strong>. You will
+evaluate interactions and analyze performance.</p>
+<details class="info" open="open">
+<summary>Key Learning</summary>
+<p>The <strong>AI Assistant Dashboard</strong> gives you <strong>real-time visibility</strong> into AI usage and impact. <br>
+while <strong>AI Quality Management</strong> turns every interaction into a <strong>coaching opportunity</strong>, automatically, in any language, at scale.</p>
+</details>
+<details class="warning" open="open">
+<summary>The PodID Discipline</summary>
+<p>Always replace <strong>XXX</strong> with your assigned <strong>3-digit ID (e.g., 001, 002)</strong>. Your naming convention must start with the prefix <strong>Pod</strong> followed by your PodID <strong>(PodXXX)</strong>. If you do not follow this convention exactly, you will overwrite your neighbor's work. Stay disciplined with your naming convention!</p>
+</details>
+<h2 id="phase-1-analyzing-ai-assistant-dashboard">Phase 1 — Analyzing AI Assistant Dashboard</h2>
+<h3 id="11-launch-the-supervisor-desktop">1.1 Launch the Supervisor Desktop</h3>
+<ol>
+<li>Open <strong>Chrome</strong> and select the <strong>Supervisor_Lab</strong> Chrome Profile.</li>
+<li>Navigate to: 
+<div class="highlight"><pre><span></span><code>https://desktop.wxcc-us1.cisco.com/
+</code></pre></div></li>
+<li>
+<p>Log in with your <strong>Supervisor POD credentials</strong> and confirm:</p>
+<ul>
+<li><strong>Role:</strong> <code>Supervisor</code></li>
+<li><strong>Handle calls using:</strong> <code>Desktop</code></li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Save &amp; Continue</strong>.</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Save Your Password</p>
+<p>Save the password on this Chrome Profile to make future logins easier during the lab.</p>
+</div>
+<details class="- info">
+<summary>See how to login</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/LaunchingSupervisorDesktop.gif" data-title="Launching Supervisor Desktop" data-desc-position="top"><img alt="Launching Supervisor Desktop" loading="lazy" src="../assets/LaunchingSupervisorDesktop.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Launching the Supervisor Desktop</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="12-explore-the-overview-dashboard">1.2 Explore the Overview Dashboard</h3>
+<ol>
+<li>In the left panel, click <strong>Monitor</strong> → <strong>Overview</strong>.</li>
+<li>Scroll down and explore the operational KPIs available — Service Level, Handle Time,
+   Queue details, and more.</li>
+</ol>
+<hr>
+<h3 id="13-launch-analyzer">1.3 Launch Analyzer</h3>
+<ol>
+<li>From the Overview Dashboard, click the <strong>three dots (⋮)</strong> and select <strong>Go to Analyzer</strong>.</li>
+</ol>
+<p>A second Chrome tab will open with the <strong>Analyzer</strong> tool.</p>
+<details class="info">
+<summary>See how to launch Analyzer</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/LaunchAnalyzer.gif" data-title="Launch Analyzer" data-desc-position="top"><img alt="Launch Analyzer" loading="lazy" src="../assets/LaunchAnalyzer.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Accessing Analyzer from the Supervisor Desktop</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="14-run-the-cisco-live-ai-assistant-dashboard">1.4 Run the Cisco Live AI Assistant Dashboard</h3>
+<ol>
+<li>In the left panel, navigate to the <strong>Dashboard</strong> section.</li>
+<li>Locate <strong>Cisco Live AI Assistant Dashboard</strong>, click the <strong>three dots (⋮)</strong> and select <strong>Run</strong>.</li>
+<li>Set the Duration filter to <strong>This Week</strong>.</li>
+</ol>
+<p>You will see all interactions from this lab that had <strong>AI Assistant</strong> running — Transcription
+volume, Handle Time, and Calls with Suggested Responses.</p>
+<details class="- info">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAssistantDashboard.gif" data-title="AI Assistant Dashboard" data-desc-position="top"><img alt="AI Assistant Dashboard" loading="lazy" src="../assets/AIAssistantDashboard.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Cisco Live AI Assistant Dashboard — This Week view</figcaption>
+</figure><p></p>
+<details class="tip" open="open">
+<summary>Explore the Filters</summary>
+<p>Filter by <strong>TeamName</strong>, <strong>QueueName</strong>, or queue language (EN/ES) to drill down into
+specific segments. Scroll right to explore all available metrics.</p>
+</details>
+</details>
+<hr>
+<h2 id="phase-2-analyzing-insights-from-interactions-with-ai-quality-management">Phase 2 — Analyzing Insights from Interactions with AI Quality Management</h2>
+<hr>
+<h3 id="11-review-completed-interactions">1.1 Review Completed Interactions</h3>
+<ol>
+<li>Go back to the <strong>Supervisor Desktop</strong>.</li>
+<li>In the left panel, click <strong>Monitor</strong> → <strong>Interactions</strong> → <strong>Completed</strong>.</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">New AI QM KPIs</p>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Evaluation Score</strong></td>
+<td>Automated score assigned by AI QM from the interaction transcript</td>
+</tr>
+<tr>
+<td><strong>Customer Sentiment</strong></td>
+<td>AI-detected customer sentiment throughout the interaction</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>Click <strong>Actions</strong> to customize which KPIs are visible in this panel.</li>
+<li>Filter and sort the columns as needed.</li>
+</ol>
+<details class="- info">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/SupervisorInteractions.gif" data-title="Supervisor Interactions" data-desc-position="top"><img alt="Supervisor Interactions" loading="lazy" src="../assets/SupervisorInteractions.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Completed Interactions panel with AI QM KPIs</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="12-view-an-individual-interaction-english">1.2 — View an Individual Interaction (English)</h3>
+<ol>
+<li>Select one of your completed interactions and click <strong>View</strong>.</li>
+<li>Review the full interaction detail: <strong>Recording</strong>, <strong>IVR Transcription</strong>,
+   <strong>Agent Transcript</strong>, and <strong>AI QM Evaluation</strong>.</li>
+</ol>
+<details class="- info">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/IndividualInteraction.gif" data-title="Individual Interaction" data-desc-position="top"><img alt="Individual Interaction" loading="lazy" src="../assets/IndividualInteraction.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+    <figcaption>Viewing the full detail of a completed interaction</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="13-view-an-individual-interaction-spanish">1.3 — View an Individual Interaction (Spanish)</h3>
+<ol>
+<li>Repeat <strong>Step 1.2</strong> selecting a <strong>Spanish interaction</strong> from the Completed tab.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Early Preview Feature</p>
+<p>Non-English evaluation is still an <strong>Early Preview</strong> feature. Spanish interactions may
+occasionally show inconsistencies in the AI QM evaluation output.</p>
+</div>
+<details class="- info">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/SpanishInteraction.gif" data-title="Spanish Interaction" data-desc-position="top"><img alt="Spanish Interaction" loading="lazy" src="../assets/SpanishInteraction.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Viewing a completed Spanish interaction with AI QM evaluation</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="14-explore-the-evaluation-forms">1.4 — Explore the Evaluation Forms</h3>
+<ol>
+<li>In the left panel, navigate to <strong>Configure</strong>.</li>
+<li>
+<p>Three Evaluation Forms were pre-created by the Proctors for this lab:</p>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Cumulus_EN</code></td>
+<td>Auto-evaluation for English interactions</td>
+</tr>
+<tr>
+<td><code>Cumulus_ES</code></td>
+<td>Auto-evaluation for Spanish interactions</td>
+</tr>
+<tr>
+<td><code>Cumulus_Manual</code></td>
+<td>Manual evaluation — no queue assigned</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Select <strong>Cumulus_EN</strong> and click <strong>View</strong>.</p>
+</li>
+<li>Review the evaluation questions, the values per question, and the <strong>Form Assignment</strong>.<br>
+   <em>(Spanish queues → <code>Cumulus_ES</code> / English queues → <code>Cumulus_EN</code>)</em>.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">How Language is Determined</p>
+<p>AI QM uses the <strong><code>Global_Language</code></strong> variable set in the voice flow. There is no
+auto-detected language — the variable must be explicitly configured in the flow.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Explore the Spanish Form</p>
+<p>Repeat this step selecting <strong>Cumulus_ES</strong> to review the Spanish evaluation form.</p>
+</div>
+<details class="- info">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/EvaluationForm.gif" data-title="Evaluation Form" data-desc-position="top"><img alt="Evaluation Form" loading="lazy" src="../assets/EvaluationForm.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Exploring the Cumulus_EN Evaluation Form and its queue assignment</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="15-explore-the-manual-form">1.5 — Explore the Manual Form</h3>
+<ol>
+<li>Still in <strong>Configure</strong>, click <strong>Cumulus_Manual</strong> and review this form.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">No Queue — No Automation</p>
+<p>This form has no queue associated — no automated AI evaluation is performed using it.
+It is designed exclusively for <strong>manual supervisor evaluations</strong>.</p>
+</div>
+<details class="- info">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ManualForm.gif" data-title="Manual Form" data-desc-position="top"><img alt="Manual Form" loading="lazy" src="../assets/ManualForm.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Cumulus_Manual form — configured for manual evaluation only</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="16-perform-a-manual-evaluation">1.6 — Perform a Manual Evaluation</h3>
+<ol>
+<li>Go back to <strong>Interactions</strong> → <strong>Completed</strong> and select one interaction. Click <strong>View</strong>.</li>
+<li>Inside <strong>Additional Information</strong>, go to <strong>Evaluation Forms</strong>.</li>
+<li>From the dropdown, select <strong>Cumulus_Manual</strong>.</li>
+<li>Score each question based on the <strong>transcript</strong> or <strong>recording</strong> in the same panel.</li>
+<li>Click <strong>Submit</strong>.</li>
+</ol>
+<details class="- info">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ManualEvaluation.gif" data-title="Manual Evaluation" data-desc-position="top"><img alt="Manual Evaluation" loading="lazy" src="../assets/ManualEvaluation.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Performing a manual evaluation using the Cumulus_Manual form</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="17-review-the-final-evaluation-score">1.7 — Review the Final Evaluation Score</h3>
+<ol>
+<li>Note that this interaction now shows a <strong>different Evaluation Score</strong> — calculated from
+   <strong>2 evaluations</strong>: the Auto Evaluation + your Manual Evaluation.</li>
+<li>Click the <strong>Evaluations</strong> tab inside <strong>Additional Information</strong> and expand the <strong>arrow</strong>
+   to see each score individually.</li>
+</ol>
+<details class="- info">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/EvaluationScore.gif" data-title="Evaluation Score" data-desc-position="top"><img alt="Evaluation Score" loading="lazy" src="../assets/EvaluationScore.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+<figcaption>Viewing combined Auto + Manual evaluation scores</figcaption>
+</figure><p></p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">More AI QM Features Available</p>
+<p>Features like <strong>Coaching</strong> and <strong>Sentiment Analysis</strong> are also available on this tenant.
+We are limited on time — but come back next year to explore them together! 😄</p>
+</div>
+<h2 id="lab-complete-congratulations">🏁 Lab Complete — Congratulations! 🎉</h2>
+<p>You have successfully completed <strong>Bonus Lab – </strong>AI Analytics &amp; Quality Management for Supervisors**.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supervisor Desktop</td>
+<td>Launched and Overview Dashboard explored</td>
+</tr>
+<tr>
+<td>AI Assistant Dashboard</td>
+<td>Accessed in Analyzer and explored</td>
+</tr>
+<tr>
+<td>Completed interactions</td>
+<td>Reviewed with AI QM KPIs in English and Spanish</td>
+</tr>
+<tr>
+<td>Evaluation Forms</td>
+<td>Cumulus_EN, Cumulus_ES, and Cumulus_Manual explored</td>
+</tr>
+<tr>
+<td>Manual evaluation</td>
+<td>Performed and combined score reviewed</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>Lab authored for Cisco Live 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../AI_Assistant/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 3 - Intelligent AI Assistant">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 3 - Intelligent AI Assistant
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../wrap/" class="md-footer__link md-footer__link--next" aria-label="Next: Comparta su opinión!">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Comparta su opinión!
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.sections", "navigation.collapse", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

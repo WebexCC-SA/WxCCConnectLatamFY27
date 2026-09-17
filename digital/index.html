@@ -1,0 +1,2779 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC">
+      
+      
+        <meta name="author" content="Carolina Morales">
+      
+      
+      
+        <link rel="prev" href="../voice/">
+      
+      
+        <link rel="next" href="../AI_Assistant/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 2 - Digital Patient Journey - LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-2-ai-digital-first-multilingual-patient-journey" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-header__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 2 - Digital Patient Journey
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Descripción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wrap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparta su opinión!
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-nav__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Descripción
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La misión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Multilingual Voice AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Digital Patient Journey
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Digital Patient Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#section-agenda-60-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Agenda - 60 Minutes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-collaboration-control-hub-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Collaboration Control Hub Foundation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Collaboration Control Hub Foundation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-channel-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Channel Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-multilingual-survey-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Multilingual Survey Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-ai-agent-studio-the-digital-duo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: AI Agent Studio – The "Digital Duo"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: AI Agent Studio – The &quot;Digital Duo&quot;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-english-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 English Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-spanish-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Spanish Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-webex-connect-flow-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Webex Connect – Flow Orchestration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Webex Connect – Flow Orchestration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-navigate-to-webex-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Navigate to Webex Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-open-the-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Open the Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#321-language-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 Language Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-language-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Language Agent Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-closing-survey-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 Closing &amp; Survey Hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-web-asset-w3schools-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Web Asset &amp; W3Schools Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Web Asset &amp; W3Schools Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-web-chat-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Web Chat Asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-w3schools-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 W3Schools Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-apply-branded-html-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Apply Branded HTML Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-verify-branding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Verify Branding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-copy-web-chat-installation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Copy Web Chat Installation Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-insert-and-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Insert and Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-final-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Final Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2-complete-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 2 Complete – Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Intelligent AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bonus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - Bonus - Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparta su opinión!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#section-agenda-60-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Agenda - 60 Minutes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-collaboration-control-hub-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Collaboration Control Hub Foundation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: Collaboration Control Hub Foundation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-channel-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Channel Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-multilingual-survey-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Multilingual Survey Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-ai-agent-studio-the-digital-duo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: AI Agent Studio – The "Digital Duo"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: AI Agent Studio – The &quot;Digital Duo&quot;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-english-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 English Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-spanish-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Spanish Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-webex-connect-flow-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Webex Connect – Flow Orchestration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Webex Connect – Flow Orchestration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-navigate-to-webex-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Navigate to Webex Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-open-the-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Open the Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#321-language-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 Language Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-language-agent-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Language Agent Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-closing-survey-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 Closing &amp; Survey Hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-web-asset-w3schools-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Web Asset &amp; W3Schools Simulation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: Web Asset &amp; W3Schools Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-web-chat-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Web Chat Asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-w3schools-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 W3Schools Simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-apply-branded-html-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Apply Branded HTML Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-verify-branding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Verify Branding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-copy-web-chat-installation-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Copy Web Chat Installation Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-insert-and-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Insert and Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-final-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Final Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2-complete-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 2 Complete – Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-2-ai-digital-first-multilingual-patient-journey">Lab 2 - AI Digital-First Multilingual Patient Journey</h1>
+<hr>
+<h2 id="section-agenda-60-minutes">Section Agenda - 60 Minutes</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Task</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Collaboration Control Hub Foundation</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AI Agent Studio – The Digital Duo</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Webex Connect – Flow Orchestration</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Web Asset &amp; W3Schools Simulation</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Final Testing</td>
+<td>5 min</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Welcome back, everyone. Imagine the scene: You've just landed in Las Vegas for Cisco Live.
+The desert air is dry, your schedule is packed, and suddenly, you're feeling under the weather.
+You need to visit the clinic, but you don't have time to wait on hold.
+You need an insurance form, and you need it now.
+This isn't just a lab; this is the future of patient care. Let's build it.</p>
+<details class="info" open="open">
+<summary>Key Learning</summary>
+<p>Unlike voice, digital flows require <strong>distinct agents per language</strong> to maintain
+session integrity across the web widget.</p>
+</details>
+<details class="warning" open="open">
+<summary>The PodID Discipline</summary>
+<p>Always replace <strong>XXX</strong> with your assigned <strong>3-digit ID (e.g., 001, 002)</strong>. Your naming convention must start with the prefix <strong>Pod</strong> followed by your PodID <strong>(PodXXX)</strong>. If you do not follow this convention exactly, you will overwrite your neighbor's work. Stay disciplined with your naming convention!</p>
+</details>
+<hr>
+<h2 id="phase-1-collaboration-control-hub-foundation">Phase 1: Collaboration Control Hub Foundation</h2>
+<h3 id="11-channel-configuration">1.1 Channel Configuration</h3>
+<ol>
+<li>Login to Collaboration Control hub with your Admin Credentials:</li>
+<li>Navigate to <strong>Collaboration Control Hub &gt; Contact Center &gt; Customer Experience &gt; Channels</strong></li>
+<li>
+<p>Click <strong>Create Channel</strong> and configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>PodXXX_Cumulus_WebChat</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Cumulus Hospital PodXXX</td>
+</tr>
+<tr>
+<td><strong>Channel Type</strong></td>
+<td>Chat</td>
+</tr>
+<tr>
+<td><strong>Asset Name</strong></td>
+<td>PodXXX_Cumulus_WebChat</td>
+</tr>
+<tr>
+<td><strong>Service Level Threshold</strong></td>
+<td>60 seconds</td>
+</tr>
+<tr>
+<td><strong>Timezone</strong></td>
+<td>America/Los_Angeles</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <strong>Create</strong></p>
+</li>
+</ol>
+<hr>
+<h3 id="12-multilingual-survey-creation">1.2 Multilingual Survey Creation</h3>
+<div class="admonition note">
+<p class="admonition-title">Before You Begin</p>
+<p><strong>Prerequisite:</strong> Ensure you have downloaded the Cumulus Hospital logo to your local machine. Right-click the image and select "Save image as..." to save it as Cumulus_Hospital.png inside your Desktop folder
+</p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Cumulus_Hospital.png" data-title="Cumulus Hospital" data-desc-position="top"><img alt="Cumulus Hospital" src="../assets/Cumulus_Hospital.png" width="300"></a>
+</figure><p></p>
+</div>
+<hr>
+<ol>
+<li>Navigate to <strong>Collaboration Control Hub &gt; Contact Center &gt; Customer Experience &gt; Survey Configuration</strong></li>
+<li>
+<p>Click <strong>Create New Survey</strong> and select <strong>Digital Survey</strong> and configure as follows:</p>
+<p><strong>Summary</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>PodXXX_Cumulus_Survey - change XXX for your POD number</td>
+</tr>
+<tr>
+<td><strong>Languages</strong></td>
+<td>English (Default) &amp; Spanish – Latin America (español)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>click <strong>next</strong></p>
+</li>
+<li>
+<p><strong>English Configuration</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Welcome Title</strong></td>
+<td>Welcome</td>
+</tr>
+<tr>
+<td><strong>Welcome Message</strong></td>
+<td><em>(Leave blank)</em></td>
+</tr>
+<tr>
+<td><strong>Select +Add a question</strong></td>
+<td><strong>Qestion Type:</strong> Star</td>
+</tr>
+<tr>
+<td><strong>Question</strong></td>
+<td>On a scale of 1 to 5, how satisfied were you with the assistance provided today?</td>
+</tr>
+<tr>
+<td><strong>Start Label</strong></td>
+<td>Very Dissatisfied <em>(Negative statement)</em></td>
+</tr>
+<tr>
+<td><strong>End Label</strong></td>
+<td>Very Satisfied <em>(Positive statement)</em></td>
+</tr>
+<tr>
+<td><strong>Thank You Title</strong></td>
+<td>Thank you for your time</td>
+</tr>
+<tr>
+<td><strong>Thank You Message</strong></td>
+<td>Thank you for your feedback! We appreciate your time and are committed to your health and well-being. Have a great day!</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Spanish Configuration</strong>: Switch to the <strong>Spanish – Latin America</strong> tab and configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Welcome Title</strong></td>
+<td>¡Bienvenido!</td>
+</tr>
+<tr>
+<td><strong>Welcome Message</strong></td>
+<td><em>(Leave blank)</em></td>
+</tr>
+<tr>
+<td><strong>Select +Add a question</strong></td>
+<td><strong>Qestion Type:</strong> Star</td>
+</tr>
+<tr>
+<td><strong>Question</strong></td>
+<td>En una escala del 1 al 5, ¿qué tan satisfecho estuvo con la asistencia recibida hoy?</td>
+</tr>
+<tr>
+<td><strong>Start Label</strong></td>
+<td>Muy insatisfecho <em>(Negative statement)</em></td>
+</tr>
+<tr>
+<td><strong>End Label</strong></td>
+<td>Muy satisfecho <em>(Positive statement)</em></td>
+</tr>
+<tr>
+<td><strong>Thank You Title</strong></td>
+<td>Gracias!</td>
+</tr>
+<tr>
+<td><strong>Thank You Message</strong></td>
+<td>¡Gracias por sus comentarios! Valoramos mucho su tiempo y estamos comprometidos con su salud y bienestar. ¡Que tenga un excelente día!</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click the <strong>English</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong> (bottom right) and configure as follows:</p>
+</li>
+<li>
+<p><strong>Appearance Configuration</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Color &gt; Brand Color</strong></td>
+<td>#0a7ec7</td>
+</tr>
+<tr>
+<td><strong>Text Color (Welcome Title)</strong></td>
+<td>#FFFFFF</td>
+</tr>
+<tr>
+<td><strong>Brand Logo</strong></td>
+<td>Upload Cumulus_Hospital.png from your desktop folder</td>
+</tr>
+<tr>
+<td><strong>Background Image</strong></td>
+<td>Upload Cumulus_Hospital.png from your desktop folder</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+</ol>
+<details class="tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/survey.gif" data-title="survey" data-desc-position="top"><img alt="survey" loading="lazy" src="../assets/survey.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+  <figcaption>Digital Survey Configuration</figcaption>
+</figure><p></p>
+</details>
+<hr>
+<h2 id="phase-2-ai-agent-studio-the-digital-duo">Phase 2: AI Agent Studio – The "Digital Duo"</h2>
+<p>Navigate to <strong>Collaboration Control Hub &gt; Contact Center &gt; Customer Experience &gt; AI Agent</strong> and
+click on the black button <strong>Build your AI Agent</strong>.</p>
+<hr>
+<h3 id="21-english-agent">2.1 English Agent</h3>
+<p><strong>Step 1 – Extract Website into Knowledge Base</strong> </p>
+<div class="admonition info">
+<p class="admonition-title">What is Website Extraction?</p>
+<p>The Knowledge Base already contains a <strong>pre-loaded file</strong> with general information about Cumulus Hospital and its patient intake forms. <br> In this step, we will add <strong>website source</strong> to extract additional content, specifically the types of diagnostic services offered by the hospital. The crawler starts from a URL you specify and navigates through pages based on depth and page limits, transforming web content into knowledge your AI Agent can access instantly. <br> <br> For time-keeping purposes, we will only perform this step for the <strong>English AI Agent</strong>.</p>
+</div>
+<ol>
+<li>Navigate to the <strong>Knowledge</strong> tab (third tab) in the AI Agent Studio.</li>
+<li>Locate the Knowledge Base <strong><code>PodXXX_UseCase2_AIAgentCumulus_EN</code></strong> and click it. <em>(Replace XXX with your PodID)</em> </li>
+<li>In the top right corner, click the black <strong>Add Source</strong> button and select <strong>Websites</strong>.</li>
+<li>Read and agree to the <strong>disclaimer</strong>.</li>
+<li>
+<p>Configure the source as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source Name</strong></td>
+<td><code>Cumulus Hospital</code></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td><code>Cumulus Hospital Services</code></td>
+</tr>
+<tr>
+<td><strong>Starting URL</strong></td>
+<td><code>https://carolmor-collab.github.io/cumulus-hospital/</code></td>
+</tr>
+<tr>
+<td><strong>Deep Limit</strong></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><strong>Page Limit</strong></td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><strong>Content Exclusions</strong></td>
+<td><code>Nav &amp; Footer</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Want to preview the website?</p>
+<p>Open <a href="https://carolmor-collab.github.io/cumulus-hospital/">https://carolmor-collab.github.io/cumulus-hospital/</a>
+in a new browser tab to see the content that will be extracted.</p>
+</div>
+</li>
+<li>
+<p>Under <strong>Sync Rule Schedule</strong>, keep <strong>Automatically apply changes to agents or skills</strong> selected.</p>
+</li>
+<li>Click <strong>Add Source</strong>.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Syncing in Progress</p>
+<p>The source will take a couple of minutes to sync. Once it shows <strong>Updated</strong>, click the ✏️ pencil icon to review the content that was extracted.</p>
+<p>If it is still syncing, continue to the next step — it will complete in the background.</p>
+</div>
+<details class="tip">
+<summary>See How to configure</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/extract_website.gif" data-title="Extract Website" data-desc-position="top"><img alt="Extract Website" loading="lazy" src="../assets/extract_website.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+  <figcaption>Extracting website content into the Knowledge Base</figcaption>
+</figure><p></p>
+</details>
+<p><strong>Step 2 - Export the Template Agent</strong></p>
+<ol>
+<li>
+<p>Navigate to the <strong>AI Agent</strong> tab (first tab) in the AI Agent Studio.</p>
+</li>
+<li>
+<p>In the search bar, type <code>UseCase2_English</code> to locate the AI Agent. <br>
+Under <strong>UseCase2_English</strong>, click the <strong>three dots (...)</strong> and select <strong>Export agent</strong>.
+This will download the <code>UseCase2_English.json</code> file to your local machine. Save it in your <strong>Desktop</strong> folder.</p>
+</li>
+</ol>
+<details class="tip">
+<summary>See how to Export</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/exportagent.png" data-title="Export Agent" data-desc-position="top"><img alt="Export Agent" src="../assets/exportagent.png" width="900"></a>
+</figure><p></p>
+</details>
+<hr>
+<p><strong>Step 3 - Import the Template to Create Your AI Agent</strong></p>
+<p>There in the Studio &gt; Click <strong>Import AI Agent</strong>. Under the <strong>Upload</strong> button,
+select the <code>UseCase2_English.json</code> file.</p>
+<hr>
+<p><strong>Step 4 - Naming</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>PodXXX_UseCase2_English <em>(Replace XXX with your PodID)</em></td>
+</tr>
+<tr>
+<td><strong>System ID</strong></td>
+<td>Keep the default</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Click <strong>Import</strong></p>
+<details class="tip">
+<summary>See how to Import</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/importagent.gif" data-title="Import Agent" data-desc-position="top"><img alt="Import Agent" loading="lazy" src="../assets/importagent.gif" style="width: 150%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<p><strong>Step 5 – Knowledge Configuration</strong></p>
+<p>In the <strong>PodXXX_UseCase2_English</strong> AI Agent page, go to the <strong>Knowledge</strong> tab, Click the search box, type the value below, and select it from the dropdown:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Base</strong></td>
+<td>PodXXX_UseCase2_AIAgentCumulus_EN</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Remeber to replace XXX with your PodID</p>
+<p>Each student has their own Knowledge Base. Selecting the wrong one will break another student's lab.</p>
+</div>
+<p>Click <strong>Save</strong> and then <strong>Publish</strong>. For the comment, use: <code>V1</code></p>
+<hr>
+<p><strong>Step 6 – Test</strong></p>
+<p>Use the <strong>Preview</strong> feature in the AI Agent Studio to simulate a live chat. <br>
+Inside PodXXX_UseCase2_English AI Agent page Select <strong>Preview</strong> and <strong>Start a chat</strong> and verify:</p>
+<ul>
+<li><strong>Identity Capture</strong>: The agent asks for your <strong>name</strong>.</li>
+<li><strong>Conversational NLU - General request</strong>: Test the agent's ability to handle general question by saying: <em>Hi, I’m currently in Las Vegas on a business trip and I’m feeling under the weather. I don’t feel well and I think I need to get medical assistance</em></li>
+<li><strong>Conversational NLU - Specific request</strong>: Test the agent's ability to handle specific context by saying: <em>What kind of diagnostics services do you have?</em></li>
+<li><strong>Intent Recognition</strong>: The agent recognizes the <strong>Insurance Forms</strong> intent when you say: <em>I need some forms</em></li>
+<li><strong>Form Delivery</strong>: The agent provides the correct URL for the requested form.</li>
+<li><strong>Language Consistency</strong>: The entire interaction remains in <strong>English</strong>.</li>
+</ul>
+<details class="- example">
+<summary>Test Script — English</summary>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hello, I am Pulse from Cumulus Hospital. May I have your name, please, so I can assist you better?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Caro</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hello, Caro. I am Pulse from Cumulus Hospital, how can I help you?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Hi, I'm currently in Las Vegas on a business trip and I'm feeling under the weather. I don't feel well and I think I need to get medical assistance.</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Caro, I'm sorry to hear that you're not feeling well. Cumulus Hospital has a facility in Las Vegas located at 123 Neon Way, Las Vegas, NV 89101. They offer emergency services, MRI, X-Ray, and general surgery. If you need immediate medical attention, please visit this location for assistance. Is there anything else I can help you with today?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Yes, I need a form.</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Caro, here are the standard forms available: Patient Registration Form · Insurance Claim Form · Authorization Form · Medical Records Release Form. Please let me know which form you need, and I will share the link with you.</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Patient Registration Form</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Thank you, Caro. The form has been shared. Please complete the document and return it to our registration office at your earliest convenience. Here is the Patient Registration Form: <strong>Patient Registration Form 2026</strong>. Is there anything else I can help you with today?</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="- tip">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/previewenglish.gif" data-title="Preview English" data-desc-position="top"><img alt="Preview English" loading="lazy" src="../assets/previewenglish.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<p><strong>Step 7 – Session Inspection</strong></p>
+<p>In the <strong>PodXXX_UseCase2_English</strong> AI Agent page, open the <strong>Sessions</strong> tab located on the left-hand navigation menu. Review the most recent session log to confirm the conversation was triggered and processed correctly.</p>
+<details class="- tip">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/inspection.gif" data-title="inspection" data-desc-position="top"><img alt="inspection" loading="lazy" src="../assets/inspection.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Session Inspection</p>
+<p>At any point, inside the preview chat, hover over the chat bubble and click <strong>View In Session</strong> to open the session inspection panel directly.</p>
+</div>
+<hr>
+<h3 id="22-spanish-agent">2.2 Spanish Agent</h3>
+<p><strong>Step 1 – Export the Template Agent</strong></p>
+<p>In the search bar, type <code>UseCase2_Spanish</code> to locate the AI Agent. <br>
+Under <strong>UseCase2_Spanish</strong> AI Agent, click the <strong>three dots (...)</strong> and select <strong>Export agent</strong>.
+This will download the <code>UseCase2_Spanish.json</code> file to your local machine.
+Save it in your desktop folder.
+<br></p>
+<hr>
+<p><strong>Step 2 – Import the Template to Create Your AI Agent</strong></p>
+<p>There in the Studio &gt; Click <strong>Import AI Agent</strong>. Under the <strong>Upload</strong> button,
+select the <code>UseCase2_Spanish.json</code> file.</p>
+<hr>
+<p><strong>Step 3 – Naming</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>PodXXX_UseCase2_Spanish <em>(Replace XXX with your PodID)</em></td>
+</tr>
+<tr>
+<td><strong>System ID</strong></td>
+<td>Keep the default</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Import</strong></p>
+<hr>
+<p><strong>Step 4 – Knowledge Configuration</strong></p>
+<p>In the <strong>PodXXX_UseCase2_Spanish</strong> AI Agent page, go to the <strong>Knowledge</strong> tab, click the search box, type the value below, and select it from the dropdown:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Base</strong></td>
+<td>PodXXX_UseCase2_AIAgentCumulus_ES</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Remeber to replace XXX with your PodID</p>
+<p>Each student has their own Knowledge Base. Selecting the wrong one will break another student's lab.</p>
+</div>
+<p>Click <strong>Save</strong> and then <strong>Publish</strong>. For the comment, use: <code>V1</code></p>
+<hr>
+<p><strong>Step 5 – Test</strong></p>
+<p>Use the <strong>Preview</strong> feature in the AI Agent Studio to simulate a live chat. Inside PodXXX_UseCase2_Spanish AI Agent page Select <strong>Preview</strong> and <strong>Start a chat</strong> and verify:</p>
+<ul>
+<li><strong>Identity Capture</strong>: The agent asks for your <strong>name</strong>.</li>
+<li><strong>Conversational NLU</strong>: Test the agent's ability to handle context by saying: <em>Hola, estoy actualmente en Las Vegas en un viaje de trabajo y me siento un poco mal. No me siento bien y creo que necesito recibir asistencia médica</em></li>
+<li><strong>Intent Recognition</strong>: The agent recognizes the <strong>Insurance Forms</strong> intent when you say: <em>Necesito unos formularios</em></li>
+<li><strong>Form Delivery</strong>: The agent provides the correct URL for the requested form.</li>
+<li><strong>Language Consistency</strong>: The entire interaction remains in <strong>Spanish</strong>.</li>
+</ul>
+<details class="- example">
+<summary>Test Script — Spanish</summary>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hola, soy Pulso del Hospital Cumulus. ¿Podría decirme su nombre, por favor, para poder asistirle mejor?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Caro</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hola, Caro. Soy Pulso del Hospital Cumulus, ¿en qué puedo ayudarle hoy?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Hola, estoy actualmente en Las Vegas en un viaje de trabajo y me siento un poco mal. No me siento bien y creo que necesito recibir asistencia médica.</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Caro, lamento que no se sienta bien. El Hospital Cumulus cuenta con una sede en Las Vegas ubicada en 123 Neon Way, Las Vegas, NV 89101, donde puede recibir atención médica de emergencia, servicios de rayos X, cirugía general y más. El hospital está abierto de lunes a viernes, de 8:00 a. m. a 6:00 p. m. ¿Le gustaría información sobre cómo llegar, los servicios disponibles o necesita algún formulario específico para su atención? Estoy aquí para ayudarle.</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Necesito un formulario.</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Caro, estos son los formularios estándar que puedo proporcionarle: Formulario de Registro de Paciente · Formulario de Reclamo de Seguro · Formulario de Autorización · Formulario de Liberación de Registros Médicos. ¿Podría indicarme cuál de estos formularios necesita? Así podré compartirle el enlace correspondiente.</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Formulario de Reclamo de Seguro</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Gracias, Caro. Aquí tiene el enlace para descargar el <strong>Formulario de Reclamo de Seguro 2026</strong>. Por favor, complete el documento y devuélvalo a nuestra oficina de registro a la brevedad posible. ¿Hay algo más en lo que pueda ayudarle hoy?</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="- tip">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/previewspanish.gif" data-title="Preview spanish" data-desc-position="top"><img alt="Preview spanish" src="../assets/previewspanish.gif"></a>
+</figure><p></p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Session Inspection</p>
+<p>At any point, inside the preview chat, hover over the chat bubble and click <strong>View In Session</strong> to open the session inspection panel directly.</p>
+</div>
+<hr>
+<h2 id="phase-3-webex-connect-flow-orchestration">Phase 3: Webex Connect – Flow Orchestration</h2>
+<p>In this phase, you will "activate" the brain of Cumulus Hospital. You will map the routing logic to the language-specific agents and ensure the patient experience is seamless.</p>
+<details class="tip" open="open">
+<summary>Pro-Tip</summary>
+<p>Think of this flow as the "brain" of Cumulus Hospital. The Digital flow acts as the receptionist, and the routing and decision nodes act as the hallways that direct the patient to the specific specialist who speaks their language.
+</p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/logic.png" data-title="logic" data-desc-position="top"><img alt="logic" src="../assets/logic.png" width="800"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="31-navigate-to-webex-connect">3.1 Navigate to Webex Connect</h3>
+<p>Go to <strong>Collaboration Control Hub &gt; Contact Center &gt; Quick Links &gt; Digital Channels &gt; Webex Connect</strong>
+and navigate to your own service: <strong>PodXXX_LTRCCT2001_CUMULUS</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Remeber to replace XXX with your PodID</p>
+<p>Each student has their own Webex Connect Service. Selecting the wrong one will break another student's lab.</p>
+</div>
+<hr>
+<h3 id="32-open-the-flow">3.2 Open the Flow</h3>
+<p>Click on <strong>UseCase2_webChat</strong> flow to open it
+You will see the complete architecture for our bilingual digital journey.
+Your task is to "activate" the orchestration by mapping the variables and agents.
+    </p><figure markdown="">
+        <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/digital-architecture.png" data-title="Cumulus Digital Architecture" data-desc-position="top"><img alt="Cumulus Digital Architecture" src="../assets/digital-architecture.png" width="1000"></a>
+    </figure><p></p>
+<p><strong><em>Reference Key:</em></strong> Each configuration number shown in the diagram above corresponds directly to the step-by-step instructions provided in the sections below (3.2.1 through 3.2.3). Use this as your reference key to ensure every node is correctly mapped within your Webex Connect flow.</p>
+<details class="- tip">
+<summary>After opening the flow you can zoom out to see the same diagram</summary>
+<p></p><div style="display: flex; gap: 20px;">
+<figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/zoomout.gif" data-title="zoomout" data-desc-position="top"><img alt="zoomout" loading="lazy" src="../assets/zoomout.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</div></details>
+<hr>
+<h3 id="321-language-decision">3.2.1 Language Decision</h3>
+<details class="- info">
+<summary>See Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/digital-architecture.png" data-title="Cumulus Digital Architecture" data-desc-position="top"><img alt="Cumulus Digital Architecture" src="../assets/digital-architecture.png" width="1000"></a>
+</figure> <p></p>
+</details>
+<p>Locate the <strong>Language Decision</strong> branch node.</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Node</th>
+<th>Color</th>
+<th>Action</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Language Decision</strong></td>
+<td>Blue</td>
+<td>Configure as follow for English &amp; Spanish Branch</td>
+<td>Evaluate the 'receive.message' variable captured by your Quick Replies. This logic directs the patient to the English or Spanish path based on their button selection.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>For Branch 1</strong></p>
+<p>Open the Language Decision Node, expand the Branch 1 and configure as follow:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Branch Name</strong></td>
+<td>Change from Branch 1 to <strong>English</strong></td>
+</tr>
+<tr>
+<td><strong>Variable</strong></td>
+<td>$(n2545.receive.message) - leave it as configured</td>
+</tr>
+<tr>
+<td><strong>Condition</strong></td>
+<td>Contains ignore case - leave it as configured</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td>English</td>
+</tr>
+</tbody>
+</table>
+<details class="warning" open="open">
+<summary>Cannot edit the branch name?</summary>
+<p>If you see the ✏️ pencil and 🗑️ trash icons together, close the node, click <strong>Save</strong> in the main flow, go back to the main service using the <strong>"&lt;"</strong> button, and reload the flow — the fields will become editable again.</p>
+</details>
+<details class="- note">
+<summary>See Example — ① Language Decision - English</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">① Branch 1 — English</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/englishbranch.png" data-title="English Branch" data-desc-position="top"><img alt="English Branch" src="../assets/englishbranch.png" width="700"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Rename <strong>Branch 1</strong> to <strong>English</strong> and set the value to <strong>English</strong>.</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">After renaming, make sure to click ✅ to save name changes</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<p><strong>For Branch 2</strong></p>
+<p>In the same Language Decision Node, now expand the Branch 2 and configure as follow:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Branch Name</strong></td>
+<td>Change from Branch 2 to <strong>Spanish</strong></td>
+</tr>
+<tr>
+<td><strong>Variable</strong></td>
+<td>$(n2545.receive.message) - leave it as configured</td>
+</tr>
+<tr>
+<td><strong>Condition</strong></td>
+<td>Contains ignore case - leave it as configured</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td>Español</td>
+</tr>
+</tbody>
+</table>
+<p>After Spanish Branch´s configuration make sure to <strong>Save</strong></p>
+<details class="- note">
+<summary>See Example — ① Language Decision - Spanish</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">② Branch 2 — Spanish</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/spanishbranch.png" data-title="Spanish Branch" data-desc-position="top"><img alt="Spanish Branch" src="../assets/spanishbranch.png" width="700"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Rename <strong>Branch 2</strong> to <strong>Spanish</strong> and set the value to <strong>Español</strong>.</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">After renaming, make sure to click ✅ to save name changes</p>
+</div>
+</div>
+</div>
+</div>
+</details>
+<p><strong>None of the above:</strong> Leave it as it is.</p>
+<hr>
+<h3 id="322-language-agent-orchestration">3.2.2 Language Agent Orchestration</h3>
+<details class="- info">
+<summary>See Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/digital-architecture.png" data-title="Cumulus Digital Architecture" data-desc-position="top"><img alt="Cumulus Digital Architecture" src="../assets/digital-architecture.png" width="1000"></a>
+</figure> <p></p>
+</details>
+<p>Locate the numbered nodes in your flow, double-click to open each one, and configure them as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Node</th>
+<th>Color</th>
+<th>Action</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td><strong>AI Agent Language1</strong></td>
+<td>Red</td>
+<td><ul><li>Rename node to: AI Agent English</li><li> Select your AI agent PodXXX_UseCase2_English</li><ul></ul></ul></td>
+<td><strong>English AI Agent</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>AI Agent Language2</strong></td>
+<td>Green</td>
+<td><ul><li>Rename node to: AI Agent Spanish</li><li> Select your AI agent PodXXX_UseCase2_Spanish</li><ul></ul></ul></td>
+<td><strong>Spanish AI Agent</strong></td>
+</tr>
+</tbody>
+</table>
+<p>After each configuration make sure to <strong>Save</strong></p>
+<details class="- note">
+<summary>See Example — ② AI Agent English</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">② Rename the Node</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/englishaiagent.png" data-title="English AI Agent Rename" data-desc-position="top"><img alt="English AI Agent Rename" src="../assets/englishaiagent.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Rename the node to <strong>AI Agent English</strong> and select <strong>PodXXX_UseCase2_English</strong>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">After renaming, make sure to click ✅ to save name changes</p>
+</div>
+</details>
+<details class="- note">
+<summary>See Example — ⑤ AI Agent Spanish</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">⑤ Rename the Node</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/spanishaiagent.png" data-title="Spanish AI Agent Rename" data-desc-position="top"><img alt="Spanish AI Agent Rename" src="../assets/spanishaiagent.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Rename the node to <strong>AI Agent Spanish</strong> and select <strong>PodXXX_UseCase2_Spanish</strong>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">After renaming, make sure to click ✅ to save name changes</p>
+</div>
+</details>
+<hr>
+<h3 id="323-closing-survey-hooks">3.2.3 Closing &amp; Survey Hooks</h3>
+<details class="- info">
+<summary>Flow Snapshot</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/digital-architecture.png" data-title="Cumulus Digital Architecture" data-desc-position="top"><img alt="Cumulus Digital Architecture" src="../assets/digital-architecture.png" width="1000"></a>
+</figure> <p></p>
+</details>
+<p>Configure the final nodes to ensure a graceful exit and accurate data collection.
+<br>Locate the numbered nodes in your flow, double-click to open each one, and configure them as follows:</p>
+<p><strong>Close AI Agent Nodes</strong></p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Node</th>
+<th>Color</th>
+<th>Action</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td><strong>Close AI Agent English 1</strong></td>
+<td>Red</td>
+<td>Select PodXXX_UseCase2_English</td>
+<td>Ensures session cleanup upon error</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Close AI Agent English 2</strong></td>
+<td>Red</td>
+<td>Select PodXXX_UseCase2_English</td>
+<td>Handles session closure after survey is presented to the user</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Close AI Agent Spanish 1</strong></td>
+<td>Green</td>
+<td>Select PodXXX_UseCase2_Spanish</td>
+<td>Ensures session cleanup upon error</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Close AI Agent Spanish 2</strong></td>
+<td>Green</td>
+<td>Select PodXXX_UseCase2_Spanish</td>
+<td>Handles session closure after survey is presented to the user</td>
+</tr>
+</tbody>
+</table>
+<p>After each configuration make sure to <strong>Save</strong></p>
+<details class="- note">
+<summary>See Example — ③ ④ English Nodes</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">③ Close AI Agent English 1</label><label for="__tabbed_5_2">④ Close AI Agent English 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/closeaiagentenglish1.png" data-title="Close AI Agent English 1" data-desc-position="top"><img alt="Close AI Agent English 1" src="../assets/closeaiagentenglish1.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Select <strong>PodXXX_UseCase2_English</strong> — Ensures session cleanup upon error.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/closeaiagentenglish2.png" data-title="Close AI Agent English 2" data-desc-position="top"><img alt="Close AI Agent English 2" src="../assets/closeaiagentenglish2.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Select <strong>PodXXX_UseCase2_English</strong> — Handles session closure after survey is presented.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</details>
+<details class="- note">
+<summary>See Example — ⑥ ⑦ Spanish Nodes</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">⑥ Close AI Agent Spanish 1</label><label for="__tabbed_6_2">⑦ Close AI Agent Spanish 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/closeaiagentspanish1.png" data-title="Close AI Agent Spanish 1" data-desc-position="top"><img alt="Close AI Agent Spanish 1" src="../assets/closeaiagentspanish1.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Select <strong>PodXXX_UseCase2_Spanish</strong> — Ensures session cleanup upon error.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/closeaiagentspanish2.png" data-title="Close AI Agent Spanish2" data-desc-position="top"><img alt="Close AI Agent Spanish2" src="../assets/closeaiagentspanish2.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Select <strong>PodXXX_UseCase2_Spanish</strong> — Handles session closure after survey is presented.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</details>
+<p><strong>Survey Hook – English Path</strong></p>
+<details class="- info">
+<summary>Flow Snapshot</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/digital-architecture.png" data-title="Cumulus Digital Architecture" data-desc-position="top"><img alt="Cumulus Digital Architecture" src="../assets/digital-architecture.png" width="1000"></a>
+</figure> <p></p>
+</details>
+<p>Locate the numbered node in your flow, double-click to open, and configure it as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Node</th>
+<th>Color</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>Survey</td>
+<td>Purple</td>
+<td>Triggers English CSAT survey</td>
+</tr>
+</tbody>
+</table>
+<p>Configure the node with the following settings:</p>
+<ol>
+<li><strong>Node Authentication</strong> — Select <code>LTRCCT2001</code></li>
+<li>Click <strong>Fetch All Questionnaires</strong></li>
+<li>Under <strong>Available Questionnaires</strong>, select your own survey: <code>PodXXX_Cumulus_Survey</code></li>
+<li>Set the <strong>Preferred Language</strong> field to <code>English</code></li>
+</ol>
+<p>After configuration, make sure to <strong>Save</strong>.</p>
+<details class="- note">
+<summary>See Example — ⑧ Survey English</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/surveyenglish.png" data-title="English Survey" data-desc-position="top"><img alt="English Survey" src="../assets/surveyenglish.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Set the <strong>Preferred Language</strong> field to <strong>English</strong> to trigger the English CSAT survey.</p>
+</blockquote>
+</details>
+<p><strong>Survey Hook – Spanish Path</strong></p>
+<p>Locate the numbered node in your flow, double-click to open, and configure it as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Node</th>
+<th>Color</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>Survey</td>
+<td>Purple</td>
+<td>Triggers Spanish CSAT survey</td>
+</tr>
+</tbody>
+</table>
+<p>Configure the node with the following settings:</p>
+<ol>
+<li><strong>Node Authentication</strong> — Select <code>LTRCCT2001</code></li>
+<li>Click <strong>Fetch All Questionnaires</strong></li>
+<li>Under <strong>Available Questionnaires</strong>, select your own survey: <code>PodXXX_Cumulus_Survey</code></li>
+<li>Set the <strong>Preferred Language</strong> field to <code>Spanish</code></li>
+</ol>
+<details class="- note">
+<summary>See Example — ⑨ Survey Spanish</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/spanishsurvey.png" data-title="Spanish Survey" data-desc-position="top"><img alt="Spanish Survey" src="../assets/spanishsurvey.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Set the <strong>Preferred Language</strong> field to <strong>Spanish</strong> to trigger the Spanish CSAT survey.</p>
+</blockquote>
+</details>
+<p>Click the blue <strong>Make Live</strong> button, select your asset <strong><code>PodXXX_Cumulus_WebChat</code></strong> from the <strong>Application</strong> dropdown, and click <strong>Make Live</strong> again.</p>
+<div class="admonition note">
+<p class="admonition-title">Going Live</p>
+<p>It will take approximately <strong>3 minutes</strong> for the status to change to <strong>Live</strong>.
+You can continue working in the meantime.</p>
+</div>
+<details class="- tip">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/flow_make_live.gif" data-title="Make Live a Webex Connect Flow" data-desc-position="top"><img alt="Make Live a Webex Connect Flow" loading="lazy" src="../assets/flow_make_live.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h2 id="phase-4-web-asset-w3schools-simulation">Phase 4: Web Asset &amp; W3Schools Simulation</h2>
+<h3 id="41-web-chat-asset">4.1 Web Chat Asset</h3>
+<div class="admonition note">
+<p class="admonition-title">Before You Begin</p>
+<p>Ensure you have downloaded the Cumulus Hospital logo to your local machine
+and saved it as <strong>Cumulus_Hospital.png</strong> on your desktop (See <a href="#12-multilingual-survey-creation">Step 1.2 — Multilingual Survey Creation</a>).</p>
+</div>
+<p>Navigate to <strong>Collaboration Control Hub &gt; Contact Center &gt; Digital Settings &gt; Web Chat Assets</strong> and locate the asset
+<strong>PodXXX_Cumulus_WebChat</strong> (replace XXX for your POD number), and click on it to open the configuration settings:</p>
+<p><strong>Asset Settings</strong></p>
+<p>Configure as follow:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Notifications</strong></td>
+<td>Turn on – Play chime sound when user receives a new message</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Website</strong></p>
+<p>Navigate to the <strong>Website</strong> tab, then click <strong>Add Website</strong> to launch the configuration workflow. In the <strong>General</strong> section, configure the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chat widget language</strong></td>
+<td>English</td>
+</tr>
+<tr>
+<td><strong>Display name</strong></td>
+<td>Cumulus Hospital</td>
+</tr>
+<tr>
+<td><strong>Byline text</strong></td>
+<td>Leave it blank</td>
+</tr>
+<tr>
+<td><strong>First message</strong></td>
+<td>Hi!</td>
+</tr>
+<tr>
+<td><strong>PCI compliance banner message</strong></td>
+<td>We are committed to protecting your information. This chat is secure and PCI compliant.</td>
+</tr>
+<tr>
+<td><strong>Domain</strong></td>
+<td>www.w3schools.com</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Email transcript:</strong> Leave it as it is configured. Click <strong>Next</strong>.</p>
+<hr>
+<p><strong>Appearance tab</strong>
+Configure the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Widget color</strong></td>
+<td>#0a7ec7</td>
+</tr>
+<tr>
+<td><strong>Widget Button</strong></td>
+<td>Select the first option available</td>
+</tr>
+<tr>
+<td><strong>Logo</strong></td>
+<td>Upload Cumulus_Hospital.png from your desktop</td>
+</tr>
+<tr>
+<td><strong>Message composer</strong></td>
+<td>Turn on Allow emojis · Turn on Allow attachments</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Next</strong>.</p>
+<hr>
+<p><strong>Availability tab</strong></p>
+<p>Click <strong>Save and Next</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Getting an error after clicking Save &amp; Next?</p>
+<p>This is expected in the lab environment, multiple pods share the same <strong>domain</strong> for web chat assets. Simply click <strong>X</strong> to dismiss the error and your website widget
+will be enabled correctly.</p>
+<details class="- advise">
+<summary>Error</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/error_webChat.gif" data-title="WebChat Error" data-desc-position="top"><img alt="WebChat Error" loading="lazy" src="../assets/error_webChat.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</div>
+<hr>
+<p><strong>Banned Visitors</strong></p>
+<p>If you do not get the error, click <strong>Done</strong>.</p>
+<details class="- note">
+<summary>Complete Web Chat Asset Configuration</summary>
+<p><strong>WebChat</strong>
+</p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/webchat.gif" data-title="WebChat Assest" data-desc-position="top"><img alt="WebChat Assest" loading="lazy" src="../assets/webchat.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="42-w3schools-simulation">4.2 W3Schools Simulation</h3>
+<ol>
+<li>
+<p>Open the W3Schools HTML Editor at <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></p>
+</li>
+<li>
+<p>Click on the <strong>Try it Yourself</strong> button</p>
+</li>
+</ol>
+<hr>
+<h3 id="43-apply-branded-html-structure">4.3 Apply Branded HTML Structure</h3>
+<p>Replace the existing HTML with the recommended branded HTML structure for Cumulus Healthcare. Copy and paste this:
+</p><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span> 
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span> 
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> 
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span> 
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span> 
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Cumulus Hospital | Digital Assistant<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span> 
+    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s1">'Segoe UI'</span><span class="p">,</span><span class="w"> </span><span class="n">Tahoma</span><span class="p">,</span><span class="w"> </span><span class="n">Geneva</span><span class="p">,</span><span class="w"> </span><span class="n">Verdana</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#f4f7f9</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">flex-direction</span><span class="p">:</span><span class="w"> </span><span class="kc">column</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">align-items</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="p">.</span><span class="nc">header-container</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="kt">px</span><span class="w"> </span><span class="mi">40</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">);</span><span class="w"> </span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="p">.</span><span class="nc">logo-img</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">            </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#005073</span><span class="p">;</span>
+<span class="w">            </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#56627c</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="kt">em</span><span class="p">;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">margin-top</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span> 
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span> 
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span> 
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"header-container"</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://qaemailmedia.s3.amazonaws.com/ba7f153c-fb89-4dbf-a6f6-2a6628dfde7c/CumulusHospital_1234268365472632.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Cumulus Hospital Logo"</span> <span class="na">class</span><span class="o">=</span><span class="s">"logo-img"</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Cumulus Hospital<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span> 
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Digital Patient Care <span class="err">&amp;</span> Virtual Assistant Portal<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span> 
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+
+<span class="cm">&lt;!-- Paste here your installation script --&gt;</span> 
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><p></p>
+<hr>
+<h3 id="44-verify-branding">4.4 Verify Branding</h3>
+<p>Click <strong>Run</strong> and confirm the page is branded with Cumulus HealthCare information.</p>
+<details class="- note">
+<summary>See Example</summary>
+<p><strong>W3School Try Yourself</strong>
+</p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/w3school1.gif" data-title="W3School" data-desc-position="top"><img alt="W3School" loading="lazy" src="../assets/w3school1.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="45-copy-web-chat-installation-script">4.5 Copy Web Chat Installation Script</h3>
+<p>Go to <strong>Collaboration Control Hub &gt; Contact Center &gt; Digital Settings &gt; Web Chat Assets</strong>.
+Select your asset <strong>PodXXX_Cumulus_WebChat</strong>, navigate to the <strong>Installation</strong> tab,
+and click <strong>Copy</strong>.</p>
+<details class="- note">
+<summary>See Example</summary>
+<p><strong>WebChat Installation Script</strong>
+</p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/installationscript.png" data-title="WebChat Installation Script" data-desc-position="top"><img alt="WebChat Installation Script" src="../assets/installationscript.png" width="700"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="46-insert-and-run">4.6 Insert and Run</h3>
+<p>Insert your <strong>Web Chat Installation Script</strong> (copied in the previous step)
+into the W3Schools portal in the space indicated in the HTML script.
+<br>| <code>&lt;!-- Paste here your installation script --&gt;</code> |</p>
+<p>Click <strong>Run</strong>. If the widget appears in the preview pane, you have successfully
+connected your Cumulus Hospital portal to Webex Contact Center.</p>
+<details class="- note">
+<summary>See Example</summary>
+<p><strong>W3School with WebChat installed</strong>
+</p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/w3schoolwebchat.gif" data-title="W3School with WebChat" data-desc-position="top"><img alt="W3School with WebChat" loading="lazy" src="../assets/w3schoolwebchat.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Your Cumulus Hospital web chat widget is now live and connected to
+Webex Contact Center.</p>
+</div>
+<hr>
+<h2 id="phase-5-final-testing">Phase 5: Final Testing</h2>
+<div class="admonition info">
+<p class="admonition-title">The Digital-First Mindset</p>
+<p>When you test, observe the transition from the Quick Replies to the Language Agent.
+It should be <strong>invisible</strong> to the patient.
+That is the hallmark of a high-quality omnichannel experience.</p>
+</div>
+<hr>
+<p>Run the full test <strong>twice</strong> — once in <strong>English</strong>, then in <strong>Spanish</strong>.</p>
+<p><strong>Step 1 – English Test</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Test Script – English</p>
+<ol>
+<li>Launch the chat widget</li>
+<li>Select <strong>English</strong> and provide your name</li>
+<li>Type: <em>I am in Las Vegas on a business trip and I am not feeling very well, I need assistance</em></li>
+<li>Wait for the AI Agent response</li>
+<li>Ask for a form to get assistance (<em>Patient Registration Form, Insurance Claim Form, Authorization Form, Medical Records Release Form</em>)</li>
+<li>Verify the agent responds in <strong>English</strong> and provides the correct URL</li>
+<li>Wait <strong>60 seconds</strong> and complete the survey</li>
+</ol>
+</div>
+<details class="- note">
+<summary>See Example</summary>
+<p><strong>English Test</strong>
+</p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/englishtesting.gif" data-title="English Test" data-desc-position="top"><img alt="English Test" loading="lazy" src="../assets/englishtesting.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<p><strong>Step 2 – Spanish Test</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Test Script – Spanish</p>
+<ol>
+<li>Open the chat widget</li>
+<li>Select <strong>Spanish</strong> and provide your name</li>
+<li>Type: <em>Estoy en Las Vegas en un viaje de negocios y no me siento muy bien, necesito asistencia</em></li>
+<li>Wait for the AI Agent's response</li>
+<li>Request a form to get assistance  (<em>Formulario de Registro de paciente, Formulario de reclamo de seguro, Formulario de Autorización, Formulario de liberación de registros médicos</em>)</li>
+<li>Verify that the agent responds in Spanish and provides the correct URL</li>
+<li>Wait <strong>60 seconds</strong> and complete the survey</li>
+</ol>
+</div>
+<details class="- note">
+<summary>See Example</summary>
+<p><strong>Spanish Test</strong>
+</p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/spanishtesting.gif" data-title="Spanish Test" data-desc-position="top"><img alt="Spanish Test" loading="lazy" src="../assets/spanishtesting.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h2 id="lab-2-complete-congratulations">🏁 Lab 2 Complete – Congratulations! 🎉</h2>
+<p>You have successfully completed <strong>Lab 2 – AI Digital-First Multilingual Patient Journey</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Chat Channel</td>
+<td>Created and configured</td>
+</tr>
+<tr>
+<td>Multilingual Survey (EN + ES)</td>
+<td>Created and branded</td>
+</tr>
+<tr>
+<td>English AI Agent</td>
+<td>Imported, configured, and published</td>
+</tr>
+<tr>
+<td>Spanish AI Agent</td>
+<td>Imported, configured, and published</td>
+</tr>
+<tr>
+<td>Webex Connect Flow Orchestration</td>
+<td>Configured and activated</td>
+</tr>
+<tr>
+<td>Web Chat Asset</td>
+<td>Configured and branded</td>
+</tr>
+<tr>
+<td>W3Schools Simulation</td>
+<td>Connected and validated</td>
+</tr>
+<tr>
+<td>End-to-End Testing (EN + ES)</td>
+<td>All scenarios validated</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>✨ <em>Omnichannel Consistency: You’ve bridged the gap between voice and digital, ensuring Cumulus Hospital provides a seamless experience for every patient.</em></p>
+</blockquote>
+<p>If you run into any issues, flag me down. Let’s go!</p>
+<hr>
+<p><em>Lab authored for Cisco Live 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../voice/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 1 - Multilingual Voice AI">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 1 - Multilingual Voice AI
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../AI_Assistant/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 3 - Intelligent AI Assistant">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 3 - Intelligent AI Assistant
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.sections", "navigation.collapse", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

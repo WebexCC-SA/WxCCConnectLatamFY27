@@ -1,0 +1,2680 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC">
+      
+      
+        <meta name="author" content="Carolina Morales">
+      
+      
+      
+        <link rel="prev" href="../digital/">
+      
+      
+        <link rel="next" href="../bonus/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 3 - Intelligent AI Assistant - LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-3-real-time-ai-assistant-for-complex-patient-interactions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-header__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 3 - Intelligent AI Assistant
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Descripción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wrap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparta su opinión!
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-nav__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Descripción
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La misión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Multilingual Voice AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Digital Patient Journey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Intelligent AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Intelligent AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#section-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-ai-assistant-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: AI Assistant Provisioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: AI Assistant Provisioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-create-the-english-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Create the English Knowledge Base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-create-the-ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Create the AI Assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-test-validate-the-aha-moment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Test &amp; Validate — The "Aha!" Moment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-revert-to-english-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Revert to English Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-assigning-ai-assistant-skills-to-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Assigning AI Assistant Skills to Queues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Assigning AI Assistant Skills to Queues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-configure-english-spanish-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Configure English &amp; Spanish Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-voice-flow-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Voice Flow Orchestration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Voice Flow Orchestration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-map-english-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Map English Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-map-spanish-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Map Spanish Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-validate-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Validate &amp; Publish
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-configure-the-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Configure the Channel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-the-live-patient-journey-english-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: The "Live" Patient Journey — English Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: The &quot;Live&quot; Patient Journey — English Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-english-path-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 English Path Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-the-live-patient-journey-spanish-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: The "Live" Patient Journey — Spanish Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 5: The &quot;Live&quot; Patient Journey — Spanish Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-spanish-path-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Spanish Path Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-3-complete-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 3 Complete — Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bonus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4 - Bonus - Analytics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparta su opinión!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#section-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-ai-assistant-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: AI Assistant Provisioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1: AI Assistant Provisioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-create-the-english-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Create the English Knowledge Base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-create-the-ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Create the AI Assistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-test-validate-the-aha-moment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Test &amp; Validate — The "Aha!" Moment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-revert-to-english-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Revert to English Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-assigning-ai-assistant-skills-to-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Assigning AI Assistant Skills to Queues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2: Assigning AI Assistant Skills to Queues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-configure-english-spanish-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Configure English &amp; Spanish Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-voice-flow-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Voice Flow Orchestration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Voice Flow Orchestration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-map-english-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Map English Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-map-spanish-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Map Spanish Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-validate-publish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Validate &amp; Publish
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-configure-the-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Configure the Channel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-the-live-patient-journey-english-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: The "Live" Patient Journey — English Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4: The &quot;Live&quot; Patient Journey — English Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-english-path-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 English Path Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-the-live-patient-journey-spanish-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: The "Live" Patient Journey — Spanish Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 5: The &quot;Live&quot; Patient Journey — Spanish Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-spanish-path-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Spanish Path Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-3-complete-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 3 Complete — Congratulations! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-3-real-time-ai-assistant-for-complex-patient-interactions">Lab 3 - Real-Time AI Assistant for Complex Patient Interactions</h1>
+<hr>
+<h2 id="section-agenda">Section Agenda</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Task</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>AI Assistant Provisioning</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Assigning AI Assistant Skills to Queues</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Voice Flow Orchestration</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Live Patient Journey – English &amp; Spanish Testing</td>
+<td>25 min</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="introduction">Introduction</h2>
+<p>Welcome to our final core use case. You’ve mastered the voice and digital patient journeys; now, we tackle high-stakes clinical support. When a patient needs urgent coverage for a critical procedure, the human-AI partnership is vital. Let’s build the future of agent empowerment.</p>
+<details class="info" open="open">
+<summary>Key Learning</summary>
+<p>In high-stakes healthcare, <strong>AI is about augmentation</strong>. You will learn how to leverage <strong>context preservation</strong> (passing data from the AI Agent to the Human Agent) and the <strong>AI Assistant</strong> to drive down <strong>Average Handle Time (AHT)</strong>, ensure clinical accuracy, and build lasting patient trust.</p>
+</details>
+<details class="warning" open="open">
+<summary>The PodID Discipline</summary>
+<p>Always replace <strong>XXX</strong> with your assigned <strong>3-digit ID (e.g., 001, 002)</strong>. Your naming convention must start with the prefix <strong>Pod</strong> followed by your PodID <strong>(PodXXX)</strong>. If you do not follow this convention exactly, you will overwrite your neighbor's work. Stay disciplined with your naming convention!</p>
+</details>
+<hr>
+<h2 id="phase-1-ai-assistant-provisioning">Phase 1: AI Assistant Provisioning</h2>
+<p><strong>Architectural Note:</strong> We are optimizing our architecture by utilizing a single, multilingual AI Assistant to serve both English and Spanish queues. This demonstrates the scalability of Webex Contact Center AI, as the assistant dynamically leverages language context passed from the voice flow.</p>
+<p>In this phase, you will provision the "Brain" of the agent-assist experience. We will build the master AI Assistant and assign it to the respective Knowledge Base.</p>
+<div class="admonition note">
+<p class="admonition-title">Prerequisite</p>
+<p>Ensure you have downloaded the source document for the Knowledge Base.
+Right-click the link below, select <strong>Open in New Tab</strong>, and save the file to your
+<strong>Desktop</strong> folder as <code>UseCase3_CumulusHospital_AIAssistant_KB</code>.</p>
+<p><a href="https://qaemailmedia.s3.amazonaws.com/ba7f153c-fb89-4dbf-a6f6-2a6628dfde7c/UseCase3_Cumulus_Hospital_AI_Assistant_KB_2058921675493421.pdf">📄 Download Knowledge Base Document</a></p>
+</div>
+<hr>
+<h3 id="11-create-the-english-knowledge-base">1.1 Create the English Knowledge Base</h3>
+<ol>
+<li>
+<p>Login to <strong>Collaboration Control Hub</strong> with your admin credentials.</p>
+</li>
+<li>
+<p>Navigate to <strong>Collaboration Control Hub &gt; Contact Center &gt; Overview</strong>. Scroll down to the <strong>Quick Links</strong>
+   section and open <strong>Webex AI Agents</strong>. You are now in the <strong>AI Agent Studio</strong>.</p>
+</li>
+<li>
+<p>Navigate to the <strong>third tab</strong> on the left labeled <strong>Knowledge</strong>.</p>
+</li>
+<li>
+<p>Click the black <strong>+ Create Knowledge Base</strong> button in the upper-right corner and enter the
+   following information:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>PodXXX_UseCase3_AIAssistantCumulus <em>(Replace XXX with your PodID)</em></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Pod XXX UseCase3 Cumulus AI Assistant KB EN</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>In the Knowledge Base configuration page, click <strong>Add Source</strong> in the top-right corner,
+   select <strong>Files</strong>, and click <strong>Add file</strong>.</p>
+</li>
+<li>
+<p>Select the document from your desktop folder named:
+   <code>UseCase3_CumulusHospital_AIAssistant_KB</code></p>
+</li>
+<li>
+<p>Click <strong>Process file</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Close and keep processing</strong>.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Syncing in Progress</p>
+<p>The source will show as <strong>Processing</strong> for a couple of minutes. Once it is ready, the status will change to <strong>Updated</strong>.</p>
+<p>If it is still syncing, continue to the next step — it will complete in the background.</p>
+</div>
+<details class="tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/KW_AI_Assistant.gif" data-title="Knowledge Base AI Assistant" data-desc-position="top"><img alt="Knowledge Base AI Assistant" loading="lazy" src="../assets/KW_AI_Assistant.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="12-create-the-ai-assistant">1.2 Create the AI Assistant</h3>
+<ol>
+<li>
+<p>In the AI Agent Studio, navigate to the <strong>second tab</strong> on the left labeled
+   <strong>AI Assistant Skills</strong>.</p>
+</li>
+<li>
+<p>Click the black <strong>+ Create skill</strong> button in the upper-right corner, select
+   <strong>Start from scratch</strong>, and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Skill Name</strong></td>
+<td>PodXXX_UseCase3_AIAssistant - <em>(Replace XXX with your PodID)</em></td>
+</tr>
+<tr>
+<td><strong>System ID</strong></td>
+<td>PodXXX_UseCase3_AIAssistant</td>
+</tr>
+<tr>
+<td><strong>Goal</strong></td>
+<td><em>You are the AI Assistant for Cumulus Hospital, serving as a real-time assistant for human agents. Your mission is to empower agents by analyzing bi-directional conversations to provide policy-validated intelligence during BCBS coverage inquiries. Your objective is to reduce agent cognitive load and deliver a seamless, high-quality patient experience with first-call resolution.</em></td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>In the Skill configuration page, in the <strong>Profile</strong> tab enter the following in the <strong>Instructions</strong> box:</p>
+<div class="highlight"><pre><span></span><code>1. You should ask the agent for the patient_name.
+
+2. Conversational Analysis: Actively listen to and analyze the bi-directional 
+   conversation. Identify the BCBS Policy Code and the Clinical Procedure 
+   (MRI, X-Ray, Blood Test, or Ultrasound) mentioned by either party, both 
+   values are mandatory BCBS policy code and procedure.
+
+3. Real-Time Intelligence: Immediately surface policy-validated data from the 
+   Knowledge Base, including coverage percentages and pre-authorization 
+   requirements, so the agent can inform the patient accurately.
+
+4. Suggested Responses: Offer concise, natural-language scripts that agents 
+   can adapt. Keep all responses under 3 sentences to ensure clarity and 
+   speed during live calls.
+
+5. Form Delivery Workflow: If pre-authorization is "Required," ask the agent 
+   for customer phone number and perform [send_form] action to send SMS 
+   message with pre-authorization form URL.
+
+6. Ask the agent to consult the patient if any other form is required.
+
+7. Form Retrieval: If any other insurance form is requested, ask the name of 
+   the form and perform [send_form] action again, you should have patient 
+   name, patient phone number.
+
+8. Compliance &amp; Accuracy: Always prioritize data from the Knowledge Base, 
+   including hospital procedures, working hours, locations and info requested 
+   by either party.
+
+9. Continuous Improvement: Learn from agent feedback loops to improve the 
+   relevance, accuracy, and personalization of your suggested responses.
+</code></pre></div>
+<p>Click <strong>Save changes</strong>.</p>
+</li>
+<li>
+<p>Go to the <strong>Knowledge</strong> tab. In the knowledge base dropdown, select:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Knowledge Base</strong></td>
+<td>PodXXX_UseCase3_AIAssistantCumulus</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Remember to replace XXX with your PodID</p>
+<p>Each student has their own Knowledge Base. Selecting the wrong one will break
+another student's lab.</p>
+</div>
+<p>Click <strong>Save changes</strong>.</p>
+</li>
+<li>
+<p>Go to the <strong>Language</strong> tab and confirm <strong>English</strong> is selected.</p>
+<details class="tip">
+<summary>See how to configure steps 1 - 6</summary>
+<p></p><figure markdown="">
+<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAssistant.gif" data-title="Configure AI Assistant" data-desc-position="top"><img alt="Configure AI Assistant" loading="lazy" src="../assets/AIAssistant.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+ </figure><p></p>
+</details>
+</li>
+<li>
+<p>Go to the <strong>Actions</strong> tab and click the <strong>+ New action</strong> button. Configure it as follows in the Update Action page:</p>
+<p><strong>•General Information</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Action Name</strong></td>
+<td>send_form</td>
+</tr>
+<tr>
+<td><strong>Action Description</strong></td>
+<td>This automated action triggers an SMS delivery to the patient's mobile device. It is designed to provide immediate access to clinical documentation.</td>
+</tr>
+<tr>
+<td><strong>Action Scope</strong></td>
+<td>Slot filling and fulfillment</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - General Information</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ActionGeneralInformation.png" data-title="Update Action - General information" data-desc-position="top"><img alt="Update Action - General information" src="../assets/ActionGeneralInformation.png" width="700"></a>
+</figure><p></p>
+</details>
+<hr>
+<p><strong>Slot Filling — Input Entities</strong></p>
+<p>The following entities are the variables that the AI Assistant must capture from the live conversation before executing the <code>send_form</code> action. Click <strong>+ New input entity</strong> for each entity below:<br>
+<code>use the arrow &gt; to navigate from Entity 1 to Entity 6</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Entity 1 — form_name</label><label for="__tabbed_1_2">Entity 2 — patient_name</label><label for="__tabbed_1_3">Entity 3 — phone_number</label><label for="__tabbed_1_4">Entity 4 — language</label><label for="__tabbed_1_5">Entity 5 — policy_code</label><label for="__tabbed_1_6">Entity 6 — procedure_name</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>form_name</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Name of the form required, captured by the AI Assistant.</td>
+</tr>
+<tr>
+<td><strong>Entity Examples</strong> <code>Click +Add, enter an item, and repeat for each additional entry</code></td>
+<td>Patient Registration Form · Insurance Claim Form · Authorization Form · Medical Records Release · Formulario de Autorización · Formulario de Reclamo de Seguro · Formulario de Liberación de Registros Medicos · Formulario de Registro de Paciente</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><strong>Agent Review Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 1: form_name</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/form_name.png" data-title="Entity 1 - form_name" data-desc-position="top"><img alt="Entity 1 - form_name" src="../assets/form_name.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Name</strong></td>
+<td style="text-align: left;">patient_name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Type</strong></td>
+<td style="text-align: left;">String</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Description</strong></td>
+<td style="text-align: left;">Patient name captured by the AI Assistant.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Entity Examples</strong> <br><code>Click +Add, enter an item and repeat</code></td>
+<td style="text-align: left;">Mary · Andrew · Mattew · Thomas · Charlie</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Setting</strong></td>
+<td style="text-align: left;"><strong>Required</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Agent Review Required</strong></td>
+<td style="text-align: left;">No</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 2: patient_name</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/patient_name.png" data-title="Entity 2 - patient_name" data-desc-position="top"><img alt="Entity 2 - patient_name" src="../assets/patient_name.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>phone_number</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Patient mobile number to send SMS with forms, captured by the AI Assistant.</td>
+</tr>
+<tr>
+<td><strong>Entity Examples</strong></td>
+<td>+17863738922</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><strong>Agent Review Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 3: phone_number</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/phone_number.png" data-title="Entity 3 - phone_number" data-desc-position="top"><img alt="Entity 3 - phone_number" src="../assets/phone_number.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>language</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The language should be obtained from the call itself, where the flow should pass english or spanish as a variable.</td>
+</tr>
+<tr>
+<td><strong>Entity Examples</strong> <br><code>Click +Add, enter an item and repeat</code></td>
+<td>en-US · es-US</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><strong>Agent Review Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 4: language</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/language.png" data-title="Entity 4 - language" data-desc-position="top"><img alt="Entity 4 - language" src="../assets/language.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>policy_code</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Patient policy code, captured by the AI Assistant.</td>
+</tr>
+<tr>
+<td><strong>Entity Examples</strong> <br><code>Click +Add, enter an item and repeat</code></td>
+<td>BCBS-101 · BCBS-202 · BCBS-303</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>Not Required</td>
+</tr>
+<tr>
+<td><strong>Agent Review Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 5: policy_code</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/policy_code.png" data-title="Entity 5 - policy_code" data-desc-position="top"><img alt="Entity 5 - policy_code" src="../assets/policy_code.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>procedure_name</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>String</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Patient's procedure name, captured by the AI Assistant.</td>
+</tr>
+<tr>
+<td><strong>Entity Examples</strong> <br><code>Click +Add, enter an item and repeat</code></td>
+<td>MRI · X-ray · blood test · ultrasound · Ultrasonido · Rayos X · Resonancia médica · examen de sangre</td>
+</tr>
+<tr>
+<td><strong>Setting</strong></td>
+<td>Not Required</td>
+</tr>
+<tr>
+<td><strong>Agent Review Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>See Example - Entity 6: procedure_name</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/procedure_name.png" data-title="Entity 6 - procedure_name" data-desc-position="top"><img alt="Entity 6 - procedure_name" src="../assets/procedure_name.png" width="700"></a>
+</figure><p></p>
+</details>
+</div>
+</div>
+</div>
+<hr>
+<p><strong>Webex Connect Flow Builder Fulfillment</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Select Service</strong></td>
+<td>PodXXX_LTRCCT2001_CUMULUS</td>
+</tr>
+<tr>
+<td><strong>Select Flow</strong></td>
+<td>UseCase3_Cumulus_Send_Form</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Save</strong>.</p>
+<details class="note">
+<summary>See Example - Webex Connect Fulfillment</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/webex_connect_fulfillment.png" data-title="Update Action - Webex Connect Fulfillment" data-desc-position="top"><img alt="Update Action - Webex Connect Fulfillment" src="../assets/webex_connect_fulfillment.png" width="1000"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p><strong>Save changes</strong>: Click Save changes </p>
+</li>
+<li><strong>Publish</strong>: Click <strong>Publish</strong>, enter <code>V1</code> as the comment, and click <strong>Publish</strong> again.</li>
+</ol>
+<hr>
+<h3 id="13-test-validate-the-aha-moment">1.3 Test &amp; Validate — The "Aha!" Moment</h3>
+<p>Use the built-in <strong>Preview</strong> tool in the AI Agent Studio to simulate a live chat.</p>
+<ol>
+<li>
+<p>Inside <strong>PodXXX_UseCase3_AIAssistant</strong> select <strong>Preview</strong> in the upper-right corner and <strong>Start a chat</strong> and verify:</p>
+<ul>
+<li><strong>Patient Name Capture</strong>: The assistant asks the agent for the <strong>patient's name</strong>.</li>
+<li><strong>Policy &amp; Procedure Recognition</strong>: The assistant identifies the <strong>BCBS Policy Code</strong>
+  and the <strong>Clinical Procedure</strong> from the conversation.</li>
+<li><strong>Real-Time Intelligence</strong>: The assistant surfaces <strong>coverage percentages</strong> and
+  <strong>pre-authorization requirements</strong> from the Knowledge Base.</li>
+<li><strong>Form Delivery</strong>: The assistant triggers the <code>[send_form]</code> action and sends
+  the correct <strong>SMS with the pre-authorization form</strong>.</li>
+<li><strong>Language Consistency</strong>: The entire interaction remains in <strong>English</strong>.</li>
+</ul>
+<details class="- example">
+<summary>Test Script — English</summary>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hi, how can I help you?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>I need help with MRI with policy BCBS-101</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>For MRI under BCBS-101 policy, coverage is 70% and pre-authorization is required. May I have the patient's name and phone number to send the pre-authorization form via SMS?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Sophie</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Thank you, Sophie. Could you please provide the patient's phone number so I can send the MRI pre-authorization form via SMS?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td><em>Enter your phone number (include the + country code)</em></td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>The MRI pre-authorization form has been sent to Sophie's phone number. Please check if the patient requires any other insurance forms or assistance.</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>I need also the patient registration form</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>I can send the Patient Registration Form to Sophie. Could you please confirm the patient's phone number to send the form via SMS?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td><em>Enter your phone number (include the + country code)</em></td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>The Patient Registration Form has been sent to Sophie's phone number. Please let me know if there is anything else you need assistance with. °</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="- tip">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAssistantEN.gif" data-title="Preview English" data-desc-position="top"><img alt="Preview English" loading="lazy" src="../assets/AIAssistantEN.gif" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p><strong>Session Inspection</strong>: Go to the <strong>Sessions</strong> tab inside the AI Assistant skill page.
+   Review the last session to confirm how the Knowledge Base data was retrieved and how the
+   <code>send_form</code> action was performed.</p>
+<details class="- tip">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAssistant_inspection.gif" data-title="AI Assistant´s session Inspection" data-desc-position="top"><img alt="AI Assistant´s session Inspection" loading="lazy" src="../assets/AIAssistant_inspection.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<details class="warning" open="open">
+<summary>Operational Note — Language Toggle Required</summary>
+<p>Since we are using a <strong>single AI Assistant</strong> to serve both English and Spanish queues, you
+must <strong>manually toggle the language setting</strong> to test each language within the AI Agent Studio.</p>
+</details>
+<hr>
+<ol>
+<li>
+<p>In the <strong>PodXXX_UseCase3_AIAssistant</strong> page, navigate to the <strong>Language</strong> tab. Change
+   the language to <strong>Spanish</strong>, click <strong>Save changes</strong>.</p>
+<details class="- note">
+<summary>Configure Spanish Language</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/languageAssistant.png" data-title="Configure Spanish Language" data-desc-position="top"><img alt="Configure Spanish Language" src="../assets/languageAssistant.png" width="900"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p><strong>Spanish Chat Simulation</strong> — follow the exchange below:</p>
+<ul>
+<li><strong>Patient Name Capture</strong>: The assistant asks the agent for the <strong>nombre del paciente</strong>.</li>
+<li><strong>Policy &amp; Procedure Recognition</strong>: The assistant identifies the <strong>Código de Póliza BCBS</strong>
+  and the <strong>Procedimiento clínico</strong> from the conversation.</li>
+<li><strong>Real-Time Intelligence</strong>: The assistant surfaces <strong>coverage percentages</strong> and
+  <strong>pre-authorization requirements</strong> from the Knowledge Base.</li>
+<li><strong>Form Delivery</strong>: The assistant triggers the <code>[send_form]</code> action and sends
+  the correct <strong>SMS with the pre-authorization form</strong>.</li>
+<li><strong>Language Consistency</strong>: The entire interaction remains in <strong>Spanish</strong>.</li>
+</ul>
+<details class="- example">
+<summary>Test Script — Spanish</summary>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Hola, ¿cómo puedo ayudarle?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>ayuda para hacer un ultrasonido con póliza BCBS-101</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Para el procedimiento de ultrasonido con la póliza BCBS-101, la cobertura es del 70% y se requiere preautorización. ¿Podría proporcionarme el nombre del paciente y su número de teléfono para enviarle el formulario de preautorización por SMS?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td>Caro</td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>Gracias, Caro. Para enviarle el formulario de preautorización para el ultrasonido, ¿podría proporcionarme también su número de teléfono móvil?</td>
+</tr>
+<tr>
+<td>👤 <strong>User</strong></td>
+<td><em>Enter your phone number (include the + country code)</em></td>
+</tr>
+<tr>
+<td>🤖 <strong>Prompt</strong></td>
+<td>He enviado el formulario de autorización para el ultrasonido a su número de teléfono. ¿Necesita que le ayude con algún otro formulario o trámite relacionado con su seguro?</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="- tip">
+<summary>See how it works</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAssistantEN2.gif" data-title="Preview Spanish" data-desc-position="top"><img alt="Preview Spanish" loading="lazy" src="../assets/AIAssistantEN2.gif" style="width: 60%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p><strong>Session Inspection</strong>: Go to the <strong>Sessions</strong> tab inside the AI Assistant skill page.
+   Review the last session to confirm the Knowledge Base data was retrieved, the <code>send_form</code>
+   action was performed, and the language was <strong>Spanish</strong>.</p>
+</li>
+</ol>
+<hr>
+<h3 id="14-revert-to-english-configuration">1.4 Revert to English Configuration</h3>
+<div class="admonition warning">
+<p class="admonition-title">Required Step</p>
+<p>Once your Spanish testing is complete, you <strong>must revert</strong> the AI Assistant to its primary
+language configuration to ensure it is ready for queue integration.</p>
+</div>
+<ol>
+<li>In the <strong>PodXXX_UseCase3_AIAssistant</strong> page, navigate to the <strong>Language</strong> tab.</li>
+<li>Change the language back to <strong>English</strong>, click <strong>Save changes</strong>, then click <strong>Publish</strong>.</li>
+<li>In the comment field, enter <code>V2</code> and click <strong>Publish</strong> again to finalize the revert.</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Your AI Assistant is now correctly configured to serve both <strong>English &amp; Spanish</strong> queues.</p>
+</div>
+<hr>
+<h2 id="phase-2-assigning-ai-assistant-skills-to-queues">Phase 2: Assigning AI Assistant Skills to Queues</h2>
+<p>Now that your AI Assistant is provisioned, we must link it to your English and Spanish queues
+to enable Real-time Assist.</p>
+<ol>
+<li>
+<p>Log in to <strong>Collaboration Control Hub</strong> with your admin credentials.</p>
+</li>
+<li>
+<p>Navigate to <strong>Contact Center &gt; Desktop Experience &gt; AI Features</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Queue</strong> tab.</p>
+</li>
+</ol>
+<details class="- tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIFeaturestab.gif" data-title="AI Features Menu" data-desc-position="top"><img alt="AI Features Menu" loading="lazy" src="../assets/AIFeaturestab.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="21-configure-english-spanish-queue">2.1 Configure English &amp; Spanish Queue</h3>
+<ul>
+<li>Search for your English &amp; Spanish queues: <strong>PodXXX_Cumulus_EN</strong>, <strong>PodXXX_Cumulus_ES</strong> <em>(Replace XXX with your PodID)</em>. </li>
+<li>Select both at the same time.</li>
+<li>Click <strong>Edit AI Features</strong></li>
+<li>Click the <strong>Real-time Assist</strong> checkbox and configure as follows:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Apply Real-time assistance</strong></td>
+<td>Toggle <strong>ON</strong></td>
+</tr>
+<tr>
+<td><strong>Select a skill</strong></td>
+<td>PodXXX_UseCase3_AIAssistantCumulus</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Save</strong>.</p>
+<details class="- tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/realtimeassistEN.png" data-title="English Queue Real-Time Assist" data-desc-position="top"><img alt="English Queue Real-Time Assist" src="../assets/realtimeassistEN.png" width="1000"></a>
+</figure><p></p>
+</details>
+<div class="admonition success">
+<p class="admonition-title">Result</p>
+<p>Both queues are now <strong>AI-enabled</strong>, allowing the AI Assistant to provide real-time guidance
+to agents in <strong>both languages</strong>.</p>
+</div>
+<hr>
+<h2 id="phase-3-voice-flow-orchestration">Phase 3: Voice Flow Orchestration</h2>
+<p>The final configuration step is to map your English and Spanish queues to the main Voice Flow.</p>
+<ol>
+<li>
+<p>Navigate to <strong>Contact Center &gt; Flows</strong>.</p>
+</li>
+<li>
+<p>Search for your flow: <strong>PodXXXUseCase3Cumulus</strong>. Click to open.</p>
+</li>
+<li>
+<p>Click <strong>Get Started</strong> to close the welcome screen.</p>
+</li>
+<li>
+<p><strong>Activate Edit Mode</strong>: In the center of the top toolbar, toggle the <strong>Edit</strong> switch to <strong>ON</strong>.</p>
+<details class="tip" open="open">
+<summary>Pro-Tip</summary>
+<p>If the left and right configuration panels open automatically, you may close them to
+maximize your canvas. Take your time to review the flow in both the <strong>Main Flow</strong> canvas and the <strong>Event Flow</strong> canvas.</p>
+</details>
+<details class="- tip">
+<summary>See how to open your Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/voiceflow.gif" data-title="Open Voice Flow" data-desc-position="top"><img alt="Open Voice Flow" loading="lazy" src="../assets/voiceflow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<hr>
+<h3 id="31-map-english-queue">3.1 Map English Queue</h3>
+<p>Locate the node labeled <strong>Queue_EN</strong>. Select it, then open the <strong>Properties</strong> panel in the
+upper right and configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Queue</strong></td>
+<td>PodXXX_Cumulus_EN <em>(Replace XXX with your PodID)</em></td>
+</tr>
+</tbody>
+</table>
+<details class="- tip">
+<summary>See how to locate and map your English Queue</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">① ② Locate the English Queue Node</label><label for="__tabbed_2_2">③ ④ Configure your English Queue</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/voice_flow_EN.png" data-title="Open English Queue" data-desc-position="top"><img alt="Open English Queue" src="../assets/voice_flow_EN.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Locate the <strong>Queue_EN</strong> node in the flow canvas and click to open the Properties panel.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/voice_flow_en_queue_config.png" data-title="Configure English Queue" data-desc-position="top"><img alt="Configure English Queue" src="../assets/voice_flow_en_queue_config.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 In the Properties panel, select your corresponding queue: <strong>PodXXX_Cumulus_EN</strong> and close the Propierties panel. </p>
+</blockquote>
+</div>
+</div>
+</div>
+</details>
+<hr>
+<h3 id="32-map-spanish-queue">3.2 Map Spanish Queue</h3>
+<p>Locate the node labeled <strong>Queue_ES</strong>. Select it, then open the <strong>Properties</strong> panel in the
+upper right and configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Queue</strong></td>
+<td>PodXXX_Cumulus_ES <em>(Replace XXX with your PodID)</em></td>
+</tr>
+</tbody>
+</table>
+<details class="- tip">
+<summary>See how to locate and map your Spanish Queue</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">① ② Locate the Spanish Queue Node</label><label for="__tabbed_3_2">③ ④ Configure your Spanish Queue</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/voice_flow_ES.png" data-title="Open Spanish Queue" data-desc-position="top"><img alt="Open Spanish Queue" src="../assets/voice_flow_ES.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Locate the <strong>Queue_ES</strong> node in the flow canvas and click to open the Properties panel.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p></p><figure markdown="">
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/voice_flow_es_queue_config.png" data-title="Configure Spanish Queue" data-desc-position="top"><img alt="Configure Spanish Queue" src="../assets/voice_flow_es_queue_config.png" width="900"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 In the Properties panel, select your corresponding queue: <strong>PodXXX_Cumulus_ES</strong> and close the Propierties panel. </p>
+</blockquote>
+</div>
+</div>
+</div>
+</details>
+<hr>
+<h3 id="33-validate-publish">3.3 Validate &amp; Publish</h3>
+<ol>
+<li>Toggle <strong>Validation</strong> to <strong>ON</strong> to ensure no configuration errors exist.</li>
+<li>Click <strong>Publish</strong>.</li>
+<li>Ensure the version label is set to <strong>latest</strong>, then click <strong>Publish flow</strong>.</li>
+</ol>
+<details class="- tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/publishvoiceflow.gif" data-title="Publish Voice Flow" data-desc-position="top"><img alt="Publish Voice Flow" loading="lazy" src="../assets/publishvoiceflow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="34-configure-the-channel">3.4 Configure the Channel</h3>
+<ol>
+<li>
+<p>In <strong>Collaboration Control Hub &gt; Contact Center</strong>, find <strong>Channels</strong>.</p>
+</li>
+<li>
+<p>Find your Channel <strong>PodXXX_Cumulus_Voice</strong> and click to edit. Configure as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Routing Flow</strong></td>
+<td>PodXXXUseCase3Cumulus</td>
+</tr>
+<tr>
+<td><strong>Music on Hold</strong></td>
+<td>defaultmusic_on_hold.wav</td>
+</tr>
+<tr>
+<td><strong>Version Label</strong></td>
+<td>Latest</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+<h2 id="phase-4-the-live-patient-journey-english-testing">Phase 4: The "Live" Patient Journey — English Testing</h2>
+<p>In this phase, you will validate the end-to-end patient journey. You will simulate a live
+call, experience the seamless hand-off from the Triage AI to the Human Agent, and witness
+the <strong>AI Assistant</strong> in action.</p>
+<hr>
+<h3 id="41-english-path-validation">4.1 English Path Validation</h3>
+<p><strong>Step 1 — Agent Login</strong></p>
+<p>Log in with your assigned <strong>Agent credentials</strong> in the Agent Desktop.</p>
+<blockquote>
+<p>🔗 The URL is found in <strong>Collaboration Control Hub &gt; Contact Center &gt; Overview &gt; Quick Links &gt; Desktop</strong>.
+Copy this link and paste it in the <strong>Google Chrome profile</strong> for your agent.</p>
+</blockquote>
+<hr>
+<p><strong>Step 2 — Agent Desktop Preferences</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Team</strong></td>
+<td>PodXXX_Cumulus</td>
+</tr>
+<tr>
+<td><strong>Handle calls using</strong></td>
+<td>Desktop</td>
+</tr>
+</tbody>
+</table>
+<p>Click <strong>Save and Continue</strong>. </p>
+<details class="- tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/agentdesktoplogin.png" data-title="Agent Desktop Login" data-desc-position="top"><img alt="Agent Desktop Login" src="../assets/agentdesktoplogin.png" width="500"></a>
+</figure><p></p>
+</details>
+<p>Set your agent status to <strong>Set as Idle (all channels)</strong> : select as reason: <strong>Break</strong>.</p>
+<details class="- tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/agent_breakstatus.png" data-title="Agent Desktop Status" data-desc-position="top"><img alt="Agent Desktop Status" src="../assets/agent_breakstatus.png" width="980"></a>
+</figure><p></p>
+</details>
+<hr>
+<p><strong>Step 3 — Initiate Call</strong></p>
+<p>Step 3.1: Dial your assigned <strong>Channel number</strong> from your mobile device or Webex App. <em>(you can find it under the lab access instructions in the getting Started session)</em>.</p>
+<blockquote>
+<p>🔗 You can use your <strong>cell phone</strong> or log in to the <strong>Webex App</strong> using the additional
+user assigned to your POD to make the call.</p>
+</blockquote>
+<p><code>Note: For detailed guidance, refer to the Getting Started section.</code></p>
+<hr>
+<p><strong>Step 4 — Language Selection</strong></p>
+<p>When the IVR prompts for language, select <strong>English</strong>.</p>
+<hr>
+<p><strong>Step 5 — Triage Interaction</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Triage Script — English</p>
+<ul>
+<li>Request an <strong>MRI</strong> <em>(you can also request: Blood Test, Ultrasound, or X-Ray)</em></li>
+<li>Provide your name: Example: <strong>"Caro"</strong></li>
+<li>Provide policy code: <strong>BCBS-101</strong></li>
+<li>The AI Agent will transfer you to the <strong>human agent queue</strong>.</li>
+</ul>
+</div>
+<hr>
+<p><strong>Step 6 — Agent Desktop Reception</strong></p>
+<p>Set your agent status to <strong>Set as Available (all channels)</strong> and the call will be answered <strong>automatically</strong>.</p>
+<details class="- tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/agent_available.png" data-title="Agent Desktop Available" data-desc-position="top"><img alt="Agent Desktop Available" src="../assets/agent_available.png" width="980"></a>
+</figure><p></p>
+</details>
+<div class="admonition warning">
+<p class="admonition-title">Best Practice</p>
+<p>Immediately <strong>mute both your mobile device and your Agent Desktop</strong> to avoid audio
+feedback loops.</p>
+</div>
+<ul>
+<li><strong>Virtual Agent Transfer Summary</strong>: In the AI Assistant menu, click <strong>View Summary</strong> in
+  the popup. Review the Triage summary of your conversation with the AI Agent.</li>
+<li><strong>Transcript Review</strong>: Open the <strong>IVR Transcript</strong> to review the line-by-line history,
+  then open the <strong>Live Transcript</strong> and keep it visible.</li>
+</ul>
+<hr>
+<p><strong>Step 7 — Real-Time Assist &amp; Form Delivery</strong></p>
+<details class="example" open="open">
+<summary>Live Interaction Script — English</summary>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Who</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Click <strong>Get Assistance</strong> in the AI Assistant chat.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Unmute Agent Desktop and say: <em>"Hello Caro, my name is [Agent PodID]. I see you want to schedule an MRI with policy code BCBS-101, is that correct?"</em></td>
+</tr>
+<tr>
+<td>3</td>
+<td>📱 <strong>Mobile</strong></td>
+<td>Unmute mobile and say: <em>"Yes, that is correct."</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>🤖 <strong>AI Assist</strong></td>
+<td>Observe suggested response: <em>"Inform Caro that her BCBS-101 policy covers 70% of the MRI cost. Let her know pre-authorization is required. Ask for her phone number to send the form via SMS."</em></td>
+</tr>
+<tr>
+<td>5</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Read the suggested response and ask: <em>"Is it okay to send the pre-authorization form to the number you are calling from?"</em></td>
+</tr>
+<tr>
+<td>6</td>
+<td>📱 <strong>Mobile</strong></td>
+<td>Unmute mobile and say: <em>"Yes, that is okay."</em></td>
+</tr>
+<tr>
+<td>7</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Copy the phone number from the <strong>top panel</strong> and paste it into the Real-Time Assist chat. Observe the <code>[send_form]</code> action trigger.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Ask: <em>"Did you receive the SMS with the form?"</em></td>
+</tr>
+<tr>
+<td>9</td>
+<td>📱 <strong>Mobile</strong></td>
+<td>Say: <em>"Yes, but I also need the Patient Registration Form. Please send that to the same number."</em></td>
+</tr>
+<tr>
+<td>10</td>
+<td>🤖 <strong>AI Assist</strong></td>
+<td>Observe the <code>[send_form]</code> action trigger again. Verify receipt of the second SMS.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Say: <em>"The Patient Registration Form has been sent. Is there anything else I can assist you with?"</em></td>
+</tr>
+<tr>
+<td>12</td>
+<td>📱 <strong>Mobile</strong></td>
+<td>Say: <em>"That's all, thank you. Goodbye."</em></td>
+</tr>
+<tr>
+<td>13</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Review the <strong>Suggested Wrap-up Code</strong> and <strong>Conversation Summary</strong>. Edit it if requrired and select the appropriate code and click <strong>Submit</strong>.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="- tip">
+<summary>See how it works — AI Assistant (Summaries, Real-Time Assist, Real-Time transcript) &amp; Form Delivery</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">① Real-Time Assist Interaction</label><label for="__tabbed_4_2">② SMS Received by Patient</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/interaction_english.gif" data-title="Real-Time Assist &amp; Form Delivery" data-desc-position="top"><img alt="Real-Time Assist &amp; Form Delivery" loading="lazy" src="../assets/interaction_english.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Observe how the AI Assistant surfaces the coverage data and triggers the <code>[send_form]</code> action in real time.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/sms_english.png" data-title="SMS Form Delivery" data-desc-position="top"><img alt="SMS Form Delivery" src="../assets/sms_english.png" width="300"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Verify that the patient receives the SMS with the pre-authorization form link on their mobile device.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</details>
+<hr>
+<h2 id="phase-5-the-live-patient-journey-spanish-testing">Phase 5: The "Live" Patient Journey — Spanish Testing</h2>
+<details class="warning" open="open">
+<summary>⚠️ Before You Begin — Configure Your Browser for Spanish</summary>
+<p>It is recommended that you configure your browser environment to support
+Spanish before starting this path. This ensures the Agent Desktop correctly
+reflects the Spanish locale settings.</p>
+<ol>
+<li>In <strong>Chrome</strong>, click the <strong>three-dot menu</strong> → <strong>Settings</strong>.</li>
+<li>In the search bar, type <code>Language</code>.</li>
+<li>Locate <strong>Spanish</strong> in the language list. If it is not set as the primary
+   language, click the <strong>three dots</strong> next to it and select <strong>Move to the top</strong>.</li>
+<li><strong>Reload your Agent Desktop</strong> page to apply the changes.</li>
+</ol>
+</details>
+<details class="- tip">
+<summary>See how to configure</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/spanishlanguage.png" data-title="Set Your Browser Language to Spanish" data-desc-position="top"><img alt="Set Your Browser Language to Spanish" src="../assets/spanishlanguage.png" width="800"></a>
+</figure><p></p>
+</details>
+<hr>
+<h3 id="51-spanish-path-validation">5.1 Spanish Path Validation</h3>
+<p><strong>Step 1 — Reset Agent Status</strong></p>
+<p>Set your agent status to <strong>Set as Idle (all channels)</strong> : select as reason: <strong>Receso</strong>.</p>
+<hr>
+<p><strong>Step 2 — Initiate Call</strong></p>
+<p>Step 2.1: Dial your assigned <strong>Channel number</strong> from your mobile device or Webex App. <em>(you can find it under the lab access instructions)</em>.</p>
+<hr>
+<p><strong>Step 3 — Language Selection</strong></p>
+<p>When the IVR prompts for language, select <strong>Spanish</strong>.</p>
+<hr>
+<p><strong>Step 4 — Triage Interaction (Spanish)</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Triage Script — Spanish</p>
+<ul>
+<li>Request a procedure: <em>"Necesito hacerme un ultrasonido."</em>
+  <em>(You can also request: examen de sangre, resonancia magnética o Rayos-X)</em></li>
+<li>Provide your name: <em>Example:</em> <em>"Caro"</em></li>
+<li>Provide policy code: <em>"BCBS-101"</em></li>
+<li>The AI Agent will transfer you to the <strong>Spanish human agent queue</strong>.</li>
+</ul>
+</div>
+<hr>
+<p><strong>Step 5 — Agent Desktop Reception</strong></p>
+<p>Set your agent status to <strong>Set as Available (all channels)</strong> and the call will be answered <strong>automatically</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Best Practice</p>
+<p>Immediately <strong>mute both your mobile device and your Agent Desktop</strong> to avoid audio feedback.</p>
+</div>
+<ul>
+<li><strong>Virtual Agent Transfer Summary</strong>: Click <strong>View Summary</strong>. Review the Triage summary
+  in <strong>Spanish</strong>.</li>
+<li><strong>Transcript Review</strong>: Open the <strong>IVR Transcript</strong> and the <strong>Live Transcript</strong> and keep
+  them visible.</li>
+</ul>
+<hr>
+<p><strong>Step 6 — Real-Time Assist &amp; Form Delivery (Spanish)</strong></p>
+<details class="example" open="open">
+<summary>Live Interaction Script — Spanish</summary>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Who</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Click <strong>Get Assistance</strong> in the AI Assistant chat.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Unmute Agent Desktop and say: <em>"Hola Caro, mi nombre es [Agente PodID]. Veo que necesita un ultrasonido con el código de póliza BCBS-101, ¿es correcto?"</em></td>
+</tr>
+<tr>
+<td>3</td>
+<td>📱 <strong>Mobile</strong></td>
+<td>Unmute mobile and say: <em>"Sí, es correcto."</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td>🤖 <strong>AI Assist</strong></td>
+<td>Observe suggested response in Spanish: <em>"Infórmale a Caro que su póliza BCBS-101 cubre el 70% del costo del ultrasonido. Confirma que se requiere preautorización y solicita su número de teléfono para enviar el formulario por SMS."</em></td>
+</tr>
+<tr>
+<td>5</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Read the suggested response and ask: <em>"¿Está bien si envío el formulario de preautorización al número desde el que está llamando?"</em></td>
+</tr>
+<tr>
+<td>6</td>
+<td>📱 <strong>Mobile</strong></td>
+<td>Say: <em>"Sí, está bien."</em></td>
+</tr>
+<tr>
+<td>7</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Copy the phone number from the <strong>top panel</strong> and paste it into the Real-Time Assist chat. Observe the <code>[send_form]</code> action trigger.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Ask: <em>"¿Recibió el SMS con el formulario?"</em></td>
+</tr>
+<tr>
+<td>9</td>
+<td>📱 <strong>Mobile</strong></td>
+<td>Say: <em>"Sí, pero también necesito el formulario de registro de paciente. Por favor, envíemelo al mismo número."</em></td>
+</tr>
+<tr>
+<td>10</td>
+<td>🤖 <strong>AI Assist</strong></td>
+<td>Observe the <code>[send_form]</code> action trigger again. Verify receipt of the second SMS.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Say: <em>"El formulario de registro de paciente ha sido enviado. ¿Necesita alguna otra forma o asistencia?"</em></td>
+</tr>
+<tr>
+<td>12</td>
+<td>📱 <strong>Mobile</strong></td>
+<td>Say: <em>"Eso es todo, gracias. Adiós."</em></td>
+</tr>
+<tr>
+<td>13</td>
+<td>🖥️ <strong>Agent</strong></td>
+<td>Review the <strong>Suggested Wrap-up Code</strong> and <strong>Conversation Summary</strong>. Edit it if requrired and select the appropriate code and click <strong>Submit</strong>.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="- tip">
+<summary>See how it works — AI Assistant (Summaries, Real-Time Assist, Real-Time transcript) &amp; Form Delivery - Spanish</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">① Real-Time Assist Interaction Spanish</label><label for="__tabbed_5_2">② SMS Received by Patient - Spanish</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/spanish_interaction.gif" data-title="Real-Time Assist &amp; Form Delivery Spanish" data-desc-position="top"><img alt="Real-Time Assist &amp; Form Delivery Spanish" loading="lazy" src="../assets/spanish_interaction.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Observe how the AI Assistant surfaces the coverage data and triggers the <code>[send_form]</code> action in real time.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/sms_spanish.png" data-title="SMS Form Delivery" data-desc-position="top"><img alt="SMS Form Delivery" src="../assets/sms_spanish.png" width="300"></a>
+</figure><p></p>
+<blockquote>
+<p>👆 Verify that the patient receives the SMS with the pre-authorization form link on their mobile device, all in Spanish.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</details>
+<hr>
+<h2 id="lab-3-complete-congratulations">🏁 Lab 3 Complete — Congratulations! 🎉</h2>
+<p>You have successfully completed <strong>Lab 3 – Real-Time AI Assistant for Complex Patient Interactions</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multilingual AI Assistant</td>
+<td>Provisioned and mapped to Knowledge Base · Tested in Preview (EN + ES)</td>
+</tr>
+<tr>
+<td>Real-Assist Skill Assignment</td>
+<td>Configured for English &amp; Spanish queues</td>
+</tr>
+<tr>
+<td>AI Assistant Features</td>
+<td>Real-time transcription &amp; summaries enabled</td>
+</tr>
+<tr>
+<td>Queue-to-Flow Mapping</td>
+<td>English &amp; Spanish queues mapped to Voice Flow</td>
+</tr>
+<tr>
+<td>Virtual Agent Transfer Summary</td>
+<td>Context hand-off validated</td>
+</tr>
+<tr>
+<td>Real-Time Assist (Copilot)</td>
+<td>Suggested responses and SMS form delivery validated</td>
+</tr>
+<tr>
+<td>End-to-End Testing</td>
+<td>All clinical scenarios validated</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>✨ <em>Agent Empowerment: You've built a real-time AI-powered assistant that reduces cognitive
+load, ensures policy accuracy, and delivers a seamless, high-quality patient experience —
+in two languages.</em></p>
+</blockquote>
+<hr>
+<p><em>Lab authored for Cisco Live 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../digital/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 2 - Digital Patient Journey">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 2 - Digital Patient Journey
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../bonus/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 4 - Bonus - Analytics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 4 - Bonus - Analytics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.sections", "navigation.collapse", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
