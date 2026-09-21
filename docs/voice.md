@@ -247,10 +247,6 @@ Lab 1 - Concierge AI Agent
     </figure>
 
 ---
-!!! success "Lab 1 completado"
-
-    Ha creado, configurado, probado y publicado el `Concierge AI Agent`.
-
 
 ## 🏁 Lab 1 Completado — Felicitaciones! 🎉
 
