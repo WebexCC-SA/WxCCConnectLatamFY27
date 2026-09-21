@@ -18,6 +18,7 @@ El agente, llamado **Concierge**, identificará si el paciente desea continuar l
 ???+ warning "Disciplina del Pod ID"
     Reemplace siempre `XXX` por su POD_ID de tres dígitos asignado, por ejemplo: `001` o `002`. La convención de nombres debe comenzar con el prefijo `Pod`, seguido de su `Pod ID`: `PodXXX`. **Si no sigue exactamente esta convención, podría sobrescribir el trabajo de otro participante**
 
+---
 
 ## 1. Acceder a AI Agent Studio
 
