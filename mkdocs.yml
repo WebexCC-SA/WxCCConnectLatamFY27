@@ -89,8 +89,8 @@ nav:
   - Descripción:
         - La misión: overview.md
   - Actividades:
-      - Getting Started: getting_started.md
-      - Lab 1 - Multilingual Voice AI: voice.md
+      - Antes de Comenzar: getting_started.md
+      - Lab 1 - Concierge AI Agent: voice.md
       - Lab 2 - Digital Patient Journey: digital.md
       - Lab 3 - Intelligent AI Assistant: AI_Assistant.md 
       - Lab 4 - Bonus - Analytics: bonus.md

@@ -1,164 +1,159 @@
-# Getting Started
+# Antes de comenzar
 
-!!! note "Modular by Design"
-    Each lab in this session is **fully independent**. You can complete them 
-    in any order based on your interests and available time.
+Bienvenido al lab de **AI Agents para Webex Contact Center**.
+
+Durante esta experiencia asumirás el rol de **Webex Contact Center Administrator** de Cumulus Hospital. Crearás y probarás una solución bilingüe basada en AI Agents autónomos para atender pacientes en español e inglés.
+
+## 1. Aviso importante
+
+Aunque el diseño y los ejemplos de configuración de este lab pueden utilizarse como referencia, para preguntas relacionadas con diseño o implementación consulte la documentación oficial en [help.webex.com](https://help.webex.com/).
 
 
-## 1 Disclaimer
+## 2. Preparación del lab
 
-Although the lab design and configuration examples provided throughout this session can be used as a reference, for design-related questions please consult the official documentation at [help.webex.com](https://help.webex.com).
+### 2.1 Configuración perfiles de Chrome
 
-## 2 Lab Preparation 
+Para evitar errores relacionados con sesiones, credenciales o información almacenada en el navegador, trabajará con un perfil dedicado de Chrome.
 
-### 2.1 Chrome Profile Setup
 
-To avoid browser login and cache errors, you will work with dedicated Chrome Profiles
-representing the different user roles throughout the labs.
-
-#### Profiles to Create
-| Profile Name | Role |
+#### Perfiles a crear
+| Nombre del Perfil | Rol |
 |---|---|
-| `Admin_Lab` | Administrator |
+| `Admin_Lab` | Administrador |
 | `Supervisor_Lab` | Supervisor |
-| `Agent_Lab` | Agent |
+| `Agent_Lab` | Agente |
 
 ---
 
-### Steps
+### Pasos
 
-1. Launch **Chrome** and locate the **person icon** near the top-right corner of the browser.
+1. Abra **Google Chrome** y localice el icono de perfil en la esquina superior derecha.
 
-???- note "Chrome Profile icon"
+???- note "Icono Perfil Chrome"
     <figure markdown>
       ![Chrome Profile](./assets/ChromeProfile_image.png){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-      <figcaption>Chrome profile icon — top-right corner</figcaption>
+      <figcaption>Icono de perfil de Chrome esquina superior derecha</figcaption>
     </figure>
 
-2. Click the icon and select **Add Chrome Profile**, then choose **Stay Signed out**.
-3. Select a color, enter the profile name (e.g. `Admin_Lab`) and click **Done**.
-4. Repeat **steps 2 and 3** to create the two remaining profiles — `Supervisor_Lab`
-   and `Agent_Lab`.
+2. Seleccione el icono y haga clic en **Add Chrome Profile** y seleccione **Stay Signed out**.
+3. Elija un color, escriba (ej.:`Admin_Lab`) como nombre del perfil y haga clic en **Done**.
+4. Repita los **pasos 2 y 3** para crear los dos perfiles adicionales — `Supervisor_Lab` y `Agent_Lab`.
 
-???- info "See How It Works"
+???- info "Mira cómo hacerlo"
     <figure markdown>
       ![Chrome Profile Setup](./assets/ChromeProfile.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-      <figcaption>Creating the three Chrome Profiles for the lab</figcaption>
+      <figcaption>Configuración de los 3 perfiles de Chrome para el laboratorio</figcaption>
     </figure>
 
 ---
     
-## 3 Lab Access
+## 3 Acceso al lab
 
-!!! warning "The Pod Discipline — Read Before You Start"
-    Throughout all labs, you will be working on a **shared tenant** with all other students
-    in this session.
+!!! warning "Disciplina del Pod — Lea antes de comenzar"
 
-    To keep the environment stable for everyone, please follow these rules:
+    Durante todos los labs trabajará en un **tenant compartido** con los demás participantes de esta sesión.
 
-    - Always replace **XXX** with your assigned **3-digit Pod ID (e.g., 001, 002)**
-    - Your naming convention must always start with the prefix **Pod** followed by your
-      ID — **(PodXXX)**
-    - **Always use the exact name indicated in the lab guide** — do not use different
-      names, do not alter the suggested name, do not add extra characters
-    - **Do not modify, delete, or overwrite** any resource labeled **ADMIN** or
-      **DO NOT DELETE** — those are shared configurations that support the entire lab
-    - If you do not follow this convention exactly, you will overwrite your neighbor's
-      work
+    Para mantener el ambiente estable para todos, siga estas reglas:
 
-    Stay disciplined. Your Pod ID is your workspace.
+    - Reemplace siempre `XXX` por el `Pod ID` de tres dígitos que le fue asignado, por ejemplo: `001` o `002`.
+    - La convención de nombres debe comenzar siempre con el prefijo `Pod`, seguido de su ID. Por ejemplo: `PodXXX`.
+    - Utilice siempre el nombre exacto indicado en la guía del lab. No utilice nombres diferentes, no modifique el nombre sugerido ni agregue caracteres adicionales.
+    - No modifique, elimine ni sobrescriba ningún recurso identificado como `ADMIN` o `DO NOT DELETE`. Estas son configuraciones compartidas que permiten el funcionamiento del lab.
+    - Si no sigue exactamente esta convención, podría sobrescribir el trabajo de otro participante.
+
+    Mantenga siempre la disciplina. Su `Pod ID` representa su espacio de trabajo.
 ---
 
-### 3.1 Lab Credentials
-All credentials for this session have been pre-provisioned by the lab proctors. <br>
+### 3.1 Credenciales del lab
+Todas las credenciales de esta sesión han sido preconfiguradas por los proctors.<br>
 
-Your **pod** has been pre-assigned to a desktop. Please use **one** of the following options to retrieve your credentials: <br>
+Por favor, utiliza la siguiente opción para obtener tus credenciales: <br>
 
-  **Option 1 – Lab Assistant (Primary)**  
-  If not already open, navigate to the following link in your browser: 
-  [https://lab-assistant.com/](https://lab-assistant.com/)
-
-  **Option 2 – Credentials File (Backup)**  
-  Open the file **`LTRCCT-2001_Credentials_PODXXX.txt`** located on the **Desktop** of your lab machine.
+  **Archivo de credenciales**  
+  En el **escritorio** de la máquina del lab, abra el archivo: **`LABCOL-1217_Credenciales_PODXXX.txt`**.
 
 
-| Role | Username | Password |
+| Rol | Usuario | Password |
 |---|---|---|
-| Administrator | `wxcclabs+admin_IDXXX@gmail.com` | Provided in the LTRCCT-2001_Credentials file |
-| Agent | `wxcclabs+agent_IDXXX@gmail.com` | Provided in the LTRCCT-2001_Credentials file |
-| Supervisor | `wxcclabs+supvr_XXX@gmail.com` | Provided in the LTRCCT-2001_Credentials file |
+| Administrador | `wxcclabs+admin_IDXXX@gmail.com` | Disponible en el archivo LABCOL-1217_Credenciales_PODXXX.txt |
+| Agente | `wxcclabs+agent_IDXXX@gmail.com` | Disponible en el archivo LABCOL-1217_Credenciales_PODXXX.txt |
+| Supervisor | `wxcclabs+supvr_XXX@gmail.com` | Disponible en el archivo LABCOL-1217_Credenciales_PODXXX.txt |
 
-#### Your credentials file also includes
-- 🪪 Your **Pod ID**
-- 📞 Your **PSTN Channel Number**
-- 🔑 Your **Airtable Authorization Token**
-
----
-
-!!! info "Action Required — Webex Space"
-    Before starting labs, post a message in the **Webex space assigned for this lab**
-    with your **Pod ID + Full Name** (e.g., `Pod 001 — Jane Doe`).
-
-    This allows proctors to track assignments and assist you faster throughout the session.
-
-!!! tip "Lost your Airtable Token?"
-    If you need your **Airtable Authorization Token** again at any point during the lab,
-    request it directly from a proctor in the **Webex lab space**.
+#### El archivo de credenciales también incluye:
+- 🪪 Su **Pod ID**
+- 📞 Su **PSTN Channel Number**
 
 ---
 
-### 3.2 Making Test Calls - Webex App Setup
-#### If you can make US PSTN Calls from your mobile skip this section
-If you are unable to place test calls from your mobile device, you can use the **Webex App** pre-installed on your lab machine as your PSTN calling device.
+### 3.2 Realizar llamadas de prueba - Configuración de Webex App
+#### Si puede realizar llamadas PSTN de EE. UU. desde su teléfono móvil, omita esta sección
+Si no puede realizar llamadas de prueba desde su teléfono móvil, puede utilizar la **Webex App** instalada en la máquina del lab.
 <br>
 
-1. On your lab machine **Desktop**, locate the **Webex App** icon and double-click
-   to open it.
-2. Sign in using your **Supervisor credentials** from `LTRCCT-2001_Credentials`.
-3. Once logged in, navigate to the **Calling** menu on the left panel.
-4. Dial your assigned **Channel PSTN Number** to place a test call into the lab flow.
+1. En el **escritorio**, localice y abra la **Webex App** 
+2. Inicie sesión utilizando las credenciales de **Supervisor** del archivo `LABCOL-1217_Credenciales_PODXXX.txt`.
+3. En el panel izquierdo, seleccione el menu de **Calling** .
+4. Marque el **número PSTN** asignado a su Pod para realizar una llamada de prueba al lab.
 
-???- info "See How It Works"
+???- info "Mira cómo hacerlo"
     <figure markdown>
       ![Webex App](./assets/WebexApp.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-      <figcaption>Webex App for PSTN Calls</figcaption>
+      <figcaption>Webex App para llamadas a PSTN en USA</figcaption>
     </figure>
 
-!!! tip "Earbuds Available at Your Seat"
-    A pair of wired earbuds has been provided at your workstation, use them if needed to place calls through the **Webex App** or to handle interactions as an Agent during **Lab 3**.
-    🎧 **Keep them — they're yours to take home!**
+!!! tip "Audífonos disponibles"
+    En su estación de trabajo encontrará audífonos con cable. Puede utilizarlos para realizar llamadas desde la **Webex App** durante las pruebas del **Bonus**.
+    🎧 **¡Guárdalos, son tuyos para llevártelos a casa!**
 
 
-### 3.3 Lab Quick Links
+### 3.3 Enlaces rápidos del lab
 
-Bookmark these URLs — you will use them throughout all labs.
+Guarde estos enlaces. Los utilizará durante las actividades:
 
-| Tool | URL |
+| Herramienta | URL |
 |---|---|
 | **Collaboration Control Hub** | [admin.webex.com](https://admin.webex.com) |
 | **Agent / Supervisor Desktop** | [desktop.wxcc-us1.cisco.com](https://desktop.wxcc-us1.cisco.com/?ciClusterId=P0A1) |
 
-## 4 Lab Environment — Pre-Configured Components
+Para acceder a AI Agent Studio, ingrese a Control Hub y utilice la sección de servicios o los enlaces disponibles en el tenant.
 
-To maximize your lab time, the following components have been pre-configured by the
-proctors. **You do not need to set these up.**
+## 4 Entorno del lab — Componentes preconfigurados
 
-| Component | Details |
+Para aprovechar mejor el tiempo disponible, los siguientes componentes ya fueron configurados por los proctors. **No es necesario crearlos nuevamente**.
+
+| Componente | Detalles |
 |---|---|
-| **Site** | One site pre-created for the lab environment |
-| **Cisco PSTN** | Applied to the lab environment |
-| **Teams & Queues** | Pre-created for each Pod |
-| **Desktop Profile & Layout** | Pre-configured for the lab environment |
-| **Webex Connect Services** | Pre-provisioned for each Pod |
-| **Webex Connect Web Chat Asset** | Pre-provisioned for each Pod |
-| **Users & Licenses** | Agent and Supervisor users with Contact Center licenses applied for each Pod |
-| **Multimedia Profile** | Pre-configured for the lab environment |
-| **Wrap-up & Idle Codes** | Pre-configured for the lab environment |
-| **AI Assistant Features** | Generated summaries, sentiment analysis, and real-time transcription enabled for the lab environment |
+| **Site** | Un site creado previamente para el ambiente del lab |
+| **Cisco PSTN** | Aplicado al ambiente del lab |
+| **Teams & Queues** | Creados previamente para cada Pod |
+| **Desktop Profile & Layout** | Preconfigurados para el ambiente del lab |
+| **Webex Connect Services** | Preprovisionados para cada Pod |
+| **Users & Licenses** | Usuarios `Agent` y `Supervisor` con las licencias de Contact Center correspondientes |
+| **Multimedia Profile** | Preconfigurado para el ambiente del lab |
+| **Wrap-up & Idle Codes** | Preconfigurados para el ambiente del lab |
+| **AI Assistant Features** | Resúmenes generados, análisis de sentimiento y transcripción en tiempo real habilitados |
+| **MCP Server y MCP actions** | Preconfigurados e integrados con la organización de Webex del ambiente del laboratorio |
 
-!!! note "Lab-Specific Assets"
-    Depending on the lab, additional assets such as **flows, knowledge bases, AI Agents, and other configurations** have been pre-created for each specific use case. These items are explained in detail in the corresponding lab section.
+!!! note "Recursos específicos del lab"
+
+    Dependiendo del lab, algunos recursos adicionales, como `flows`, `knowledge bases`, configuraciones de Webex Connect y otros componentes, pueden haber sido preconfigurados para cada caso de uso.
+    Estos recursos se explican en detalle en la sección correspondiente de cada lab.
 
 ---
 
-*Lab authored for Cisco Live 2026*
+## 5 Acerca de MCP (Model Context Protocol)
+
+**MCP (Model Context Protocol)** es un estándar abierto que amplía las capacidades de los AI Agents. MCP proporciona un protocolo consistente para que los AI Agents soliciten contexto, invoquen herramientas y actúen sobre sistemas externos.
+
+El protocolo incluye una capa de descubrimiento que permite enumerar las herramientas, capacidades y metadatos disponibles, eliminando la necesidad de buscar manualmente diferentes APIs.
+
+Al agrupar tareas de varios pasos en una sola llamada a una herramienta, MCP ayuda a reducir la latencia, disminuir errores y acelerar los flujos de trabajo.
+
+Nuestro **MCP Server** ya fue configurado y habilitado para utilizarse en nuestro tenant de **Webex Contact Center**. También está integrado con la **organización de Webex** utilizada en el ambiente del laboratorio.
+
+Puede consultar la documentación completa sobre MCP Server y la solución de Webex en la siguiente página:
+
+[Webex MCP Server Overview](https://developer.webex.com/mcp/docs/webex-mcp-server-overview)
+
+
+*Lab realizado para Cisco Connect Latam 2026*

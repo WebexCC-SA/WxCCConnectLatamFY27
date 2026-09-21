@@ -26,6 +26,12 @@ El lab está dividido en tres partes:
 | **Lab 1** | Concierge AI Agent | Crear y configurar un AI Agent autónomo que detecte el idioma del paciente y transfiera la interacción a la ruta correspondiente en español o inglés. |
 | **Lab 2** | Cumulus AI Agent | Crear un AI Agent autónomo para responder preguntas sobre Cumulus Hospital, validar la identidad del paciente y gestionar citas utilizando un Knowledge Base, MCP Server y Webex Connect. |
 | **Lab 3** | Integración con Voice Flow | Integrar los AI Agents con un Voice Flow mediante el uso de los nodos `VirtualAgentV2`, realizar una llamada real y validar la experiencia bilingüe y el envío de confirmaciones por SMS. |
+| **Bonus** | AI Assistant | Escalar una llamada desde el AI Agent hacia un agente humano y observar cómo `AI Assistant` proporciona asistencia en tiempo real durante la interacción. |
+
+Al finalizar los tres labs principales, habrás creado, configurado e integrado una solución bilingüe basada en AI Agents autónomos.
+
+En el **Bonus Lab**, podrás escalar una llamada desde el AI Agent hacia un agente humano y experimentar cómo `AI Assistant` apoya al agente durante la conversación mediante capacidades como transcripción en tiempo real, asistencia agentic en tiempo real con respuestas sugeridas y ejecución de acciones, resumen de la interacción y análisis de sentimiento.
+
 
 ## Objetivos de aprendizaje
 
@@ -37,6 +43,9 @@ Al finalizar este lab podrás:
 4. Utilizar un Knowledge Base y acciones del MCP Server como `get_patient` y `update_patient`.
 5. Validar la identidad del paciente y gestionar citas respetando las reglas de privacidad.
 6. Probar una llamada completa y confirmar el resultado mediante SMS.
+7. Escalar una interacción desde un AI Agent hacia un agente humano.
+8. Utilizar las capacidades de `AI Assistant` para apoyar al agente durante una llamada en tiempo real.
+
 
 ---
 
