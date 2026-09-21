@@ -1,116 +1,64 @@
 # Descripción
 ---
+## La misión
 
-## Your Mission
+¡Bienvenido a tu primera actividad de AI Agent en Cisco Connect Latam!
 
-You are a **Webex Contact Center Administrator** at **Cumulus Hospital**, a modern healthcare provider serving diverse communities across the United States and Mexico.
+En este lab asumirás el rol de **Webex Contact Center Administrator** de **Cumulus Hospital**, una institución privada multinacional de salud con dos ubicaciones en Estados Unidos y dos en México. Cumulus Hospital ofrece servicios de diagnóstico y diversas especialidades médicas.
 
-Your mission is to transform patient interactions, from appointment scheduling and insurance verification to complex clinical information, using the power of **Webex Contact Center with AI**.
+Tu reto será crear una experiencia automatizada para los pacientes que llaman al hospital para consultar información, validar sus datos y gestionar sus citas.
 
-Because Cumulus Hospital serves a diverse patient base, a core pillar of this lab is **multilingual orchestration**. You will build bilingual patient journeys, configure, test, and refine interactions in both **English** and **Spanish**.
+Construirás dos AI Agents autónomos desde cero utilizando **AI Agent Studio**:
 
+- **Concierge:** detectará si el paciente desea continuar la conversación en español o en inglés y transferirá la interacción utilizando la ruta correspondiente.
+- **Cumulus:** funcionará como un asistente para responder preguntas sobre el hospital, consultar información del paciente y gestionar citas, aplicando reglas de autenticación, privacidad y seguridad.
 
-???+ info "Core Learning"
-    Throughout this lab, you will prove one thing:
-    > ### *WebexCC AI  is flexible and easy to use for multilanguage environment.*
+También integrarás los AI Agents con un **Knowledge Base**, **MCP Server**, **Webex Connect** y un **Voice Flow** mediante el uso de nodos `VirtualAgentV2`.
 
----
+Al finalizar, probarás la solución en `Preview` y realizarás una llamada real para validar la experiencia completa, incluyendo el envío de una confirmación por SMS.
 
-## Learning Objectives
+## Estructura del lab
 
-By the end of this session you will be able to:
+El lab está dividido en tres partes:
 
-- **Deploy** an autonomous multilingual Voice AI Agent that schedules appointments without human intervention
-- **Configure** a Digital AI Agent that engages patients in their language across chat channels
-- **Enable** a real-time AI Assistant that guides agents through complex interactions with policy-validated intelligence
-- **Measure** AI impact and agent performance using Analyzer dashboards and automated AI QM evaluation forms
-
----
-
-
-## Lab Structure
-
-| | Detail | |
+| Lab | Tema | Descripción |
 |---|---|---|
-| ⏱️ | **Total Duration** | 4 hours |
-| 🔀 | **Flexibility** | Labs 1, 2, and 3 are fully independent — complete them in any order |
-| 🎁 | **Bonus Lab** | Independent, but recommended after Lab 3 |
+| **Lab 1** | Concierge AI Agent | Crear y configurar un AI Agent autónomo que detecte el idioma del paciente y transfiera la interacción a la ruta correspondiente en español o inglés. |
+| **Lab 2** | Cumulus AI Agent | Crear un AI Agent autónomo para responder preguntas sobre Cumulus Hospital, validar la identidad del paciente y gestionar citas utilizando un Knowledge Base, MCP Server y Webex Connect. |
+| **Lab 3** | Integración con Voice Flow | Integrar los AI Agents con un Voice Flow mediante el uso de los nodos `VirtualAgentV2`, realizar una llamada real y validar la experiencia bilingüe y el envío de confirmaciones por SMS. |
+
+## Objetivos de aprendizaje
+
+Al finalizar este lab podrás:
+
+1. Crear, configurar y publicar un AI Agent autónomo en `AI Agent Studio`.
+2. Configurar una experiencia bilingüe para español e inglés.
+3. Integrar un AI Agent con `MCP Server`, `Webex Connect` y un Voice Flow.
+4. Utilizar un Knowledge Base y acciones del MCP Server como `get_patient` y `update_patient`.
+5. Validar la identidad del paciente y gestionar citas respetando las reglas de privacidad.
+6. Probar una llamada completa y confirmar el resultado mediante SMS.
 
 ---
 
-## Lab Topics
+!!! note "Idioma de las instrucciones"
 
-=== "Lab 1"
+    El lab está escrito principalmente en español. Sin embargo, por temas de simplicidad para el soporte por parte de los proctors, se mantienen en inglés los nombres de productos, menús, campos y configuraciones, para coincidir con la interfaz administrativa.
 
-    ### Voice AI Agent — Autonomous & Multilingual
+    Por ejemplo: `Control Hub`, `AI Agent`, `AI Agent Studio`, `guidelines`, `entity name`, `message`, `personaANI` y `VirtualAgentV2`.
 
-    Build a **voice-first virtual agent** from the ground up to handle appointment scheduling and hospital information.
+    Si decide cambiar la interfaz administrativa a español, tenga en cuenta que los nombres de los campos y menús pueden ser diferentes.
 
-    You will configure the AI Agent to handle both **English** and **Spanish**, ensuring a natural, human-like experience for all callers without human intervention.
 
-    ---
-    **What you will build:**
+!!! tip "Adaptación a otras industrias"
 
-    - Autonomous AI Agent profile with bilingual instructions
-    - Knowledge Base injection for hospital policy and scheduling
-    - Webex Connect flow with dynamic language routing
-    - Voice Flow integration via VirtualAgentV2 node
-
-=== "Lab 2"
-
-    ###  Digital AI — Multilingual Patient Journey
-
-    Design a **digital-first experience** using web interactions and AI-orchestrated flows.
-
-    You will implement language-specific routing and multilingual digital surveys to measure the *"Pulse"* of patient satisfaction in real time.
-
-    ---
-    **What you will build:**
-
-    - WebChat channel configuration with language detection
-    - AI Agent per language for session integrity
-    - Multilingual digital survey for patient satisfaction
-    - End-to-end English and Spanish chat journey validation
-
-=== "Lab 3"
-
-    ### AI Assistant — Real-Time Agent Empowerment
-
-    Augment human agents with a virtual assistant that provides **real-time assistance and intelligence**.
-
-    You will deploy a single, multilingual AI Assistant capable of serving both English and Spanish queues, dynamically leveraging the correct language context.
-
-    ---
-    **What you will build:**
-
-    - AI Assistant profile for bilingual service
-    - `send_form` action with slot filling for patient data
-    - SMS form delivery to the patient's mobile device
-    - Live interaction script validation in English (EN) and Spanish (ES)
-
-=== "Bonus Lab"
-
-    ### The Full Picture — AI Analytics & Quality Management
-
-    Transition into the role of a **Supervisor** to measure your success.
-
-    Utilize **AI-powered Quality Management (AI QM)** to analyze voice calls, perform
-    automated interaction scoring, and evaluate agent performance using bilingual
-    evaluation forms.
-
-    ---
-    **What you will do:**
-
-    - Run the Cisco Live AI Assistant Dashboard in Analyzer
-    - Review AI QM scores and customer sentiment across interactions
-    - Explore automated evaluation forms in English and Spanish
-    - Perform a manual evaluation and interpret the combined score
+    Aunque este lab presenta un caso de uso del sector salud, las instrucciones y configuraciones pueden replicarse y adaptarse fácilmente a cualquier otra industria o vertical, como servicios financieros, retail, telecomunicaciones o educación.
 
 ---
 
-> *Are you ready to build the future of patient care? Let's dive in, innovate, and
-> transform the digital healthcare experience* 🚀
+
+> *¿Estás listo para construir el futuro de la atención al paciente? ¡Comencemos 
+> a innovar y transformemos juntos la experiencia de salud digital* 🚀
 
 ---
 
-*Lab authored for Cisco Live 2026*
+*Lab realizado para Cisco Connect Latam 2026*
