@@ -584,10 +584,6 @@ Regresa a la pestaña de `AI Agent Studio`.
     | `Message` | `String` | `Summary of the action regarding scheduling, cancellation or rescheduling. Provide a summary including action, location and date using the values from the scheduling completed. Use the correct language according to {{Global_Language}}.` | `Scheduling a medical appointment; agendar una cita médica` | Activado |
     | `PersonaANI` | `String` | `Caller ANI. Use value {{PersonaANI}}. Do not use the phone number returned by get_patient.` | Número de prueba del lab | Activado |
 
-???- tip "Crear la acción send_text"
-    <figure markdown>
-        ![Crear la acción send_text](./assets/send_text.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
 
 ### 7.3 Configurar el Fulfillment
 
@@ -607,6 +603,11 @@ En la sección **Fulfillment**:
     ```
 
 4. Haz clic en **Add**.
+
+???- tip "Crear la acción send_text"
+    <figure markdown>
+        ![Crear la acción send_text](./assets/send_text.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+    </figure>
 
 ## 8. Probar el Cumulus AI Agent
 
