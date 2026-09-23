@@ -8,6 +8,8 @@
 |---|---|---|
 | 2 | Crear y configurar el `Cumulus AI Agent`, su Knowledge Base, las acciones de MCP Server y la integración con Webex Connect | 40 minutos |
 
+---
+
 ## Objetivo
 
 En este lab crearás un segundo AI Agent autónomo para Cumulus Hospital.
