@@ -23,6 +23,8 @@ El `Cumulus AI Agent` funcionará como un asistente para:
 - Utilizar acciones de `MCP Server`.
 - Enviar confirmaciones mediante un flow de `Webex Connect`.
 
+--- 
+
 ## 1. Crear el Cumulus AI Agent
 
 Permanece en la pestaña de `AI Agent Studio`.
