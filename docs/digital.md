@@ -1,890 +1,673 @@
-# Lab 2 - AI Digital-First Multilingual Patient Journey 
----
-## Section Agenda - 60 Minutes
+# Lab 2 - Cumulus AI Agent: Gestión de pacientes y citas
 
-| # | Task | Duration |
+---
+
+## Section Agenda
+
+| # | Actividad | Duración |
 |---|---|---|
-| 1 | Collaboration Control Hub Foundation | 15 min |
-| 2 | AI Agent Studio – The Digital Duo | 15 min |
-| 3 | Webex Connect – Flow Orchestration | 15 min |
-| 4 | Web Asset & W3Schools Simulation | 10 min |
-| 5 | Final Testing | 5 min |
+| 2 | Crear y configurar el `Cumulus AI Agent`, su Knowledge Base, las acciones de MCP Server y la integración con Webex Connect | 40 minutos |
 
----
+## Objetivo
 
-## Introduction
+En este lab crearás un segundo AI Agent autónomo para Cumulus Hospital.
 
-Welcome back, everyone. Imagine the scene: You've just landed in Las Vegas for Cisco Live.
-The desert air is dry, your schedule is packed, and suddenly, you're feeling under the weather.
-You need to visit the clinic, but you don't have time to wait on hold.
-You need an insurance form, and you need it now.
-This isn't just a lab; this is the future of patient care. Let's build it.
+El `Cumulus AI Agent` funcionará como un asistente para:
 
-???+ info "Key Learning"
-    Unlike voice, digital flows require **distinct agents per language** to maintain
-    session integrity across the web widget.
-    
+- Responder preguntas generales sobre Cumulus Hospital.
+- Consultar información de pacientes.
+- Validar la identidad del paciente.
+- Consultar y gestionar citas médicas.
+- Utilizar acciones de `MCP Server`.
+- Enviar confirmaciones mediante un flow de `Webex Connect`.
 
-???+ warning "The PodID Discipline"
-    Always replace **XXX** with your assigned **3-digit ID (e.g., 001, 002)**. Your naming convention must start with the prefix **Pod** followed by your PodID **(PodXXX)**. If you do not follow this convention exactly, you will overwrite your neighbor's work. Stay disciplined with your naming convention!
+## 1. Crear el Cumulus AI Agent
 
----
+Permanece en la pestaña de `AI Agent Studio`.
 
-## Phase 1: Collaboration Control Hub Foundation
+1. Haz clic en **+ Create agent**.
+2. Selecciona **Start from scratch**.
+3. Haz clic en **Next**.
+4. Selecciona **Autonomous**.
+5. Configura los siguientes campos:
 
-### 1.1 Channel Configuration
-1. Login to Collaboration Control hub with your Admin Credentials:
-2. Navigate to **Collaboration Control Hub > Contact Center > Customer Experience > Channels**
-3. Click **Create Channel** and configure as follows:
-
-    | Field | Value |
+    | Campo | Valor |
     |---|---|
-    | **Name** |  PodXXX_Cumulus_WebChat |
-    | **Description** | Cumulus Hospital PodXXX |
-    | **Channel Type** | Chat |
-    | **Asset Name** | PodXXX_Cumulus_WebChat |
-    | **Service Level Threshold** | 60 seconds |
-    | **Timezone** | America/Los_Angeles |
+    | **Agent name** | `PodXXX_ConnectLatam_Cumulus` |
+    | **System ID** | Deja el valor generado automáticamente |
+    | **AI engine** | `Webex AI Pro-US 2.0` |
 
-4. Click **Create**
+    Reemplaza `XXX` por el número de tres dígitos de tu `Pod ID`.
 
----
+    !!! note "AI engine"
+        `Webex AI Pro-US 2.0` se encuentra en etapa Beta para idiomas diferentes al inglés. Sin embargo, proporciona voces y capacidades de lenguaje más modernas para este caso de uso.
 
-### 1.2 Multilingual Survey Creation
+6. Haz clic en **Create**.
 
-!!! note "Before You Begin"
-    **Prerequisite:** Ensure you have downloaded the Cumulus Hospital logo to your local machine. Right-click the image and select "Save image as..." to save it as Cumulus_Hospital.png inside your Desktop folder
+## 2. Configurar el perfil del agente
+
+Permanece en la pestaña **Profile**.
+
+### 2.1 Configurar AI transparency
+
+1. Desactiva **AI transparency**.
+2. En el campo de justificación, escribe:
+
+    ```text
+    Lab
+    ```
+
+3. Haz clic en **Keep it disabled**.
+
+### 2.2 Configurar el Welcome Message
+
+En el campo **Welcome Message**, escribe exactamente:
+
+    ```text
+    {{WelcomeMsg}}
+    ```
+
+!!! note "Welcome Message dinámico"
+    `{{WelcomeMsg}}` es una variable que recibe el mensaje inicial enviado desde el `Voice Flow`.
+
+    Esto permite que el AI Agent reciba el mensaje inicial en el idioma seleccionado por el paciente, sin tener que solicitar nuevamente esta información.
+
+## 3. Configurar las Instructions
+
+1. Abre la pestaña **Instructions**.
+2. Copia y pega el siguiente contenido.
+3. Selecciona **Paste and match style**.
+4. Haz clic en **Save changes**.
+
+    !!! note "Idioma de Goal e Instructions"
+        Para facilitar el soporte de los proctors en este caso de uso multilingüe, el contenido de los campos `Goal` e `Instructions` se mantiene en inglés.
+
+        Sin embargo, en un entorno de producción estos campos pueden configurarse completamente en español sin ningún problema.
+
+    ```text
+    Goal:
+
+    You are a friendly and professional AI healthcare assistant for Cumulus Hospital. You are focused on answering general clinic questions based on the Knowledge Base, providing patient information about appointments, and helping patients manage their scheduled appointments.
+
+    INSTRUCTIONS:
+
+    ## Step 1: MANDATORY INITIAL STEP - FETCH THE PATIENT RECORD
+
+    Do not offer any information or perform any action before completing this step.
+
+    - After the Welcome Message, ask the patient for their 3-digit patient ID.
+    - Confirm that the patient provided exactly 3 digits, for example: 010.
+    - If the patient provides a different value, ask them to try again using 3 digits.
+    - Add the prefix "Pod" to the provided value and use the resulting value as `patientId`.
+    - For example, if the patient provides 010, use `Pod010` as the value of `patientId`.
+
+    Execute the `get_patient` action using `patientId`.
+
+    - If the patient is not found, inform the patient and ask them to provide the ID again.
+    - Do not continue until `get_patient` returns a patient record.
+    - From the response, use `firstName` and `lastName` to compose the patient's name.
+    - Set the variable `{{PersonaName}}` using the patient's first and last name.
+    - If you cannot compose `{{PersonaName}}`, do not use the patient's name when speaking to the patient.
+    - Thank the patient for the information and use `{{PersonaName}}` when possible.
+
+    ## Step 2: AUTHENTICATE THE PATIENT
+
+    Authenticate the patient using their date of birth.
+
+    1. Ask for the patient's date of birth.
+    2. Compare the response with the date of birth returned by `get_patient`.
+    3. If the date of birth is incorrect, ask the patient to try again.
+    4. Set `authenticated = true` when the value matches.
+    5. Set `authenticated = false` when the value does not match or the patient declines.
+    6. Do not provide patient details, appointment information, or perform updates while `authenticated = false`.
+    7. Allow a maximum of three attempts.
+    8. If authentication fails after three attempts, invoke `Agent_Escalation`.
+
+    ## Step 3: PROVIDE INFORMATION AFTER AUTHENTICATION
+
+    Only after `authenticated = true`:
+
+    - Answer the patient's original request.
+    - Use the Knowledge Base to answer general questions about the hospital.
+    - Use the patient information returned by `get_patient` to answer appointment-related questions.
+
+    When the patient requests an appointment:
+
+    - Check the values of `appointmentStatus` and `nextAppointmentDate`.
+    - If the appointment status is `Booked` or `Confirmed`, provide the existing date and time.
+    - Ask whether the patient wants to keep, reschedule, or cancel the appointment.
+    - Never silently create a second appointment.
+    - If the appointment is `Cancelled` or there is no next appointment, continue with the booking process.
+    - Ask for the specialty, location, date, and time.
+    - Use the Knowledge Base to verify the specialty, location, and operating hours.
+    - Confirm that the requested information is valid before updating the appointment.
+
+    ## Step 4: TIMEZONE HANDLING
+
+    MCP tools always return and expect date-time values in ISO 8601 UTC format, for example:
+
+    2026-07-09T14:30:00.000Z
+
+    The patient record includes a `timezone` field, such as `America/New_York`. This field is the source of truth.
+
+    - Do not ask the patient for their timezone unless the value is missing or null.
+    - Convert UTC date and time values into the patient's timezone.
+    - Speak naturally to the patient. Never read the raw ISO value.
+    - Interpret the date and time provided by the patient using the patient's timezone.
+    - Convert the value to ISO 8601 UTC before calling an MCP action.
+    - Confirm the appointment using the patient's local date and time.
+
+    ## Step 5: UPDATE RESTRICTIONS
+
+    The `update_patient` action may update only:
+
+    - `nextAppointmentDate`
+    - `appointmentStatus`
+
+    Do not update any other patient information.
+
+    For cancellations:
+
+    - Set `appointmentStatus` to `Cancelled`.
+    - Set `nextAppointmentDate` to `null`.
+    - Perform both updates together.
+    - Never leave the previous appointment date active.
+
+    For new appointments or rescheduling:
+
+    - Set `nextAppointmentDate` to the new ISO 8601 UTC value.
+    - Set `appointmentStatus` to `Booked`.
+    - Perform both updates together.
+
+    ## Step 6: SEND THE APPOINTMENT CONFIRMATION
+
+    After a booking, cancellation, or rescheduling is successfully completed through `update_patient`:
+
+    - Execute the `send_text` action.
+    - Send the message using `{{PersonaANI}}`.
+    - Do not use `phoneNumber`.
+    - Send only one message for each successful update.
+    - Do not send a message when the update fails.
+    - Include the action, date, and time in the patient's timezone.
+    - Never include the raw ISO value in the message.
+    - If `send_text` fails, inform the patient that the appointment was saved but the confirmation message could not be sent.
+
+    ## GENERAL BEHAVIOR
+
+    - `Agent_Escalation` is an action. Invoke it when required; do not only describe it.
+    - If `get_patient` returns an error, inform the patient politely and invoke `Agent_Escalation`.
+    - Do not attempt authentication if the patient record cannot be retrieved.
+    - Never guess or create patient information.
+    - Always verify date of birth, ZIP code, and patient information using the MCP response.
+    - If the patient asks for a human representative, invoke `Agent_Escalation`.
+    - Use `{{PersonaName}}` to provide personalized assistance whenever possible.
+
+    ## Example Flow
+
+    1. The patient requests an appointment.
+    2. The agent executes `get_patient`.
+    3. The agent asks for the patient's date of birth.
+    4. The agent authenticates the patient.
+    5. The agent verifies the current appointment information.
+    6. The agent executes `update_patient` when required.
+    7. The agent confirms the result and executes `send_text`.
+    ```
+
+## 4. Crear el Knowledge Base
+
+Descarga el archivo utilizado para configurar el Knowledge Base:
+    <a href="../assets/ConnectLatam_AIAgentCumulusKB.pdf"
+       target="_blank"
+       rel="noopener noreferrer">
+       Descargar ConnectLatam_AIAgentCumulusKB.pdf
+    </a>
+
+Este documento contiene información general sobre Cumulus Hospital, incluyendo:
+- Ubicaciones.
+- Especialidades.
+- Horarios de atención.
+- Información general de los servicios.
+
+1. Regresa a la configuración del `Cumulus AI Agent`.
+2. Abre la pestaña **Knowledge**.
+3. Haz clic en **Select a Knowledge Base**.
+4. Selecciona **+ Create knowledge base**.
+5. Configura el nombre:
+
+    ```text
+    PodXXX_CumulusKB
+    ```
+
+6. Haz clic en **Create**.
+7. Espera a que el Knowledge Base sea creado.
+8. Haz clic en **Upload Files**.
+9. Selecciona **Add file**.
+10. Selecciona el archivo `ConnectLatam_AIAgentCumulusKB.pdf`.
+11. Haz clic en **Open**.
+12. Haz clic en **Process Files**.
+13. Espera a que el archivo termine de procesarse.
+14. Cierra la ventana de carga.
+15. Cierra la ventana del Knowledge Base para regresar a la configuración del AI Agent.
+
+    ???- tip "Cómo configurar el Knowledge Base del Cumulus AI Agent"
+        <figure markdown>
+            ![Configurar el Knowledge Base del Cumulus AI Agent](./assets/KB_Cumulus_AI_Agent.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+        </figure>
+
+## 5. Configurar las acciones de MCP Server
+
+1. Haz clic en **Save changes**.
+2. Abre la pestaña **Actions**.
+3. Desactiva **Agent handover**.
+4. Haz clic en **+ Add actions**.
+5. Selecciona **Select available**.
+6. Selecciona **Browser actions**.
+7. En el buscador, escribe:
+
+    ```text
+    cumulus
+    ```
+
+8. Selecciona únicamente:
+
+    ```text
+    get_patient
+    update_patient
+    ```
+
+    !!! warning "Acciones requeridas"
+        Selecciona únicamente `get_patient` y `update_patient`. Estas son las acciones de MCP Server utilizadas en este lab.
+
+???- tip "Cómo configurar las acciones de MCP Server"
     <figure markdown>
-    ![Cumulus Hospital](./assets/Cumulus_Hospital.png){ width="300" }
+        ![Configurar las acciones de MCP Server](./assets/CreatingActions_MCP.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
----   
+## 6. Crear el Webex Connect flow
 
-1. Navigate to **Collaboration Control Hub > Contact Center > Customer Experience > Survey Configuration**
-2. Click **Create New Survey** and select **Digital Survey** and configure as follows:
+En esta actividad crearás el flow `AIAgent_send_text`. Este flow enviará al paciente la confirmación de la acción realizada por el AI Agent.
 
-    **Summary**
+### 6.1 Abrir Webex Connect
 
-    | Field | Value |
+1. Regresa a `Control Hub`.
+2. Navega a **Services > Contact Center**.
+3. En la sección **Quick Links**, ubica **Webex Connect**.
+4. Haz clic en **Webex Connect**.
+5. En Webex Connect, abre el menú **Services**.
+6. Busca el servicio asignado a tu Pod utilizando:
+
+    ```text
+    PodXXX
+    ```
+
+7. Selecciona el servicio correspondiente.
+
+    ???- tip "Cómo abrir Webex Connect"
+        <figure markdown>
+            ![Abrir Webex Connect](./assets/Launch_WxConnect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+        </figure>
+
+### 6.2 Crear el flow
+
+1. Dentro de tu servicio, abre **Flows**.
+2. Haz clic en **Create Flow**.
+3. Configura:
+
+    | Campo | Valor |
     |---|---|
-    | **Name** | PodXXX_Cumulus_Survey - change XXX for your POD number |
-    | **Languages** | English (Default) & Spanish – Latin America (español) |
+    | **Flow Name** | `AIAgent_send_text` |
+    | **Method** | `New Flow` |
+    | **Template** | `Start from Scratch` |
 
-3. click **next**
+4. Haz clic en **Create**.
 
-4. **English Configuration**
+???- tip "Crear el Webex Connect flow"
+    <figure markdown>
+        ![Crear el Webex Connect flow](./assets/Connect_flow.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+    </figure>
 
-    | Field | Value |
+### 6.3 Configurar el AI Agent Event
+
+1. En la ventana **Integrations**, selecciona **AI Agent**.
+2. En **Configure AI Agent Event**, copia el siguiente JSON.
+3. Haz clic en **Parse**.
+4. Haz clic en **Save**.
+
+    ```json
+    {
+    "PersonaName": "Eliane Gasparotto",
+    "Language": "es-US",
+    "PersonaANI": "5511992518520",
+    "Message": "Cita confirmada"
+    }
+    ```
+
+!!! note "Valores de prueba"
+    Utiliza los valores de prueba proporcionados para el ambiente del lab. No utilices información real de pacientes.
+
+???- tip "Configurar el AI Agent Event"
+    <figure markdown>
+        ![Configurar el AI Agent Event](./assets/AIAgent_Connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+    </figure>
+
+### 6.4 Configurar el HTTP Request
+
+1. Agrega un nodo **HTTP Request** al canvas.
+2. Colócalo junto al nodo **AI Agent**.
+3. Conecta el nodo **AI Agent Event** con el nodo **HTTP Request**.
+4. Abre la configuración del nodo **HTTP Request**.
+5. Configura los siguientes valores:
+
+    | Campo | Valor |
     |---|---|
-    | **Welcome Title** | Welcome |
-    | **Welcome Message** | *(Leave blank)* |
-    | **Select +Add a question** | **Qestion Type:** Star |
-    | **Question** | On a scale of 1 to 5, how satisfied were you with the assistance provided today? |
-    | **Start Label** | Very Dissatisfied *(Negative statement)* |
-    | **End Label** | Very Satisfied *(Positive statement)* |
-    | **Thank You Title** | Thank you for your time |
-    | **Thank You Message** | Thank you for your feedback! We appreciate your time and are committed to your health and well-being. Have a great day! |
+    | **Method** | `POST` |
+    | **Endpoint URL** | `https://hooks.us.webexconnect.io/events/3V12KFWSBD` |
+    | **Header** | `Content-Type` |
+    | **Value** | `application/json` |
+    | **Connection Timeout** | `5000` |
+    | **Request Timeout** | `5000` |
 
-5. **Spanish Configuration**: Switch to the **Spanish – Latin America** tab and configure as follows:
+    En el campo **Body**, agrega:
 
-    | Field | Value |
+    ```json
+    {
+    "PersonaName": "$(n2.aiAgent.PersonaName)",
+    "Language": "$(n2.aiAgent.Language)",
+    "PersonaANI": "$(n2.aiAgent.PersonaANI)",
+    "Message": "$(n2.aiAgent.Message)"
+    }
+    ```
+
+6. Haz clic en **Save**.
+
+???- tip "Configurar el HTTP Request"
+    <figure markdown>
+        ![Configurar el HTTP Request](./assets/http_node_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+    </figure>
+
+### 6.5 Configurar el Branch
+
+1. Agrega un nodo **Branch** al canvas.
+2. Conecta el nodo **HTTP Request** con el nodo **Branch**.
+3. Conecta todas las salidas del nodo **HTTP Request**.
+4. Configura las ramas:
+
+    | Rama | Idioma |
     |---|---|
-    | **Welcome Title** | ¡Bienvenido! |
-    | **Welcome Message** | *(Leave blank)* |
-    | **Select +Add a question** | **Qestion Type:** Star |
-    | **Question** | En una escala del 1 al 5, ¿qué tan satisfecho estuvo con la asistencia recibida hoy? |
-    | **Start Label** | Muy insatisfecho *(Negative statement)* |
-    | **End Label** | Muy satisfecho *(Positive statement)* |
-    | **Thank You Title** | Gracias! |
-    | **Thank You Message** | ¡Gracias por sus comentarios! Valoramos mucho su tiempo y estamos comprometidos con su salud y bienestar. ¡Que tenga un excelente día! |
+    | `ES` | Español |
+    | `EN` | Inglés |
+    | `None of above` | Ruta predeterminada |
 
-6. Click the **English** tab.
+???- tip "Configurar el Branch"
+    <figure markdown>
+        ![Configurar el Branch](./assets/branch_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+    </figure>
 
-7. Click **Next** (bottom right) and configure as follows:
+### 6.6 Agregar el nodo WhatsApp al flow
+
+Ahora agregaremos el nodo `WhatsApp` al flow. Este nodo enviará al paciente un mensaje con el resumen del servicio solicitado.
+
+1. En el panel de nodos del canvas, selecciona la categoría **Channels**.
+2. Busca y selecciona el nodo **WhatsApp**.
+3. Arrastra el nodo al flow.
+4. Conecta la salida `ES` del nodo **Branch** con el nodo **WhatsApp**.
+
+???- tip "Agregar el nodo WhatsApp al flow"
+    <figure markdown>
+        ![Agregar el nodo WhatsApp al flow](./assets/whatsapp_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+    </figure>
 
 
-8. **Appearance Configuration**
+### 6.7 Configurar WhatsApp en español
 
-    | Field | Value |
+1. En el panel de nodos, abre la categoría **Channels**.
+2. Selecciona el nodo **WhatsApp**.
+3. Colócalo en el canvas.
+4. Conecta la rama `ES` con el nodo **WhatsApp**.
+5. Abre la configuración del nodo.
+6. Cambia el nombre a:
+
+    ```text
+    WhatsApp_ES
+    ```
+
+7. Configura:
+
+    | Campo | Valor |
     |---|---|
-    | **Color > Brand Color** | #0a7ec7 |
-    | **Text Color (Welcome Title)** | #FFFFFF |
-    | **Brand Logo** | Upload Cumulus_Hospital.png from your desktop folder |
-    | **Background Image** | Upload Cumulus_Hospital.png from your desktop folder |
+    | **Destination Type** | `WABA ID` |
+    | **Destination** | `$(n2.aiAgent.PersonaANI)` |
+    | **Message Type** | `TEMPLATE` |
+    | **Template Name** | `ciscoconnect_servicerequest_es` |
+    | **Parameter Type - Variable 1** | `Text` |
+    | **Value - Variable 1** | `$(n2.aiAgent.PersonaName)` |
+    | **Parameter Type - Variable 2** | `Text` |
+    | **Value - Variable 2** | `$(n2.aiAgent.Message)` |
 
-9. Click **Save**
+8. Haz clic en **Save**.
 
-??? tip "See how to configure"
+???- tip "Configurar WhatsApp en español"
     <figure markdown>
-      ![survey](./assets/survey.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-      <figcaption>Digital Survey Configuration</figcaption>
+        ![Configurar WhatsApp en español](./assets/whatsapp_es_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
----
+### 6.8 Configurar WhatsApp en inglés
 
-## Phase 2: AI Agent Studio – The "Digital Duo"
+1. Selecciona el nodo `WhatsApp_ES`.
+2. Cópialo y pégalo para crear una copia.
+3. Conecta la rama `EN` con el nuevo nodo.
+4. Abre la configuración del nodo.
+5. Cambia el nombre a:
 
-Navigate to **Collaboration Control Hub > Contact Center > Customer Experience > AI Agent** and
-click on the black button **Build your AI Agent**.
+    ```text
+    WhatsApp_EN
+    ```
 
+6. Cambia únicamente el siguiente valor:
 
----
-
-### 2.1 English Agent
-
-**Step 1 – Extract Website into Knowledge Base** 
-
-!!! info "What is Website Extraction?"
-    The Knowledge Base already contains a **pre-loaded file** with general information about Cumulus Hospital and its patient intake forms. <br> In this step, we will add **website source** to extract additional content, specifically the types of diagnostic services offered by the hospital. The crawler starts from a URL you specify and navigates through pages based on depth and page limits, transforming web content into knowledge your AI Agent can access instantly. <br> <br> For time-keeping purposes, we will only perform this step for the **English AI Agent**.
-
-1. Navigate to the **Knowledge** tab (third tab) in the AI Agent Studio.
-2. Locate the Knowledge Base **`PodXXX_UseCase2_AIAgentCumulus_EN`** and click it. *(Replace XXX with your PodID)* 
-3. In the top right corner, click the black **Add Source** button and select **Websites**.
-4. Read and agree to the **disclaimer**.
-5. Configure the source as follows:
-
-    | Field | Value |
+    | Campo | Valor |
     |---|---|
-    | **Source Name** | `Cumulus Hospital` |
-    | **Description** | `Cumulus Hospital Services` |
-    | **Starting URL** | `https://carolmor-collab.github.io/cumulus-hospital/` |
-    | **Deep Limit** | `1` |
-    | **Page Limit** | `10` |
-    | **Content Exclusions** | `Nav & Footer` |
+    | **Template Name** | `ciscoconnect_servicerequest_en` |
 
-    !!! tip "Want to preview the website?"
-        Open [https://carolmor-collab.github.io/cumulus-hospital/](https://carolmor-collab.github.io/cumulus-hospital/)
-        in a new browser tab to see the content that will be extracted.
+    Mantén los demás parámetros configurados previamente.
 
-6. Under **Sync Rule Schedule**, keep **Automatically apply changes to agents or skills** selected.
-7. Click **Add Source**.
-
-!!! note "Syncing in Progress"
-    The source will take a couple of minutes to sync. Once it shows **Updated**, click the ✏️ pencil icon to review the content that was extracted.
-
-    If it is still syncing, continue to the next step — it will complete in the background.
-
-??? tip "See How to configure"
+???- tip "Configurar WhatsApp en inglés"
     <figure markdown>
-      ![Extract Website](./assets/extract_website.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-      <figcaption>Extracting website content into the Knowledge Base</figcaption>
+        ![Configurar WhatsApp en inglés](./assets/whatsapp_en_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
-**Step 2 - Export the Template Agent**
 
-1. Navigate to the **AI Agent** tab (first tab) in the AI Agent Studio.
+### 6.9 Configurar el WhatsApp predeterminado
 
-2. In the search bar, type `UseCase2_English` to locate the AI Agent. <br>
-Under **UseCase2_English**, click the **three dots (...)** and select **Export agent**.
-This will download the `UseCase2_English.json` file to your local machine. Save it in your **Desktop** folder.
+1. Copia nuevamente un nodo **WhatsApp** configurado.
+2. Conéctalo a la salida `None of above` del nodo **Branch**.
+3. Cambia el nombre a:
 
-??? tip "See how to Export"
+    ```text
+    WhatsApp_Default
+    ```
+
+4. Mantén las configuraciones del nodo copiado.
+
+    !!! note "Ruta predeterminada"
+        Si copias el nodo `WhatsApp_ES`, la ruta predeterminada enviará el mensaje utilizando la plantilla en español.
+
+???- tip "Configurar el WhatsApp predeterminado"
     <figure markdown>
-      ![Export Agent](./assets/exportagent.png){ width="900" }
-    </figure>
----
-
-**Step 3 - Import the Template to Create Your AI Agent**
-
-There in the Studio > Click **Import AI Agent**. Under the **Upload** button,
-select the `UseCase2_English.json` file.
-
----
-
-**Step 4 - Naming**
-
-| Field | Value |
-|---|---|
-| **Name** | PodXXX_UseCase2_English *(Replace XXX with your PodID)*|
-| **System ID** | Keep the default |
-
----
-
-Click **Import**
-
-??? tip "See how to Import"
-    <figure markdown>
-      ![Import Agent](./assets/importagent.gif){ loading=lazy style="width: 150%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+        ![Configurar el WhatsApp predeterminado](./assets/default_whatsapp_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
----
+### 6.10 Configurar Flow Outcomes
 
-**Step 5 – Knowledge Configuration**
+1. Abre **Configuration**.
+2. Selecciona **Flow Outcomes**.
+3. Verifica que **Notify** esté habilitado.
+4. Abre **Last Execution Status**.
+5. Configura:
 
-In the **PodXXX_UseCase2_English** AI Agent page, go to the **Knowledge** tab, Click the search box, type the value below, and select it from the dropdown:
-
-| Field | Value |
-|---|---|
-| **Knowledge Base** | PodXXX_UseCase2_AIAgentCumulus_EN |
-
-!!! warning "Remeber to replace XXX with your PodID"
-    Each student has their own Knowledge Base. Selecting the wrong one will break another student's lab.
-
-Click **Save** and then **Publish**. For the comment, use: `V1`
-
----
-
-**Step 6 – Test**
-
-Use the **Preview** feature in the AI Agent Studio to simulate a live chat. <br>
-Inside PodXXX_UseCase2_English AI Agent page Select **Preview** and **Start a chat** and verify:
-
- 
-- **Identity Capture**: The agent asks for your **name**.
-- **Conversational NLU - General request**: Test the agent's ability to handle general question by saying: *Hi, I’m currently in Las Vegas on a business trip and I’m feeling under the weather. I don’t feel well and I think I need to get medical assistance*
-- **Conversational NLU - Specific request**: Test the agent's ability to handle specific context by saying: *What kind of diagnostics services do you have?*
-- **Intent Recognition**: The agent recognizes the **Insurance Forms** intent when you say: *I need some forms*
-- **Form Delivery**: The agent provides the correct URL for the requested form.
-- **Language Consistency**: The entire interaction remains in **English**.
-
-???- example "Test Script — English"
-
-    | Role | Message |
+    | Campo | Valor |
     |---|---|
-    | 🤖 **Prompt** | Hello, I am Pulse from Cumulus Hospital. May I have your name, please, so I can assist you better? |
-    | 👤 **User** | Caro |
-    | 🤖 **Prompt** | Hello, Caro. I am Pulse from Cumulus Hospital, how can I help you? |
-    | 👤 **User** | Hi, I'm currently in Las Vegas on a business trip and I'm feeling under the weather. I don't feel well and I think I need to get medical assistance. |
-    | 🤖 **Prompt** | Caro, I'm sorry to hear that you're not feeling well. Cumulus Hospital has a facility in Las Vegas located at 123 Neon Way, Las Vegas, NV 89101. They offer emergency services, MRI, X-Ray, and general surgery. If you need immediate medical attention, please visit this location for assistance. Is there anything else I can help you with today? |
-    | 👤 **User** | Yes, I need a form. |
-    | 🤖 **Prompt** | Caro, here are the standard forms available: Patient Registration Form · Insurance Claim Form · Authorization Form · Medical Records Release Form. Please let me know which form you need, and I will share the link with you. |
-    | 👤 **User** | Patient Registration Form |
-    | 🤖 **Prompt** | Thank you, Caro. The form has been shared. Please complete the document and return it to our registration office at your earliest convenience. Here is the Patient Registration Form: **Patient Registration Form 2026**. Is there anything else I can help you with today? |
-    
+    | **Notification Settings** | `Notify AI Agent` |
+    | **Define JSON** | `Enter JSON` |
 
-???- tip "See how it works"
+6. Agrega el siguiente JSON:
+
+    ```json
+    {
+    "transactionID": "$(transid)",
+    "flowname": "$(flowname)",
+    "serviceName": "$(serviceName)",
+    "httpStatus": "$(n4.http.statusCode)",
+    "httpResponse": "$(n4.http.responseBody)"
+    }
+    ```
+
+7. Haz clic en **Save**.
+
+???- tip "Configurar Flow Outcomes"
     <figure markdown>
-        ![Preview English](./assets/previewenglish.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+        ![Configurar Flow Outcomes](./assets/outcomes_flowconnect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
+### 6.11 Publicar el Webex Connect flow
 
----
+1. En la esquina superior derecha, haz clic en **Make Live**.
+2. Si aparece una advertencia indicando que el nodo HTTP no tiene terminación, ignórala.
+3. Haz clic nuevamente en **Make Live**.
+4. Espera a que el flow termine de publicarse.
 
-**Step 7 – Session Inspection**
+El flow estará listo para ser utilizado por el `Cumulus AI Agent`.
 
-In the **PodXXX_UseCase2_English** AI Agent page, open the **Sessions** tab located on the left-hand navigation menu. Review the most recent session log to confirm the conversation was triggered and processed correctly.
+## 7. Crear la acción send_text
 
-???- tip "See how it works"
-    <figure markdown>
-      ![inspection](./assets/inspection.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
+Regresa a la pestaña de `AI Agent Studio`.
 
-!!! tip "Session Inspection"
-    At any point, inside the preview chat, hover over the chat bubble and click **View In Session** to open the session inspection panel directly.
+1. Asegúrate de estar en la configuración del `Cumulus AI Agent`.
+2. Abre la pestaña **Actions**.
+3. Haz clic en **+ Add actions**.
+4. Selecciona **Fulfillment** en **Create new action**.
+5. Configura:
 
----
-
-### 2.2 Spanish Agent
-
-**Step 1 – Export the Template Agent**
-
-In the search bar, type `UseCase2_Spanish` to locate the AI Agent. <br>
-Under **UseCase2_Spanish** AI Agent, click the **three dots (...)** and select **Export agent**.
-This will download the `UseCase2_Spanish.json` file to your local machine.
-Save it in your desktop folder.
-<br>
-
----
-
-**Step 2 – Import the Template to Create Your AI Agent**
-
-There in the Studio > Click **Import AI Agent**. Under the **Upload** button,
-select the `UseCase2_Spanish.json` file.
-
----
-
-**Step 3 – Naming**
-
-| Field | Value |
-|---|---|
-| **Name** | PodXXX_UseCase2_Spanish *(Replace XXX with your PodID)* |
-| **System ID** | Keep the default |
-
-Click **Import**
-
----
-
-**Step 4 – Knowledge Configuration**
-
-In the **PodXXX_UseCase2_Spanish** AI Agent page, go to the **Knowledge** tab, click the search box, type the value below, and select it from the dropdown:
-
-| Field | Value |
-|---|---|
-| **Knowledge Base** | PodXXX_UseCase2_AIAgentCumulus_ES |
-
-!!! warning "Remeber to replace XXX with your PodID"
-    Each student has their own Knowledge Base. Selecting the wrong one will break another student's lab.
-
-Click **Save** and then **Publish**. For the comment, use: `V1`
-
----
-
-**Step 5 – Test**
-
-Use the **Preview** feature in the AI Agent Studio to simulate a live chat. Inside PodXXX_UseCase2_Spanish AI Agent page Select **Preview** and **Start a chat** and verify:
-
- 
-- **Identity Capture**: The agent asks for your **name**.
-- **Conversational NLU**: Test the agent's ability to handle context by saying: *Hola, estoy actualmente en Las Vegas en un viaje de trabajo y me siento un poco mal. No me siento bien y creo que necesito recibir asistencia médica*
-- **Intent Recognition**: The agent recognizes the **Insurance Forms** intent when you say: *Necesito unos formularios*
-- **Form Delivery**: The agent provides the correct URL for the requested form.
-- **Language Consistency**: The entire interaction remains in **Spanish**.
-
-???- example "Test Script — Spanish"
-
-    | Role | Message |
+    | Campo | Valor |
     |---|---|
-    | 🤖 **Prompt** | Hola, soy Pulso del Hospital Cumulus. ¿Podría decirme su nombre, por favor, para poder asistirle mejor? |
-    | 👤 **User** | Caro |
-    | 🤖 **Prompt** | Hola, Caro. Soy Pulso del Hospital Cumulus, ¿en qué puedo ayudarle hoy? |
-    | 👤 **User** | Hola, estoy actualmente en Las Vegas en un viaje de trabajo y me siento un poco mal. No me siento bien y creo que necesito recibir asistencia médica. |
-    | 🤖 **Prompt** | Caro, lamento que no se sienta bien. El Hospital Cumulus cuenta con una sede en Las Vegas ubicada en 123 Neon Way, Las Vegas, NV 89101, donde puede recibir atención médica de emergencia, servicios de rayos X, cirugía general y más. El hospital está abierto de lunes a viernes, de 8:00 a. m. a 6:00 p. m. ¿Le gustaría información sobre cómo llegar, los servicios disponibles o necesita algún formulario específico para su atención? Estoy aquí para ayudarle. |
-    | 👤 **User** | Necesito un formulario. |
-    | 🤖 **Prompt** | Caro, estos son los formularios estándar que puedo proporcionarle: Formulario de Registro de Paciente · Formulario de Reclamo de Seguro · Formulario de Autorización · Formulario de Liberación de Registros Médicos. ¿Podría indicarme cuál de estos formularios necesita? Así podré compartirle el enlace correspondiente. |
-    | 👤 **User** | Formulario de Reclamo de Seguro |
-    | 🤖 **Prompt** | Gracias, Caro. Aquí tiene el enlace para descargar el **Formulario de Reclamo de Seguro 2026**. Por favor, complete el documento y devuélvalo a nuestra oficina de registro a la brevedad posible. ¿Hay algo más en lo que pueda ayudarle hoy? |
+    | **Action name** | `send_text` |
+    | **Action description** | `Send text to patient when finishes the scheduling.` |
 
+!!! warning "Nombres exactos"
+    Utiliza exactamente el nombre `send_text` y los nombres de las entidades. El AI Agent utilizará estos valores para identificar la acción correcta.
 
-???- tip "See how it works"
+### 7.1 Crear la entidad PersonaName
+
+1. Haz clic en **+ New input entity**.
+2. Configura:
+
+    | Campo | Valor |
+    |---|---|
+    | **Entity name** | `PersonaName` |
+    | **Entity Type** | `String` |
+    | **Entity description** | `Set with {{PersonaName}} you had composed during instructions.` |
+    | **Required** | Desactivado |
+
+3. Haz clic en **Add**.
+
+### 7.2 Crear las entidades adicionales
+
+1. Agrega las siguientes entidades:
+
+    | Entity name | Entity type | Entity description | Entity examples | Required |
+    |---|---|---|---|---|
+    | `Language` | `String` | `Use value from {{Global_Language}}. Use es-US if you do not have this information as default.` | `es-US; pt-BR` | Activado |
+    | `Message` | `String` | `Summary of the action regarding scheduling, cancellation or rescheduling. Provide a summary including action, location and date using the values from the scheduling completed. Use the correct language according to {{Global_Language}}.` | `Scheduling a medical appointment; agendar una cita médica` | Activado |
+    | `PersonaANI` | `String` | `Caller ANI. Use value {{PersonaANI}}. Do not use the phone number returned by get_patient.` | Número de prueba del lab | Activado |
+
+???- tip "Crear la acción send_text"
     <figure markdown>
-      ![Preview spanish](./assets/previewspanish.gif)
+        ![Crear la acción send_text](./assets/send_text.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
+### 7.3 Configurar el Fulfillment
 
-!!! tip "Session Inspection"
-    At any point, inside the preview chat, hover over the chat bubble and click **View In Session** to open the session inspection panel directly.
----
+En la sección **Fulfillment**:
 
-## Phase 3: Webex Connect – Flow Orchestration
+1. Selecciona **Use Webex Connect Flow Builder**.
+2. En **Select service**, selecciona el servicio asignado a tu Pod:
 
-In this phase, you will "activate" the brain of Cumulus Hospital. You will map the routing logic to the language-specific agents and ensure the patient experience is seamless.
+    ```text
+    PODXXX
+    ```
 
-???+ tip "Pro-Tip"
-    Think of this flow as the "brain" of Cumulus Hospital. The Digital flow acts as the receptionist, and the routing and decision nodes act as the hallways that direct the patient to the specific specialist who speaks their language.
-    <figure markdown>
-    ![logic](./assets/logic.png){ width="800" }
-    </figure>
+3. En **Select flow**, selecciona:
 
----
+    ```text
+    AIAgent_send_text
+    ```
 
-### 3.1 Navigate to Webex Connect
+4. Haz clic en **Add**.
 
-Go to **Collaboration Control Hub > Contact Center > Quick Links > Digital Channels > Webex Connect**
-and navigate to your own service: **PodXXX_LTRCCT2001_CUMULUS**.
+## 8. Probar el Cumulus AI Agent
 
-!!! warning "Remeber to replace XXX with your PodID"
-    Each student has their own Webex Connect Service. Selecting the wrong one will break another student's lab.
+1. Haz clic en **Preview**.
+2. Inicia una llamada de prueba.
+3. Utiliza el siguiente escenario:
 
----
+    ```text
+    BOT: Centro de Atención al Paciente del Hospital Cumulus. Déjame saber cómo te ayudo hoy.
 
-### 3.2 Open the Flow
+    PACIENTE: Me gustaría saber si en Cancún hay cardiología.
 
-Click on **UseCase2_webChat** flow to open it
-You will see the complete architecture for our bilingual digital journey.
-Your task is to "activate" the orchestration by mapping the variables and agents.
-    <figure markdown>
-        ![Cumulus Digital Architecture](./assets/digital-architecture.png){ width="1000" }
-    </figure>
+    BOT: Claro, entiendo tu interés. Sí, en Cancún hay cardiología porque esa sede ofrece todos los servicios y especialidades. Si quieres, después de identificarte puedo revisar tu cita.
 
-***Reference Key:*** Each configuration number shown in the diagram above corresponds directly to the step-by-step instructions provided in the sections below (3.2.1 through 3.2.3). Use this as your reference key to ensure every node is correctly mapped within your Webex Connect flow.
+    PACIENTE: Sí, por favor.
 
-???- tip "After opening the flow you can zoom out to see the same diagram"
-    <div style="display: flex; gap: 20px;">
-    <figure markdown>
-      ![zoomout](./assets/zoomout.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
+    BOT: Perfecto. Necesito tu identificación de paciente de tres cifras para continuar.
 
----
+    PACIENTE: Es 0XX. Usa los tres dígitos de tu Pod ID.
 
-### 3.2.1 Language Decision
+    BOT: Estoy consultando tu expediente de paciente. Un momento, por favor.
 
-???- info "See Flow"
-    <figure markdown>
-        ![Cumulus Digital Architecture](./assets/digital-architecture.png){ width="1000" }
-    </figure> 
+    BOT: Gracias. Ahora necesito tu fecha de nacimiento para verificar tu identidad.
 
-Locate the **Language Decision** branch node.
+    PACIENTE: Es el 1 de enero de 1990.
 
-| Number | Node | Color | Action | Function |
-|---|---|---|---|---|
-| 1 |**Language Decision** | Blue |Configure as follow for English & Spanish Branch | Evaluate the 'receive.message' variable captured by your Quick Replies. This logic directs the patient to the English or Spanish path based on their button selection. |
+    BOT: Perfecto, gracias por la información. He entendido el primero de enero de mil novecientos noventa. ¿Me confirmas si es correcta?
 
-**For Branch 1**
+    PACIENTE: Sí, es correcta.
 
-Open the Language Decision Node, expand the Branch 1 and configure as follow:
+    BOT: Gracias. Tu identidad ha quedado verificada. Ya tienes una cita reservada. ¿Quieres mantenerla, cambiarla o cancelarla?
 
-| Field | Value |
-|---|---|
-| **Branch Name** | Change from Branch 1 to **English** |
-| **Variable** | $(n2545.receive.message) - leave it as configured |
-| **Condition** | Contains ignore case - leave it as configured |
-| **Value** | English  |
+    PACIENTE: Quiero cancelarla.
 
-???+ warning "Cannot edit the branch name?"
-    If you see the ✏️ pencil and 🗑️ trash icons together, close the node, click **Save** in the main flow, go back to the main service using the **"<"** button, and reload the flow — the fields will become editable again.
+    BOT: Claro. Estoy cancelando tu cita y dejando constancia en tu expediente. Dame un momento, por favor.
 
-???- note "See Example — ① Language Decision - English"
+    BOT: Estoy enviando la confirmación de la cancelación de tu cita por mensaje.
 
-    === "① Branch 1 — English"
+    BOT: Tu cita ha quedado cancelada y te he enviado un mensaje de confirmación. ¿Necesitas algo más?
 
-        <figure markdown>
-            ![English Branch](./assets/englishbranch.png){ width="700" }
-        </figure>
-        > 👆 Rename **Branch 1** to **English** and set the value to **English**.
+    PACIENTE: No, eso es todo. Gracias.
 
-        !!! tip "After renaming, make sure to click ✅ to save name changes"
-    
+    BOT: De nada. Que tengas un buen día.
+    ```
 
-**For Branch 2**
+4. Verifica que el AI Agent:
 
-In the same Language Decision Node, now expand the Branch 2 and configure as follow:
+    - Solicite el `patient ID`.
+    - Ejecute `get_patient`.
+    - Solicite la fecha de nacimiento.
+    - Valide la identidad del paciente.
+    - Consulte el estado de la cita.
+    - Ejecute `update_patient` cuando corresponda.
+    - Ejecute `send_text` después de una actualización exitosa.
+    - Utilice la zona horaria del paciente.
+    - No exponga información antes de autenticar al paciente.
 
-| Field | Value |
-|---|---|
-| **Branch Name** | Change from Branch 2 to **Spanish** |
-| **Variable** | $(n2545.receive.message) - leave it as configured |
-| **Condition** | Contains ignore case - leave it as configured |
-| **Value** | Español |
-
-After Spanish Branch´s configuration make sure to **Save**
-
-???- note "See Example — ① Language Decision - Spanish"
-
-    === "② Branch 2 — Spanish"
-
-        <figure markdown>
-            ![Spanish Branch](./assets/spanishbranch.png){ width="700" }
-        </figure>
-        > 👆 Rename **Branch 2** to **Spanish** and set the value to **Español**.
-
-        !!! tip "After renaming, make sure to click ✅ to save name changes"
-    
-
-**None of the above:** Leave it as it is.
+!!! warning "Publicar el AI Agent"
+    Después de finalizar las pruebas en `Preview`, publica el `Cumulus AI Agent` para que pueda utilizarse en el Lab 3.
 
 ---
 
-### 3.2.2 Language Agent Orchestration
-
-???- info "See Flow"
-    <figure markdown>
-        ![Cumulus Digital Architecture](./assets/digital-architecture.png){ width="1000" }
-    </figure> 
-
-Locate the numbered nodes in your flow, double-click to open each one, and configure them as follows:
-
-| Number | Node | Color | Action | Function |
-|---|---|---|---|---|
-| 2 | **AI Agent Language1** | Red | <ul><li>Rename node to: AI Agent English</li><li> Select your AI agent PodXXX_UseCase2_English</li><ul> | **English AI Agent** |
-| 5 | **AI Agent Language2** |Green | <ul><li>Rename node to: AI Agent Spanish</li><li> Select your AI agent PodXXX_UseCase2_Spanish</li><ul> | **Spanish AI Agent** |
-
-After each configuration make sure to **Save**
-
-???- note "See Example — ② AI Agent English"
-
-    === "② Rename the Node"
-
-        <figure markdown>
-            ![English AI Agent Rename](./assets/englishaiagent.png){ width="900" }
-        </figure>
-        > 👆 Rename the node to **AI Agent English** and select **PodXXX_UseCase2_English**.
-
-    !!! tip "After renaming, make sure to click ✅ to save name changes"
-
-???- note "See Example — ⑤ AI Agent Spanish"
-
-    === "⑤ Rename the Node"
-
-        <figure markdown>
-            ![Spanish AI Agent Rename](./assets/spanishaiagent.png){ width="900" }
-        </figure>
-        > 👆 Rename the node to **AI Agent Spanish** and select **PodXXX_UseCase2_Spanish**.
-
-    !!! tip "After renaming, make sure to click ✅ to save name changes"
+## 🏁 Lab 2 Completado — Felicitaciones! 🎉
+Has creado y configurado el `Cumulus AI Agent`, su Knowledge Base, las acciones de MCP Server y la integración con Webex Connect.
 
 ---
 
-### 3.2.3 Closing & Survey Hooks
-
-???- info "Flow Snapshot"
-    <figure markdown>
-        ![Cumulus Digital Architecture](./assets/digital-architecture.png){ width="1000" }
-    </figure> 
-
-Configure the final nodes to ensure a graceful exit and accurate data collection.
-<br>Locate the numbered nodes in your flow, double-click to open each one, and configure them as follows:
-
-**Close AI Agent Nodes**
-
-| Number | Node | Color | Action | Function |
-|---|---|---|---|---|
-| 3 | **Close AI Agent English 1** | Red | Select PodXXX_UseCase2_English | Ensures session cleanup upon error |
-| 4 |**Close AI Agent English 2** | Red | Select PodXXX_UseCase2_English | Handles session closure after survey is presented to the user |
-| 6 |**Close AI Agent Spanish 1** | Green | Select PodXXX_UseCase2_Spanish | Ensures session cleanup upon error |
-| 7 |**Close AI Agent Spanish 2** | Green | Select PodXXX_UseCase2_Spanish | Handles session closure after survey is presented to the user |
-
-After each configuration make sure to **Save**
-
-???- note "See Example — ③ ④ English Nodes"
-
-    === "③ Close AI Agent English 1"
-
-        <figure markdown>
-            ![Close AI Agent English 1](./assets/closeaiagentenglish1.png){ width="900" }
-        </figure>
-        > 👆 Select **PodXXX_UseCase2_English** — Ensures session cleanup upon error.
-
-    === "④ Close AI Agent English 2"
-
-        <figure markdown>
-            ![Close AI Agent English 2](./assets/closeaiagentenglish2.png){ width="900" }
-        </figure>
-        > 👆 Select **PodXXX_UseCase2_English** — Handles session closure after survey is presented.
-
-???- note "See Example — ⑥ ⑦ Spanish Nodes"
-
-    === "⑥ Close AI Agent Spanish 1"
-
-        <figure markdown>
-            ![Close AI Agent Spanish 1](./assets/closeaiagentspanish1.png){ width="900" }
-        </figure>
-        > 👆 Select **PodXXX_UseCase2_Spanish** — Ensures session cleanup upon error.
-
-    === "⑦ Close AI Agent Spanish 2"
-
-        <figure markdown>
-            ![Close AI Agent Spanish2](./assets/closeaiagentspanish2.png){ width="900" }
-        </figure>
-        > 👆 Select **PodXXX_UseCase2_Spanish** — Handles session closure after survey is presented.
-
-**Survey Hook – English Path**
-
-???- info "Flow Snapshot"
-    <figure markdown>
-        ![Cumulus Digital Architecture](./assets/digital-architecture.png){ width="1000" }
-    </figure> 
-
-Locate the numbered node in your flow, double-click to open, and configure it as follows:
-
-| Number | Node | Color | Function |
-|---|---|---| --- |
-| 8 | Survey | Purple | Triggers English CSAT survey | 
-
-Configure the node with the following settings:
-
-1. **Node Authentication** — Select `LTRCCT2001`
-2. Click **Fetch All Questionnaires**
-3. Under **Available Questionnaires**, select your own survey: `PodXXX_Cumulus_Survey`
-4. Set the **Preferred Language** field to `English`
-
-After configuration, make sure to **Save**.
-
-???- note "See Example — ⑧ Survey English"
-
-    <figure markdown>
-        ![English Survey](./assets/surveyenglish.png){ width="900" }
-    </figure>
-    > 👆 Set the **Preferred Language** field to **English** to trigger the English CSAT survey.
-
-**Survey Hook – Spanish Path**
-
-Locate the numbered node in your flow, double-click to open, and configure it as follows:
-
-Number | Node | Color | Function |
-|---|---|---|---|
-| 9 | Survey | Purple | Triggers Spanish CSAT survey |
-
-Configure the node with the following settings:
-
-1. **Node Authentication** — Select `LTRCCT2001`
-2. Click **Fetch All Questionnaires**
-3. Under **Available Questionnaires**, select your own survey: `PodXXX_Cumulus_Survey`
-4. Set the **Preferred Language** field to `Spanish`
-
-???- note "See Example — ⑨ Survey Spanish"
-
-    <figure markdown>
-        ![Spanish Survey](./assets/spanishsurvey.png){ width="900" }
-    </figure>
-    > 👆 Set the **Preferred Language** field to **Spanish** to trigger the Spanish CSAT survey.
-
-
-Click the blue **Make Live** button, select your asset **`PodXXX_Cumulus_WebChat`** from the **Application** dropdown, and click **Make Live** again.
-
-!!! note "Going Live"
-    It will take approximately **3 minutes** for the status to change to **Live**.
-    You can continue working in the meantime.
-
-???- tip "See how it works"
-    <figure markdown>
-      ![Make Live a Webex Connect Flow](./assets/flow_make_live.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
-
----
-
-## Phase 4: Web Asset & W3Schools Simulation
-
-### 4.1 Web Chat Asset
-
-!!! note "Before You Begin"
-    Ensure you have downloaded the Cumulus Hospital logo to your local machine
-    and saved it as **Cumulus_Hospital.png** on your desktop (See [Step 1.2 — Multilingual Survey Creation](#12-multilingual-survey-creation)).
-
-
-Navigate to **Collaboration Control Hub > Contact Center > Digital Settings > Web Chat Assets** and locate the asset
-**PodXXX_Cumulus_WebChat** (replace XXX for your POD number), and click on it to open the configuration settings:
-
-**Asset Settings**
-
-Configure as follow:
-
-| Field | Value |
-|---|---|
-| **Notifications** | Turn on – Play chime sound when user receives a new message |
-
----
-
-**Website**
-
-Navigate to the **Website** tab, then click **Add Website** to launch the configuration workflow. In the **General** section, configure the following fields:
-
-| Field | Value |
-|---|---|
-| **Chat widget language** | English |
-| **Display name** | Cumulus Hospital |
-| **Byline text** | Leave it blank |
-| **First message** | Hi! |
-| **PCI compliance banner message** | We are committed to protecting your information. This chat is secure and PCI compliant. |
-| **Domain** | www.w3schools.com |
-
-**Email transcript:** Leave it as it is configured. Click **Next**.
-
----
-
-**Appearance tab**
-Configure the following fields:
-
-| Field | Value |
-|---|---|
-| **Widget color** | #0a7ec7 |
-| **Widget Button** | Select the first option available |
-| **Logo** | Upload Cumulus_Hospital.png from your desktop |
-| **Message composer** | Turn on Allow emojis · Turn on Allow attachments |
-
-Click **Next**.
-
----
-
-**Availability tab**
-
-
-Click **Save and Next**.
-
-!!! warning "Getting an error after clicking Save & Next?"
-    This is expected in the lab environment, multiple pods share the same **domain** for web chat assets. Simply click **X** to dismiss the error and your website widget
-    will be enabled correctly.
-    ???- Advise "Error"
-        <figure markdown>
-            ![WebChat Error](./assets/error_webChat.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-        </figure>
-
----
-
-**Banned Visitors**
-
-If you do not get the error, click **Done**.
-
-
-???- note "Complete Web Chat Asset Configuration"
-    **WebChat**
-    <figure markdown>
-        ![WebChat Assest](./assets/webchat.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
-
----
-
-### 4.2 W3Schools Simulation
-
-1. Open the W3Schools HTML Editor at [https://www.w3schools.com/](https://www.w3schools.com/)
-
-2. Click on the **Try it Yourself** button
-
----
-
-### 4.3 Apply Branded HTML Structure
-
-Replace the existing HTML with the recommended branded HTML structure for Cumulus Healthcare. Copy and paste this:
-```html
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Cumulus Hospital | Digital Assistant</title> 
-    <style> 
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #f4f7f9; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            padding: 50px; 
-            margin: 0; 
-        } 
-        .header-container { 
-            text-align: center; 
-            margin-bottom: 30px; 
-            background: white; 
-            padding: 30px 40px; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            width: 100%; 
-            max-width: 600px; 
-        } 
-        .logo-img { 
-            width: 120px;
-            height: auto; 
-            margin-bottom: 15px; 
-        } 
-        h1 { 
-            color: #005073;
-            margin: 0; 
-            font-size: 28px; 
-        } 
-        p { 
-            color: #56627c; 
-            font-size: 1.1em; 
-            margin-top: 5px; 
-        } 
-    </style> 
-</head> 
-<body> 
-    <div class="header-container"> 
-        <img src="https://qaemailmedia.s3.amazonaws.com/ba7f153c-fb89-4dbf-a6f6-2a6628dfde7c/CumulusHospital_1234268365472632.png" alt="Cumulus Hospital Logo" class="logo-img"> 
-        <h1>Cumulus Hospital</h1> 
-        <p>Digital Patient Care & Virtual Assistant Portal</p> 
-    </div> 
-  
-<!-- Paste here your installation script --> 
-  
-</body> 
-</html>
-```
-
----
-
-### 4.4 Verify Branding
-
-Click **Run** and confirm the page is branded with Cumulus HealthCare information.
-???- note "See Example"
-    **W3School Try Yourself**
-    <figure markdown>
-        ![W3School](./assets/w3school1.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
-
----
-
-### 4.5 Copy Web Chat Installation Script
-
-Go to **Collaboration Control Hub > Contact Center > Digital Settings > Web Chat Assets**.
-Select your asset **PodXXX_Cumulus_WebChat**, navigate to the **Installation** tab,
-and click **Copy**.
-
-???- note "See Example"
-    **WebChat Installation Script**
-    <figure markdown>
-        ![WebChat Installation Script](./assets/installationscript.png){ width="700" }
-    </figure>
-
----
-
-### 4.6 Insert and Run
-
-Insert your **Web Chat Installation Script** (copied in the previous step)
-into the W3Schools portal in the space indicated in the HTML script.
-<br>| `<!-- Paste here your installation script -->` |
-
-Click **Run**. If the widget appears in the preview pane, you have successfully
-connected your Cumulus Hospital portal to Webex Contact Center.
-
-???- note "See Example"
-    **W3School with WebChat installed**
-    <figure markdown>
-        ![W3School with WebChat](./assets/w3schoolwebchat.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
-
-!!! success
-    Your Cumulus Hospital web chat widget is now live and connected to
-    Webex Contact Center.
-
----
-
-## Phase 5: Final Testing
-
-!!! info "The Digital-First Mindset"
-    When you test, observe the transition from the Quick Replies to the Language Agent.
-    It should be **invisible** to the patient.
-    That is the hallmark of a high-quality omnichannel experience.
-
----
-Run the full test **twice** — once in **English**, then in **Spanish**.
-
-**Step 1 – English Test**
-
-!!! example "Test Script – English"
-    1. Launch the chat widget
-    2. Select **English** and provide your name
-    3. Type: *I am in Las Vegas on a business trip and I am not feeling very well, I need assistance*
-    4. Wait for the AI Agent response
-    5. Ask for a form to get assistance (*Patient Registration Form, Insurance Claim Form, Authorization Form, Medical Records Release Form*)
-    6. Verify the agent responds in **English** and provides the correct URL
-    7. Wait **60 seconds** and complete the survey
-
-???- note "See Example"
-    **English Test**
-    <figure markdown>
-        ![English Test](./assets/englishtesting.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
-
-**Step 2 – Spanish Test**
-
-!!! example "Test Script – Spanish"
-    1. Open the chat widget
-    2. Select **Spanish** and provide your name
-    3. Type: *Estoy en Las Vegas en un viaje de negocios y no me siento muy bien, necesito asistencia*
-    4. Wait for the AI Agent's response
-    5. Request a form to get assistance  (*Formulario de Registro de paciente, Formulario de reclamo de seguro, Formulario de Autorización, Formulario de liberación de registros médicos*)
-    6. Verify that the agent responds in Spanish and provides the correct URL
-    7. Wait **60 seconds** and complete the survey
-
-???- note "See Example"
-    **Spanish Test**
-    <figure markdown>
-        ![Spanish Test](./assets/spanishtesting.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
-
----
-
-## 🏁 Lab 2 Complete – Congratulations! 🎉
-
-You have successfully completed **Lab 2 – AI Digital-First Multilingual Patient Journey**.
-
-| Component | Status |
-|---|---|
-| Web Chat Channel | Created and configured |
-| Multilingual Survey (EN + ES) | Created and branded |
-| English AI Agent | Imported, configured, and published |
-| Spanish AI Agent | Imported, configured, and published |
-| Webex Connect Flow Orchestration | Configured and activated |
-| Web Chat Asset | Configured and branded |
-| W3Schools Simulation | Connected and validated |
-| End-to-End Testing (EN + ES) | All scenarios validated |
-
-> ✨ *Omnichannel Consistency: You’ve bridged the gap between voice and digital, ensuring Cumulus Hospital provides a seamless experience for every patient.*
-
-If you run into any issues, flag me down. Let’s go!
-
----
-
-*Lab authored for Cisco Live 2026*
-
+*Lab realizado para Cisco Connect Latam 2026*

@@ -59,7 +59,10 @@ El agente, llamado **Concierge**, identificará si el paciente desea continuar l
     | **AI engine** | `Webex AI Speech-to-Speech 1.0` |
 
     ???+ warning "Recordatorio"
-    Reemplace `XXX` por el número de tres dígitos de su `Pod ID`.
+        Reemplace `XXX` por el número de tres dígitos de su `Pod ID`.
+
+    ???+ note "`Motor Speech to Speech (S2S) 1.0`"
+        Es un motor activo en Beta dentro de esta organización y está basado en un modelo de puro habla a habla. S2S ayudará a obtener respuestas más rápidas y no cuenta con ElevenLabs.
 
 6. Haga clic en **Create**. 
 
