@@ -1,0 +1,1533 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC">
+      
+      
+        <meta name="author" content="Carolina Morales">
+      
+      
+      
+        <link rel="prev" href="../getting_started/">
+      
+      
+        <link rel="next" href="../digital/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 1 - Concierge AI Agent - LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-1-concierge-ai-agent-atencion-bilingue" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-header__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 1 - Concierge AI Agent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Descripción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wrap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparta su opinión!
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-nav__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Descripción
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La misión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antes de Comenzar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Concierge AI Agent
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Concierge AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-acceder-a-ai-agent-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Acceder a AI Agent Studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-crear-el-concierge-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Crear el Concierge AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configurar-el-perfil-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configurar el perfil del agente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configurar el perfil del agente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-configurar-ai-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Configurar AI transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-configurar-el-welcome-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Configurar el Welcome Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configurar-las-instrucciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configurar las Instrucciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurar-el-idioma-y-la-voz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configurar el idioma y la voz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-crear-las-acciones-de-transferencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Crear las acciones de transferencia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Crear las acciones de transferencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-crear-transfer_english" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Crear Transfer_English
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-crear-transfer_spanish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Crear Transfer_Spanish
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-probar-el-concierge-en-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Probar el Concierge en Preview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-publicar-el-concierge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Publicar el Concierge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-1-completado-felicitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 1 Completado — Felicitaciones! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Cumulus AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Integración de AI Agents con Voice Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bonus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bonus Lab - AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparta su opinión!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-acceder-a-ai-agent-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Acceder a AI Agent Studio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-crear-el-concierge-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Crear el Concierge AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configurar-el-perfil-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configurar el perfil del agente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Configurar el perfil del agente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-configurar-ai-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Configurar AI transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-configurar-el-welcome-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Configurar el Welcome Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configurar-las-instrucciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configurar las Instrucciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurar-el-idioma-y-la-voz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configurar el idioma y la voz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-crear-las-acciones-de-transferencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Crear las acciones de transferencia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Crear las acciones de transferencia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-crear-transfer_english" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Crear Transfer_English
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-crear-transfer_spanish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Crear Transfer_Spanish
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-probar-el-concierge-en-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Probar el Concierge en Preview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-publicar-el-concierge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Publicar el Concierge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-1-completado-felicitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 1 Completado — Felicitaciones! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-1-concierge-ai-agent-atencion-bilingue">Lab 1 - Concierge AI Agent - Atención bilingüe</h1>
+<hr>
+<h2 id="agenda">Agenda</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Task</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Crear el AI Agent autónomo <code>Concierge</code> para detectar el idioma del paciente</td>
+<td>20 min</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="objetivo">Objetivo</h2>
+<p>En este lab crearás desde cero un AI Agent autónomo utilizando <code>AI Agent Studio</code>.</p>
+<p>El agente, llamado <strong>Concierge</strong>, identificará si el paciente desea continuar la conversación en español o en inglés y transferirá la interacción al flujo correspondiente.</p>
+<details class="warning" open="open">
+<summary>Disciplina del Pod ID</summary>
+<p>Reemplace siempre <code>XXX</code> por su POD_ID de tres dígitos asignado, por ejemplo: <code>001</code> o <code>002</code>. La convención de nombres debe comenzar con el prefijo <code>Pod</code>, seguido de su <code>Pod ID</code>: <code>PodXXX</code>. <strong>Si no sigue exactamente esta convención, podría sobrescribir el trabajo de otro participante</strong></p>
+</details>
+<hr>
+<h2 id="1-acceder-a-ai-agent-studio">1. Acceder a AI Agent Studio</h2>
+<ol>
+<li>Abra Google Chrome utilizando el perfil <code>Admin_Lab</code>.</li>
+<li>Ingrese a <a href="https://admin.webex.com/">Control Hub</a>.</li>
+<li>
+<p>Inicie sesión con las credenciales de <code>Administrator</code> asignadas a su Pod.</p>
+<details class="- tip">
+<summary>Cómo acceder a Control Hub</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/launching_control_hub.gif" data-title="Launch Collaboration Control Hub" data-desc-position="top"><img alt="Launch Collaboration Control Hub" loading="lazy" src="../assets/launching_control_hub.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>En el panel izquierdo de <code>Control Hub</code>, seleccione <strong>Services</strong>.</p>
+</li>
+<li>Haga clic en <strong>Contact Center</strong>.</li>
+<li>En la página principal, ubique la sección <strong>Quick Links</strong>.</li>
+<li>
+<p>Haga clic en <strong>Webex AI Agent</strong>.</p>
+<details class="- tip">
+<summary>Cómo acceder AI Agent</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/ControlHubAIAgentLaunch.gif" data-title="Collaboration Control Hub AI Agent Launch" data-desc-position="top"><img alt="Collaboration Control Hub AI Agent Launch" loading="lazy" src="../assets/ControlHubAIAgentLaunch.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+<li>
+<p>Se abrirá <code>AI Agent Studio</code> en una nueva pestaña del navegador.</p>
+</li>
+</ol>
+<h2 id="2-crear-el-concierge-ai-agent">2. Crear el Concierge AI Agent</h2>
+<ol>
+<li>En <code>AI Agent Studio</code>, haga clic en <strong>+ Create agent</strong>.</li>
+<li>Seleccione <strong>Start from scratch</strong>.</li>
+<li>Haga clic en <strong>Next</strong>.</li>
+<li>En el tipo de agente, seleccione <strong>Autonomous</strong>.</li>
+<li>
+<p>Configure los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent name</strong></td>
+<td><code>PodXXX_ConnectLatam_Concierge</code></td>
+</tr>
+<tr>
+<td><strong>System ID</strong></td>
+<td>Deje el valor generado automáticamente</td>
+</tr>
+<tr>
+<td><strong>AI engine</strong></td>
+<td><code>Webex AI Speech-to-Speech 1.0</code></td>
+</tr>
+</tbody>
+</table>
+<details class="warning" open="open">
+<summary>Recordatorio</summary>
+<p>Reemplace <code>XXX</code> por el número de tres dígitos de su <code>Pod ID</code>.</p>
+</details>
+<details class="note" open="open">
+<summary><code>Motor Speech to Speech (S2S) 1.0</code></summary>
+<p>Es un motor activo en Beta dentro de esta organización y está basado en un modelo de puro habla a habla. S2S ayudará a obtener respuestas más rápidas y no cuenta con ElevenLabs.</p>
+</details>
+</li>
+<li>
+<p>Haga clic en <strong>Create</strong>. </p>
+</li>
+</ol>
+<details class="- tip">
+<summary>Cómo crear el Concierge AI Agent</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/como%20crear%20el%20Concierge%20AI%20Agent.gif" data-title="Create Concierge AI Agent" data-desc-position="top"><img alt="Create Concierge AI Agent" loading="lazy" src="../assets/como%20crear%20el%20Concierge%20AI%20Agent.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="3-configurar-el-perfil-del-agente">3. Configurar el perfil del agente</h2>
+<p>Después de crear el agente, permanezca en la pestaña <strong>Profile</strong>.</p>
+<h3 id="31-configurar-ai-transparency">3.1 Configurar AI transparency</h3>
+<ol>
+<li>Ubique la opción <strong>AI transparency</strong>.</li>
+<li>Desactívela.</li>
+<li>En el campo de justificación, escriba: <code>text Lab</code></li>
+<li>
+<p>Haga clic en <strong>Keep it disabled</strong>.</p>
+<h3 id="32-configurar-el-welcome-message">3.2 Configurar el Welcome Message</h3>
+</li>
+<li>
+<p>En el campo <strong>Welcome Message</strong>, copie el siguiente texto:</p>
+<div class="highlight"><pre><span></span><code>Gracias por contactar al Hospital Cumulus. Déjame saber si prefieres continuar esta interacción en español o en inglés.
+</code></pre></div>
+</li>
+<li>
+<p>Haga clic en <strong>Save changes</strong>.</p>
+</li>
+</ol>
+<h2 id="4-configurar-las-instrucciones">4. Configurar las Instrucciones</h2>
+<ol>
+<li>Abra la pestaña <strong>Instructions</strong>.</li>
+<li>Copie y pegue el siguiente contenido.</li>
+<li>
+<p>Al pegarlo, seleccione <strong>Paste and match style</strong>.</p>
+<div class="highlight"><pre><span></span><code>#### Goal
+
+You are an initial Concierge Bot that detects the customer's language, confirms it, and transfers the interaction back to the flow to continue. You MUST use the customer's detected spoken language when responding, regardless of which language it is.
+
+#### Instructions
+
+Follow these steps in this order:
+
+1. After the initial welcome message, automatically detect the customer's language based on their spoken language and switch to that language.
+
+You MUST ALWAYS answer and speak to the customer using the detected spoken language.
+
+- If the spoken language is Spanish, go to the action [Transfer_Spanish]. Do not say anything else; just transfer.
+- If the spoken language is English, go to the action [Transfer_English]. Do not say anything else; just transfer.
+- If the spoken language is different from English or Spanish, respond in the detected spoken language and explain that this lab is prepared only for Spanish and English. Ask the customer which of these two languages they would like to use.
+- If the customer insists on using a language other than English or Spanish, explain in the customer's spoken language that you will continue in English, then use the action [Transfer_English].
+
+#### GENERAL GUIDELINES
+
+Always answer the customer using the detected language, even if it is not English or Spanish.
+
+Maintain a professional and empathetic tone consistent with a hospital concierge who is assisting patients.
+
+Do not offer additional services. If the customer asks about a service or topic unrelated to your goal, try to return the conversation to the language selection process.
+
+If, after two attempts, the customer has not selected English or Spanish, explain in the customer's spoken language that you will transfer the call to continue in English, then use the action [Transfer_English].
+</code></pre></div>
+</li>
+<li>
+<p>Haga clic en <strong>Save changes</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Idioma de Instrucciones</p>
+<p>Para facilitar el soporte de los proctors en este caso de uso multilingüe, el contenido del campo instrucciones con el <code>Objetivo</code> e <code>Instrucciones</code> y <code>Guía</code> se mantiene en inglés.</p>
+<p>Sin embargo, en un entorno de producción estos campos pueden configurarse completamente en español, de acuerdo con las necesidades del negocio y el idioma de atención seleccionado.</p>
+</div>
+</li>
+</ol>
+<h2 id="5-configurar-el-idioma-y-la-voz">5. Configurar el idioma y la voz</h2>
+<ol>
+<li>Abra la pestaña <strong>Conversation</strong>.</li>
+<li>
+<p>Configure únicamente las siguientes opciones:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Language</strong></td>
+<td><code>Spanish (US) es-US</code></td>
+</tr>
+<tr>
+<td><strong>Select voice</strong></td>
+<td><code>es-US-Elena</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Haga clic en <strong>Save changes</strong>.</p>
+<details class="- tip">
+<summary>Cómo configurar el Concierge AI Agent</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/configurarelConciergeAIAgent.gif" data-title="Configure Concierge AI Agent" data-desc-position="top"><img alt="Configure Concierge AI Agent" loading="lazy" src="../assets/configurarelConciergeAIAgent.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<h2 id="6-crear-las-acciones-de-transferencia">6. Crear las acciones de transferencia</h2>
+<ol>
+<li>Abra la pestaña <strong>Actions</strong>.</li>
+<li>Desactive la acción predeterminada <strong>Agent handover</strong>.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Transferencia del Concierge</p>
+<p>El Concierge no realizará escalaciones hacia agentes humanos. En su lugar, utilizará acciones específicas para transferir la llamada de regreso al <code>flow</code> según el idioma seleccionado por el paciente.</p>
+</div>
+<h3 id="61-crear-transfer_english">6.1 Crear Transfer_English</h3>
+<ol>
+<li>Haga clic en <strong>+ Add actions</strong>.</li>
+<li>En <strong>Add new</strong>, seleccione <strong>Transfer</strong>.</li>
+<li>
+<p>Configure los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Action name</strong></td>
+<td><code>Transfer_English</code></td>
+</tr>
+<tr>
+<td><strong>Transfer condition</strong></td>
+<td><code>To be used when you detect customer wants to continue in English</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Haga clic en <strong>Add</strong>.</p>
+</li>
+</ol>
+<h3 id="62-crear-transfer_spanish">6.2 Crear Transfer_Spanish</h3>
+<ol>
+<li>
+<p>Repita el procedimiento anterior con los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Action name</strong></td>
+<td><code>Transfer_Spanish</code></td>
+</tr>
+<tr>
+<td><strong>Transfer condition</strong></td>
+<td><code>To be used when you detect customer wants to continue in Spanish</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Haga clic en <strong>Add</strong>.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Nombres exactos</p>
+<p>Utilice exactamente los nombres <code>Transfer_English</code> y <code>Transfer_Spanish</code>. No agregue espacios, caracteres adicionales ni cambie las mayúsculas.</p>
+</div>
+<details class="- tip">
+<summary>Cómo configurar las acciones del AI Agent Concierge</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/concierge_actions.gif" data-title="Configure Concierge Actions" data-desc-position="top"><img alt="Configure Concierge Actions" loading="lazy" src="../assets/concierge_actions.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="7-probar-el-concierge-en-preview">7. Probar el Concierge en Preview</h2>
+<p>Antes de publicar el agente, pruébelo utilizando <code>Preview</code>.</p>
+<ol>
+<li>Haga clic en <strong>Preview</strong> en la parte superior de <code>AI Agent Studio</code>.</li>
+<li>En la ventana emergente, haga clic en <strong>Start a call</strong>.</li>
+<li>Utilice audífonos para reducir el ruido y evitar afectar a otros participantes.</li>
+<li>Pruebe algunas de las siguientes frases:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>Yo quiero continuar en Español.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Quiero interactuar en Español.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>I want to talk in English, please.
+</code></pre></div>
+<details class="- tip">
+<summary>Pruebas en Español AI Agent Concierge</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/preview_spanish_concierge.gif" data-title="Preview Concierge in Spanish" data-desc-position="top"><img alt="Preview Concierge in Spanish" loading="lazy" src="../assets/preview_spanish_concierge.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<p>Verifique que:</p>
+<ul>
+<li>El agente reproduzca correctamente el <code>Welcome Message</code>.</li>
+<li>Detecte el idioma utilizado.</li>
+<li>Ejecute <code>Transfer_Spanish</code> cuando el paciente seleccione español.</li>
+<li>Ejecute <code>Transfer_English</code> cuando el paciente seleccione inglés.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Idiomas disponibles</p>
+<p>Aunque el Concierge puede interactuar en otros idiomas, en este lab se configurarán únicamente español e inglés, utilizando las dos acciones de transferencia creadas anteriormente.</p>
+</div>
+<h2 id="8-publicar-el-concierge">8. Publicar el Concierge</h2>
+<p>Cuando finalice las pruebas:</p>
+<ol>
+<li>Haga clic en <strong>Publish</strong>.</li>
+<li>Ingrese una nota para identificar la versión, por ejemplo:</li>
+</ol>
+<p></p><div class="highlight"><pre><span></span><code>Lab 1 - Concierge AI Agent
+</code></pre></div>
+3. Confirme la publicación.<p></p>
+<details class="- tip">
+<summary>Cómo publicar el Concierge AI Agent</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/publish_concierge.gif" data-title="Publish Concierge AI Agent" data-desc-position="top"><img alt="Publish Concierge AI Agent" loading="lazy" src="../assets/publish_concierge.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<hr>
+<h2 id="lab-1-completado-felicitaciones">🏁 Lab 1 Completado — Felicitaciones! 🎉</h2>
+<p>Usted  ha creado, configurado, probado y publicado el <strong>Concierge AI Agent</strong>.</p>
+<hr>
+<p><em>Lab realizado para Cisco Connect Latam 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../getting_started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Antes de Comenzar">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Antes de Comenzar
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../digital/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 2 - Cumulus AI Agent">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 2 - Cumulus AI Agent
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.sections", "navigation.collapse", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

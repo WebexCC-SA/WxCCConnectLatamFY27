@@ -1,0 +1,1475 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC">
+      
+      
+        <meta name="author" content="Carolina Morales">
+      
+      
+      
+        <link rel="prev" href="../digital/">
+      
+      
+        <link rel="next" href="../bonus/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 3 - Integración de AI Agents con Voice Flow - LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-3-integracion-de-ai-agents-con-voice-flow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-header__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 3 - Integración de AI Agents con Voice Flow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Descripción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wrap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparta su opinión!
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-nav__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Descripción
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La misión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antes de Comenzar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Concierge AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Cumulus AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Integración de AI Agents con Voice Flow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Integración de AI Agents con Voice Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-exportar-el-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Exportar el Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-importar-el-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Importar el Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configurar-el-concierge-en-el-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configurar el Concierge en el Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-revisar-el-parse_language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Revisar el Parse_Language
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurar-el-cumulus-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configurar el Cumulus AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-revisar-el-nodo-parse_variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Revisar el nodo Parse_Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-configurar-la-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Configurar la Queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-validar-y-publicar-el-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Validar y publicar el Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-asociar-el-voice-flow-al-entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Asociar el Voice Flow al Entry Point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-realizar-una-llamada-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Realizar una llamada de prueba
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-script-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Script de prueba
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-3-completado-felicitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 3 Completado — Felicitaciones! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bonus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bonus Lab - AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparta su opinión!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-exportar-el-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Exportar el Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-importar-el-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Importar el Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configurar-el-concierge-en-el-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configurar el Concierge en el Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-revisar-el-parse_language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Revisar el Parse_Language
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurar-el-cumulus-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configurar el Cumulus AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-revisar-el-nodo-parse_variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Revisar el nodo Parse_Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-configurar-la-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Configurar la Queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-validar-y-publicar-el-voice-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Validar y publicar el Voice Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-asociar-el-voice-flow-al-entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Asociar el Voice Flow al Entry Point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-realizar-una-llamada-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Realizar una llamada de prueba
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-script-de-prueba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Script de prueba
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-3-completado-felicitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 3 Completado — Felicitaciones! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-3-integracion-de-ai-agents-con-voice-flow">Lab 3 - Integración de AI Agents con Voice Flow</h1>
+<hr>
+<h2 id="agenda">Agenda</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Actividad</th>
+<th>Duración</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Integrar los AI Agents con un <code>Voice Flow</code> y realizar una llamada real</td>
+<td>15 minutos</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="objetivo">Objetivo</h2>
+<p>En este lab utilizarás los AI Agents creados anteriormente en una llamada real.</p>
+<p>Configurarás un Voice Flow para:</p>
+<ul>
+<li>Utilizar el <code>Concierge AI Agent</code>.</li>
+<li>Detectar el idioma seleccionado por el paciente.</li>
+<li>Transferir la interacción al <code>Cumulus AI Agent</code>.</li>
+<li>Pasar variables desde el Voice Flow hacia el AI Agent.</li>
+<li>Recibir variables desde el AI Agent.</li>
+<li>Transferir la llamada a la Queue correspondiente.</li>
+<li>Realizar una llamada real al DID asignado.</li>
+<li>Recibir una confirmación mediante WhatsApp.</li>
+</ul>
+<hr>
+<h2 id="1-exportar-el-voice-flow">1. Exportar el Voice Flow</h2>
+<ol>
+<li>Ingresa a <code>Control Hub</code>.</li>
+<li>Navega a <strong>Services &gt; Contact Center</strong>.</li>
+<li>Selecciona <strong>Flows</strong>.</li>
+<li>
+<p>Busca el flow:</p>
+<div class="highlight"><pre><span></span><code>Admin_ConnectLatamCumulus
+</code></pre></div>
+</li>
+<li>
+<p>Haz clic en los tres puntos ubicados a la derecha del flow.</p>
+</li>
+<li>Selecciona <strong>Export</strong>.</li>
+<li>Guarda el archivo JSON en tu computadora.</li>
+</ol>
+<details class="- tip">
+<summary>Exportar el Voice Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/export_voice_flow.gif" data-title="Exportar el Voice Flow" data-desc-position="top"><img alt="Exportar el Voice Flow" loading="lazy" src="../assets/export_voice_flow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="2-importar-el-voice-flow">2. Importar el Voice Flow</h2>
+<ol>
+<li>Permanece en <code>Control Hub &gt; Contact Center &gt; Flows</code>.</li>
+<li>Haz clic en <strong>Manage Flows</strong>.</li>
+<li>Selecciona <strong>Create Flows</strong>.</li>
+<li>En la nueva ventana, selecciona <strong>Import Flow</strong>.</li>
+<li>Selecciona el archivo JSON exportado en el paso anterior.</li>
+<li>Haz clic en <strong>Next</strong>.</li>
+<li>
+<p>Asigna el siguiente nombre al nuevo flow:</p>
+<div class="highlight"><pre><span></span><code>PODXXX_ConnectLatamCumulus
+</code></pre></div>
+<p>Reemplaza <code>XXX</code> por los tres dígitos de tu <code>Pod ID</code>.</p>
+</li>
+<li>
+<p>Haz clic en <strong>Create Flow</strong>.</p>
+</li>
+<li>Cuando se abra el nuevo flow, haz clic en <strong>Get Started</strong> para comenzar a editarlo.</li>
+</ol>
+<details class="- tip">
+<summary>Importar el Voice Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/import_voice_flow.gif" data-title="Importar el Voice Flow" data-desc-position="top"><img alt="Importar el Voice Flow" loading="lazy" src="../assets/import_voice_flow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="3-configurar-el-concierge-en-el-voice-flow">3. Configurar el Concierge en el Voice Flow</h2>
+<ol>
+<li>Verifica que <strong>Edit On</strong> esté habilitado.</li>
+<li>
+<p>Busca el primer nodo <code>VAV2</code> llamado:</p>
+<div class="highlight"><pre><span></span><code>VirtualAgentConcierge
+</code></pre></div>
+</li>
+<li>
+<p>Haz clic en el nodo para editarlo.</p>
+</li>
+<li>En el menú <strong>Virtual Agent</strong>, selecciona el <code>Concierge AI Agent</code> que creaste en el Lab 1.</li>
+</ol>
+<details class="- tip">
+<summary>Editar el Concierge en el Voice Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/edit_voice_flow_concierge.gif" data-title="Editar el Concierge en el Voice Flow" data-desc-position="top"><img alt="Editar el Concierge en el Voice Flow" loading="lazy" src="../assets/edit_voice_flow_concierge.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="4-revisar-el-parse_language">4. Revisar el Parse_Language</h2>
+<ol>
+<li>
+<p>Continúa revisando el flow hasta encontrar el nodo:</p>
+<p><code>Parse_Language</code></p>
+<p>Este nodo utiliza el resultado de la selección de idioma realizada en el <code>Concierge AI Agent</code>.
+El flow recibe el trigger de transferencia como una variable y configura otras variables que serán utilizadas por el siguiente AI Agent.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">No modificar este nodo</p>
+<p>El nodo <code>Parse_Language</code> ya está configurado para el lab. Solo debes revisar cómo utiliza el idioma seleccionado y el trigger de transferencia. No realices cambios.</p>
+</div>
+<details class="- tip">
+<summary>Revisar el trigger de transferencia</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/review_escalation_trigger.gif" data-title="Revisar el trigger de transferencia" data-desc-position="top"><img alt="Revisar el trigger de transferencia" loading="lazy" src="../assets/review_escalation_trigger.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="5-configurar-el-cumulus-ai-agent">5. Configurar el Cumulus AI Agent</h2>
+<ol>
+<li>Continúa dentro del Voice Flow.</li>
+<li>
+<p>Busca el nodo:</p>
+<p><code>VirtualAgent_Cumulus</code></p>
+</li>
+<li>
+<p>Haz clic en el nodo para editarlo.</p>
+</li>
+<li>
+<p>En el menú <strong>Virtual Agent</strong>, selecciona el AI Agent creado en el Lab 2:</p>
+<div class="highlight"><pre><span></span><code>PODXXX_ConnectLatam_Cumulus
+</code></pre></div>
+</li>
+<li>
+<p>Revisa la sección <strong>Event Data</strong>.</p>
+<p>El flow ya contiene los parámetros y variables que se enviarán al <code>Cumulus AI Agent</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Event Data</p>
+<p>Los parámetros configurados en <code>Event Data</code> permiten enviar información desde el Voice Flow hacia el AI Agent, como el mensaje inicial, el idioma seleccionado y el ANI del paciente.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">No modificar Event Data</p>
+<p>El campo <code>Event Data</code> ya está configurado para el lab. No es necesario realizar cambios.</p>
+</div>
+</li>
+</ol>
+<details class="- tip">
+<summary>Revisar los parámetros de Event Data</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/review_vav2_event_parameters.gif" data-title="Revisar los parámetros de Event Data" data-desc-position="top"><img alt="Revisar los parámetros de Event Data" loading="lazy" src="../assets/review_vav2_event_parameters.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="6-revisar-el-nodo-parse_variables">6. Revisar el nodo Parse_Variables</h2>
+<ol>
+<li>
+<p>Busca el nodo:</p>
+<p><code>Parse_Variables</code></p>
+</li>
+<li>
+<p>Haz clic en el nodo para revisar su configuración.</p>
+<p>Este nodo recibe variables del AI Agent cuando la interacción regresa al Voice Flow.</p>
+<p>En este caso, se configuran las siguientes variables: <code>patient_name</code> y <code>requirement</code>. <br></p>
+<p>Estas variables se utilizarán para mostrar información en el <code>Agent Desktop</code>.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">No modificar este nodo</p>
+<p>El nodo <code>Parse_Variables</code> ya está configurado para el lab. Solo revisa cómo recibe la información del AI Agent. No realices cambios.</p>
+</div>
+<details class="- tip">
+<summary>Revisar las variables de salida</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/review_parse_variables.gif" data-title="Revisar las variables de salida" data-desc-position="top"><img alt="Revisar las variables de salida" loading="lazy" src="../assets/review_parse_variables.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="7-configurar-la-queue">7. Configurar la Queue</h2>
+<ol>
+<li>Busca el nodo <strong>Queue</strong>.</li>
+<li>Haz clic en el nodo para editarlo.</li>
+<li>
+<p>En la lista de queues, selecciona:</p>
+<p><code>PodXXX_Cumulus_ES</code></p>
+<p>Esta configuración garantiza que, cuando el paciente solicite hablar con un agente humano, la llamada sea enviada al <code>Agent Desktop</code> correspondiente.</p>
+</li>
+</ol>
+<details class="- tip">
+<summary>Configurar la Queue del Voice Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/configure_voice_flow_queue.gif" data-title="Configurar la Queue del Voice Flow" data-desc-position="top"><img alt="Configurar la Queue del Voice Flow" loading="lazy" src="../assets/configure_voice_flow_queue.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="8-validar-y-publicar-el-voice-flow">8. Validar y publicar el Voice Flow</h2>
+<ol>
+<li>Activa <strong>Validation</strong> en la parte inferior del flow.</li>
+<li>Espera a que la validación finalice.</li>
+<li>Verifica que no existan errores.</li>
+<li>Haz clic en <strong>Publish Flow</strong>.</li>
+<li>Cuando aparezca la confirmación, haz clic nuevamente en <strong>Publish Flow</strong>.</li>
+</ol>
+<details class="- tip">
+<summary>Publicar el Voice Flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/publish_voice_flow.gif" data-title="Publicar el Voice Flow" data-desc-position="top"><img alt="Publicar el Voice Flow" loading="lazy" src="../assets/publish_voice_flow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="9-asociar-el-voice-flow-al-entry-point">9. Asociar el Voice Flow al Entry Point</h2>
+<p>Ahora asociarás el Voice Flow publicado con el DID que utilizarás para realizar la llamada.</p>
+<ol>
+<li>Regresa a <code>Control Hub</code>.</li>
+<li>Navega a <strong>Services &gt; Contact Center</strong>.</li>
+<li>Selecciona <strong>Entry Point</strong>.</li>
+<li>
+<p>Busca el siguiente Entry Point:</p>
+<p><code>PodXXX_Cumulus_Voice</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Seleccionar el Entry Point correcto</p>
+<p>Asegúrate de seleccionar el Entry Point de tipo <strong>Voice</strong>.</p>
+</div>
+</li>
+<li>
+<p>Haz clic en el Entry Point.</p>
+</li>
+<li>En <strong>Routing Flow</strong>, selecciona el Voice Flow que publicaste anteriormente.</li>
+<li>En <strong>Music on hold</strong>, selecciona: <code>defaultmusic_on_hold.wav</code></li>
+<li>En <strong>Version label</strong>, selecciona: <code>Latest</code></li>
+<li>Haz clic en <strong>Save</strong>.</li>
+</ol>
+<details class="- tip">
+<summary>Configurar el Entry Point</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/configure_entry_point.gif" data-title="Configurar el Entry Point" data-desc-position="top"><img alt="Configurar el Entry Point" loading="lazy" src="../assets/configure_entry_point.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="10-realizar-una-llamada-de-prueba">10. Realizar una llamada de prueba</h2>
+<ol>
+<li>Realiza una llamada al DID asignado a tu Pod.</li>
+<li>Puedes utilizar tu teléfono celular.</li>
+<li>También puedes iniciar sesión en la <code>Webex App</code> con el usuario adicional asignado a tu Pod y realizar la llamada desde allí.</li>
+<li>Selecciona el idioma cuando el Voice Flow lo solicite.</li>
+<li>Después de seleccionar el idioma, la llamada será enviada al <code>Cumulus AI Agent</code>.</li>
+</ol>
+<p>Si realizas la llamada desde un teléfono celular válido, recibirás un mensaje de WhatsApp con la confirmación de la cita.</p>
+<h2 id="11-script-de-prueba">11. Script de prueba</h2>
+<ol>
+<li>
+<p>Utiliza el siguiente script para validar la experiencia completa:</p>
+<div class="highlight"><pre><span></span><code>BOT: Centro de Atención al Paciente del Hospital Cumulus. Déjame saber cómo te ayudo hoy.
+
+PACIENTE: Yo quiero agendar una cita.
+
+BOT: Por favor, dime tu identificador de paciente de tres cifras.
+
+PACIENTE: Cero Diez.
+
+BOT: Estoy buscando tu expediente con tu identificador de paciente. Un momento, por favor.
+
+BOT: Gracias. Ahora necesito tu fecha de nacimiento para verificar tu identidad.
+
+PACIENTE: 1 de enero de 1990.
+
+BOT: Perfecto, gracias por la información. Esa fecha corresponde al primero de enero de mil novecientos noventa. ¿La confirmas?
+
+PACIENTE: Es correcto.
+
+BOT: Perfecto, tu identidad ha sido verificada. ¿En qué puedo ayudarte con tu cita?
+
+PACIENTE: Quiero cambiar mi cita.
+
+BOT: Claro. Para cambiar tu cita necesito la ubicación, la especialidad, la fecha y la hora que deseas.
+
+PACIENTE: Quiero una cita de pediatría en Cancún.
+
+BOT: En Cancún hay pediatría. Me falta la fecha y la hora que deseas. Las citas están disponibles de lunes a viernes, en punto.
+
+PACIENTE: A las 9 de la mañana.
+
+BOT: Perfecto. ¿Qué fecha deseas?
+
+PACIENTE: El 2 de octubre.
+
+BOT: Confirmo pediatría en Cancún, el 2 de octubre de 2026 a las 9 de la mañana. ¿Es correcto?
+
+PACIENTE: Sí, es correcto.
+
+BOT: Perfecto, gracias por confirmar. Estoy cambiando tu cita de pediatría en Cancún para el 2 de octubre de 2026 a las 9 de la mañana. Dame un momento.
+
+BOT: Estoy enviando la confirmación de tu cita por WhatsApp.
+
+BOT: Tu cita ha quedado cambiada para pediatría en Cancún el 2 de octubre de 2026 a las 9 de la mañana. También te he enviado un mensaje de confirmación. ¿Necesitas algo más?
+
+PACIENTE: No, eso es todo. Gracias.
+
+BOT: De nada. Que tengas un buen día.
+</code></pre></div>
+</li>
+<li>
+<p>Verifica que:</p>
+<ul>
+<li>El paciente pueda seleccionar el idioma.</li>
+<li>El <code>Concierge AI Agent</code> transfiera correctamente la interacción.</li>
+<li>El <code>Cumulus AI Agent</code> reciba las variables del Voice Flow.</li>
+<li>El paciente sea autenticado antes de consultar o modificar información.</li>
+<li>La cita se actualice correctamente.</li>
+<li>Se envíe el mensaje de WhatsApp.</li>
+<li>La llamada regrese al Voice Flow cuando corresponda.</li>
+<li>La llamada pueda ser enviada a la <code>Queue</code> configurada.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Transferencia a un agente humano</p>
+<p>La habilitación de <code>Agent handover</code> y la experiencia de asistencia con <code>AI Assistant</code> se realizarán en el <strong>Bonus Lab</strong>.</p>
+</div>
+<hr>
+<h2 id="lab-3-completado-felicitaciones">🏁 Lab 3 Completado — Felicitaciones! 🎉</h2>
+<p>Has integrado los <strong>AI Agents</strong> con un <strong>Voice Flow</strong>, realizado una llamada real y validado el envío de la confirmación por WhatsApp.</p>
+<hr>
+<p><em>Lab realizado para Cisco Connect Latam 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../digital/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 2 - Cumulus AI Agent">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 2 - Cumulus AI Agent
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../bonus/" class="md-footer__link md-footer__link--next" aria-label="Next: Bonus Lab - AI Assistant">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Bonus Lab - AI Assistant
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.sections", "navigation.collapse", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

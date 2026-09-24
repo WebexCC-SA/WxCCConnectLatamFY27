@@ -1,0 +1,2371 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC">
+      
+      
+        <meta name="author" content="Carolina Morales">
+      
+      
+      
+        <link rel="prev" href="../voice/">
+      
+      
+        <link rel="next" href="../AI_Assistant/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Lab 2 - Cumulus AI Agent - LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-2-cumulus-ai-agent-gestion-de-pacientes-y-citas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-header__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 2 - Cumulus AI Agent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Descripción
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Actividades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../wrap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Comparta su opinión!
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" class="md-nav__button md-logo" aria-label="LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LABCOL-1217: Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Descripción
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La misión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antes de Comenzar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1 - Concierge AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Cumulus AI Agent
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2 - Cumulus AI Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-crear-el-cumulus-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Crear el Cumulus AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configurar-el-perfil-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configurar el perfil del agente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configurar el perfil del agente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-configurar-ai-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Configurar AI transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configurar-el-welcome-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Configurar el Welcome Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configurar-las-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configurar las Instructions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-crear-el-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Crear el Knowledge Base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurar-las-acciones-de-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configurar las acciones de MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-crear-el-webex-connect-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Crear el Webex Connect flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Crear el Webex Connect flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-abrir-webex-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Abrir Webex Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-crear-el-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Crear el flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-configurar-el-ai-agent-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Configurar el AI Agent Event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-configurar-el-http-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Configurar el HTTP Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-configurar-el-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Configurar el Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-agregar-el-nodo-whatsapp-al-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Agregar el nodo WhatsApp al flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-configurar-whatsapp-en-espanol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 Configurar WhatsApp en español
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68-configurar-whatsapp-en-ingles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8 Configurar WhatsApp en inglés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#69-configurar-el-whatsapp-predeterminado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.9 Configurar el WhatsApp predeterminado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#610-configurar-flow-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.10 Configurar Flow Outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#611-publicar-el-webex-connect-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.11 Publicar el Webex Connect flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-crear-la-accion-send_text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Crear la acción send_text
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Crear la acción send_text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-crear-la-entidad-personaname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Crear la entidad PersonaName
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-crear-las-entidades-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Crear las entidades adicionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-configurar-el-fulfillment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Configurar el Fulfillment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-probar-el-cumulus-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Probar el Cumulus AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2-completado-felicitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 2 Completado — Felicitaciones! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AI_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3 - Integración de AI Agents con Voice Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bonus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bonus Lab - AI Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wrap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparta su opinión!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-crear-el-cumulus-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Crear el Cumulus AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configurar-el-perfil-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configurar el perfil del agente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configurar el perfil del agente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-configurar-ai-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Configurar AI transparency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configurar-el-welcome-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Configurar el Welcome Message
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-configurar-las-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Configurar las Instructions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-crear-el-knowledge-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Crear el Knowledge Base
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configurar-las-acciones-de-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Configurar las acciones de MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-crear-el-webex-connect-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Crear el Webex Connect flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Crear el Webex Connect flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-abrir-webex-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Abrir Webex Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-crear-el-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Crear el flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-configurar-el-ai-agent-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Configurar el AI Agent Event
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-configurar-el-http-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Configurar el HTTP Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-configurar-el-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Configurar el Branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-agregar-el-nodo-whatsapp-al-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Agregar el nodo WhatsApp al flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#67-configurar-whatsapp-en-espanol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 Configurar WhatsApp en español
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#68-configurar-whatsapp-en-ingles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8 Configurar WhatsApp en inglés
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#69-configurar-el-whatsapp-predeterminado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.9 Configurar el WhatsApp predeterminado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#610-configurar-flow-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.10 Configurar Flow Outcomes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#611-publicar-el-webex-connect-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.11 Publicar el Webex Connect flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-crear-la-accion-send_text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Crear la acción send_text
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Crear la acción send_text">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-crear-la-entidad-personaname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Crear la entidad PersonaName
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-crear-las-entidades-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Crear las entidades adicionales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-configurar-el-fulfillment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Configurar el Fulfillment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-probar-el-cumulus-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Probar el Cumulus AI Agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2-completado-felicitaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏁 Lab 2 Completado — Felicitaciones! 🎉
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lab-2-cumulus-ai-agent-gestion-de-pacientes-y-citas">Lab 2 - Cumulus AI Agent: Gestión de pacientes y citas</h1>
+<hr>
+<h2 id="agenda">Agenda</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Actividad</th>
+<th>Duración</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Crear y configurar el <code>Cumulus AI Agent</code>, su Knowledge Base, las acciones de MCP Server y la integración con Webex Connect</td>
+<td>40 minutos</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="objetivo">Objetivo</h2>
+<p>En este lab crearás un segundo AI Agent autónomo para Cumulus Hospital.</p>
+<p>El <code>Cumulus AI Agent</code> funcionará como un asistente para:</p>
+<ul>
+<li>Responder preguntas generales sobre Cumulus Hospital.</li>
+<li>Consultar información de pacientes.</li>
+<li>Validar la identidad del paciente.</li>
+<li>Consultar y gestionar citas médicas.</li>
+<li>Utilizar acciones de <code>MCP Server</code>.</li>
+<li>Enviar confirmaciones mediante un flow de <code>Webex Connect</code>.</li>
+</ul>
+<hr>
+<h2 id="1-crear-el-cumulus-ai-agent">1. Crear el Cumulus AI Agent</h2>
+<p>Permanece en la pestaña de <code>AI Agent Studio</code>.</p>
+<ol>
+<li>Haz clic en <strong>+ Create agent</strong>.</li>
+<li>Selecciona <strong>Start from scratch</strong>.</li>
+<li>Haz clic en <strong>Next</strong>.</li>
+<li>Selecciona <strong>Autonomous</strong>.</li>
+<li>
+<p>Configura los siguientes campos:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent name</strong></td>
+<td><code>PodXXX_ConnectLatam_Cumulus</code></td>
+</tr>
+<tr>
+<td><strong>System ID</strong></td>
+<td>Deja el valor generado automáticamente</td>
+</tr>
+<tr>
+<td><strong>AI engine</strong></td>
+<td><code>Webex AI Pro-US 2.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Reemplaza <code>XXX</code> por el número de tres dígitos de tu <code>Pod ID</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">AI engine</p>
+<p><code>Webex AI Pro-US 2.0</code> se encuentra en etapa Beta para idiomas diferentes al inglés. Sin embargo, proporciona voces y capacidades de lenguaje más modernas para este caso de uso.</p>
+</div>
+</li>
+<li>
+<p>Haz clic en <strong>Create</strong>.</p>
+</li>
+</ol>
+<h2 id="2-configurar-el-perfil-del-agente">2. Configurar el perfil del agente</h2>
+<p>Permanece en la pestaña <strong>Profile</strong>.</p>
+<h3 id="21-configurar-ai-transparency">2.1 Configurar AI transparency</h3>
+<ol>
+<li>Desactiva <strong>AI transparency</strong>.</li>
+<li>
+<p>En el campo de justificación, escribe:</p>
+<div class="highlight"><pre><span></span><code>Lab
+</code></pre></div>
+</li>
+<li>
+<p>Haz clic en <strong>Keep it disabled</strong>.</p>
+</li>
+</ol>
+<h3 id="22-configurar-el-welcome-message">2.2 Configurar el Welcome Message</h3>
+<p>En el campo <strong>Welcome Message</strong>, escribe exactamente:</p>
+<div class="highlight"><pre><span></span><code>```text
+{{ WelcomeMsg }}
+```
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Welcome Message dinámico</p>
+<p><code>{{ WelcomeMsg }}</code> es una variable que recibe el mensaje inicial enviado desde el <code>Voice Flow</code>.</p>
+<p>Esto permite que el AI Agent reciba el mensaje inicial en el idioma seleccionado por el paciente, sin tener que solicitar nuevamente esta información.</p>
+</div>
+<h2 id="3-configurar-las-instructions">3. Configurar las Instructions</h2>
+<ol>
+<li>Abre la pestaña <strong>Instructions</strong>.</li>
+<li>Copia y pega el siguiente contenido.</li>
+<li>Selecciona <strong>Paste and match style</strong>.</li>
+<li>
+<p>Haz clic en <strong>Save changes</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Idioma de Goal e Instructions</p>
+<p>Para facilitar el soporte de los proctors en este caso de uso multilingüe, el contenido de los campos <code>Goal</code> e <code>Instructions</code> se mantiene en inglés.</p>
+<p>Sin embargo, en un entorno de producción estos campos pueden configurarse completamente en español sin ningún problema.</p>
+</div>
+<div class="highlight"><pre><span></span><code>Goal:
+
+You are a friendly and professional AI healthcare assistant for Cumulus Hospital. You are focused on answering general clinic questions based on the Knowledge Base, providing patient information about appointments, and helping patients manage their scheduled appointments.
+
+INSTRUCTIONS:
+
+## Step 1: MANDATORY INITIAL STEP - FETCH THE PATIENT RECORD
+
+Do not offer any information or perform any action before completing this step.
+
+- After the Welcome Message, ask the patient for their 3-digit patient ID.
+- Confirm that the patient provided exactly 3 digits, for example: 010.
+- If the patient provides a different value, ask them to try again using 3 digits.
+- Add the prefix "Pod" to the provided value and use the resulting value as `patientId`.
+- For example, if the patient provides 010, use `Pod010` as the value of `patientId`.
+
+Execute the `get_patient` action using `patientId`.
+
+- If the patient is not found, inform the patient and ask them to provide the ID again.
+- Do not continue until `get_patient` returns a patient record.
+- From the response, use `firstName` and `lastName` to compose the patient's name.
+- Set the variable `{{ PersonaName }}` using the patient's first and last name.
+- If you cannot compose `{{ PersonaName }}`, do not use the patient's name when speaking to the patient.
+- Thank the patient for the information and use `{{ PersonaName }}` when possible.
+
+## Step 2: AUTHENTICATE THE PATIENT
+
+Authenticate the patient using their date of birth.
+
+1. Ask for the patient's date of birth.
+2. Compare the response with the date of birth returned by `get_patient`.
+3. If the date of birth is incorrect, ask the patient to try again.
+4. Set `authenticated = true` when the value matches.
+5. Set `authenticated = false` when the value does not match or the patient declines.
+6. Do not provide patient details, appointment information, or perform updates while `authenticated = false`.
+7. Allow a maximum of three attempts.
+8. If authentication fails after three attempts, invoke `Agent_Escalation`.
+
+## Step 3: PROVIDE INFORMATION AFTER AUTHENTICATION
+
+Only after `authenticated = true`:
+
+- Answer the patient's original request.
+- Use the Knowledge Base to answer general questions about the hospital.
+- Use the patient information returned by `get_patient` to answer appointment-related questions.
+
+When the patient requests an appointment:
+
+- Check the values of `appointmentStatus` and `nextAppointmentDate`.
+- If the appointment status is `Booked` or `Confirmed`, provide the existing date and time.
+- Ask whether the patient wants to keep, reschedule, or cancel the appointment.
+- Never silently create a second appointment.
+- If the appointment is `Cancelled` or there is no next appointment, continue with the booking process.
+- Ask for the specialty, location, date, and time.
+- Use the Knowledge Base to verify the specialty, location, and operating hours.
+- Confirm that the requested information is valid before updating the appointment.
+
+## Step 4: TIMEZONE HANDLING
+
+MCP tools always return and expect date-time values in ISO 8601 UTC format, for example:
+
+2026-07-09T14:30:00.000Z
+
+The patient record includes a `timezone` field, such as `America/New_York`. This field is the source of truth.
+
+- Do not ask the patient for their timezone unless the value is missing or null.
+- Convert UTC date and time values into the patient's timezone.
+- Speak naturally to the patient. Never read the raw ISO value.
+- Interpret the date and time provided by the patient using the patient's timezone.
+- Convert the value to ISO 8601 UTC before calling an MCP action.
+- Confirm the appointment using the patient's local date and time.
+
+## Step 5: UPDATE RESTRICTIONS
+
+The `update_patient` action may update only:
+
+- `nextAppointmentDate`
+- `appointmentStatus`
+
+Do not update any other patient information.
+
+For cancellations:
+
+- Set `appointmentStatus` to `Cancelled`.
+- Set `nextAppointmentDate` to `null`.
+- Perform both updates together.
+- Never leave the previous appointment date active.
+
+For new appointments or rescheduling:
+
+- Set `nextAppointmentDate` to the new ISO 8601 UTC value.
+- Set `appointmentStatus` to `Booked`.
+- Perform both updates together.
+
+## Step 6: SEND THE APPOINTMENT CONFIRMATION
+
+After a booking, cancellation, or rescheduling is successfully completed through `update_patient`:
+
+- Execute the `send_text` action.
+- Send the message using `{{ PersonaANI }}`.
+- Do not use `phoneNumber`.
+- Send only one message for each successful update.
+- Do not send a message when the update fails.
+- Include the action, date, and time in the patient's timezone.
+- Never include the raw ISO value in the message.
+- If `send_text` fails, inform the patient that the appointment was saved but the confirmation message could not be sent.
+
+## GENERAL BEHAVIOR
+
+- `Agent_Escalation` is an action. Invoke it when required; do not only describe it.
+- If `get_patient` returns an error, inform the patient politely and invoke `Agent_Escalation`.
+- Do not attempt authentication if the patient record cannot be retrieved.
+- Never guess or create patient information.
+- Always verify date of birth, ZIP code, and patient information using the MCP response.
+- If the patient asks for a human representative, invoke `Agent_Escalation`.
+- Use `{{ PersonaName }}` to provide personalized assistance whenever possible.
+
+## Example Flow
+
+1. The patient requests an appointment.
+2. The agent executes `get_patient`.
+3. The agent asks for the patient's date of birth.
+4. The agent authenticates the patient.
+5. The agent verifies the current appointment information.
+6. The agent executes `update_patient` when required.
+7. The agent confirms the result and executes `send_text`.
+</code></pre></div>
+</li>
+</ol>
+<h2 id="4-crear-el-knowledge-base">4. Crear el Knowledge Base</h2>
+<p>Descarga el archivo utilizado para configurar el Knowledge Base:
+    <a href="../assets/ConnectLatam_AIAgentCumulusKB.pdf" target="_blank" rel="noopener noreferrer">
+       Descargar ConnectLatam_AIAgentCumulusKB.pdf
+    </a></p>
+<p>Este documento contiene información general sobre Cumulus Hospital, incluyendo:
+- Ubicaciones.
+- Especialidades.
+- Horarios de atención.
+- Información general de los servicios.</p>
+<ol>
+<li>Regresa a la configuración del <code>Cumulus AI Agent</code>.</li>
+<li>Abre la pestaña <strong>Knowledge</strong>.</li>
+<li>Haz clic en <strong>Select a Knowledge Base</strong>.</li>
+<li>Selecciona <strong>+ Create knowledge base</strong>.</li>
+<li>
+<p>Configura el nombre:</p>
+<div class="highlight"><pre><span></span><code>PodXXX_CumulusKB
+</code></pre></div>
+</li>
+<li>
+<p>Haz clic en <strong>Create</strong>.</p>
+</li>
+<li>Espera a que el Knowledge Base sea creado.</li>
+<li>Haz clic en <strong>Upload Files</strong>.</li>
+<li>Selecciona <strong>Add file</strong>.</li>
+<li>Selecciona el archivo <code>ConnectLatam_AIAgentCumulusKB.pdf</code>.</li>
+<li>Haz clic en <strong>Open</strong>.</li>
+<li>Haz clic en <strong>Process Files</strong>.</li>
+<li>Espera a que el archivo termine de procesarse.</li>
+<li>Cierra la ventana de carga.</li>
+<li>
+<p>Cierra la ventana del Knowledge Base para regresar a la configuración del AI Agent.</p>
+<details class="- tip">
+<summary>Cómo configurar el Knowledge Base del Cumulus AI Agent</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/KB_Cumulus_AI_Agent.gif" data-title="Configurar el Knowledge Base del Cumulus AI Agent" data-desc-position="top"><img alt="Configurar el Knowledge Base del Cumulus AI Agent" loading="lazy" src="../assets/KB_Cumulus_AI_Agent.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<h2 id="5-configurar-las-acciones-de-mcp-server">5. Configurar las acciones de MCP Server</h2>
+<ol>
+<li>Haz clic en <strong>Save changes</strong>.</li>
+<li>Abre la pestaña <strong>Actions</strong>.</li>
+<li>Desactiva <strong>Agent handover</strong>.</li>
+<li>Haz clic en <strong>+ Add actions</strong>.</li>
+<li>Selecciona <strong>Select available</strong>.</li>
+<li>Selecciona <strong>Browser actions</strong>.</li>
+<li>
+<p>En el buscador, escribe:</p>
+<div class="highlight"><pre><span></span><code>cumulus
+</code></pre></div>
+</li>
+<li>
+<p>Selecciona únicamente:</p>
+<div class="highlight"><pre><span></span><code>get_patient
+update_patient
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Acciones requeridas</p>
+<p>Selecciona únicamente <code>get_patient</code> y <code>update_patient</code>. Estas son las acciones de MCP Server utilizadas en este lab.</p>
+</div>
+</li>
+</ol>
+<details class="- tip">
+<summary>Cómo configurar las acciones de MCP Server</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/CreatingActions_MCP.gif" data-title="Configurar las acciones de MCP Server" data-desc-position="top"><img alt="Configurar las acciones de MCP Server" loading="lazy" src="../assets/CreatingActions_MCP.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="6-crear-el-webex-connect-flow">6. Crear el Webex Connect flow</h2>
+<p>En esta actividad crearás el flow <code>AIAgent_send_text</code>. Este flow enviará al paciente la confirmación de la acción realizada por el AI Agent.</p>
+<h3 id="61-abrir-webex-connect">6.1 Abrir Webex Connect</h3>
+<ol>
+<li>Regresa a <code>Control Hub</code>.</li>
+<li>Navega a <strong>Services &gt; Contact Center</strong>.</li>
+<li>En la sección <strong>Quick Links</strong>, ubica <strong>Webex Connect</strong>.</li>
+<li>Haz clic en <strong>Webex Connect</strong>.</li>
+<li>En Webex Connect, abre el menú <strong>Services</strong>.</li>
+<li>
+<p>Busca el servicio asignado a tu Pod utilizando:</p>
+<div class="highlight"><pre><span></span><code>PodXXX
+</code></pre></div>
+</li>
+<li>
+<p>Selecciona el servicio correspondiente.</p>
+<details class="- tip">
+<summary>Cómo abrir Webex Connect</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Launch_WxConnect.gif" data-title="Abrir Webex Connect" data-desc-position="top"><img alt="Abrir Webex Connect" loading="lazy" src="../assets/Launch_WxConnect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+</li>
+</ol>
+<h3 id="62-crear-el-flow">6.2 Crear el flow</h3>
+<ol>
+<li>Dentro de tu servicio, abre <strong>Flows</strong>.</li>
+<li>Haz clic en <strong>Create Flow</strong>.</li>
+<li>
+<p>Configura:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flow Name</strong></td>
+<td><code>AIAgent_send_text</code></td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td><code>New Flow</code></td>
+</tr>
+<tr>
+<td><strong>Template</strong></td>
+<td><code>Start from Scratch</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Haz clic en <strong>Create</strong>.</p>
+</li>
+</ol>
+<details class="- tip">
+<summary>Crear el Webex Connect flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/Connect_flow.gif" data-title="Crear el Webex Connect flow" data-desc-position="top"><img alt="Crear el Webex Connect flow" loading="lazy" src="../assets/Connect_flow.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="63-configurar-el-ai-agent-event">6.3 Configurar el AI Agent Event</h3>
+<ol>
+<li>En la ventana <strong>Integrations</strong>, selecciona <strong>AI Agent</strong>.</li>
+<li>En <strong>Configure AI Agent Event</strong>, copia el siguiente JSON.</li>
+<li>Haz clic en <strong>Parse</strong>.</li>
+<li>
+<p>Haz clic en <strong>Save</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">"PersonaName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eliane Gasparotto"</span><span class="p">,</span>
+<span class="nt">"Language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es-US"</span><span class="p">,</span>
+<span class="nt">"PersonaANI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5511992518520"</span><span class="p">,</span>
+<span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cita confirmada"</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Valores de prueba</p>
+<p>Utiliza los valores de prueba proporcionados para el ambiente del lab. No utilices información real de pacientes.</p>
+</div>
+<details class="- tip">
+<summary>Configurar el AI Agent Event</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/AIAgent_Connect.gif" data-title="Configurar el AI Agent Event" data-desc-position="top"><img alt="Configurar el AI Agent Event" loading="lazy" src="../assets/AIAgent_Connect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="64-configurar-el-http-request">6.4 Configurar el HTTP Request</h3>
+<ol>
+<li>Agrega un nodo <strong>HTTP Request</strong> al canvas.</li>
+<li>Colócalo junto al nodo <strong>AI Agent</strong>.</li>
+<li>Conecta el nodo <strong>AI Agent Event</strong> con el nodo <strong>HTTP Request</strong>.</li>
+<li>Abre la configuración del nodo <strong>HTTP Request</strong>.</li>
+<li>
+<p>Configura los siguientes valores:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method</strong></td>
+<td><code>POST</code></td>
+</tr>
+<tr>
+<td><strong>Endpoint URL</strong></td>
+<td><code>https://hooks.us.webexconnect.io/events/3V12KFWSBD</code></td>
+</tr>
+<tr>
+<td><strong>Header</strong></td>
+<td><code>Content-Type</code></td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td><strong>Connection Timeout</strong></td>
+<td><code>5000</code></td>
+</tr>
+<tr>
+<td><strong>Request Timeout</strong></td>
+<td><code>5000</code></td>
+</tr>
+</tbody>
+</table>
+<p>En el campo <strong>Body</strong>, agrega:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">"PersonaName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(n2.aiAgent.PersonaName)"</span><span class="p">,</span>
+<span class="nt">"Language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(n2.aiAgent.Language)"</span><span class="p">,</span>
+<span class="nt">"PersonaANI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(n2.aiAgent.PersonaANI)"</span><span class="p">,</span>
+<span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(n2.aiAgent.Message)"</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Haz clic en <strong>Save</strong>.</p>
+</li>
+</ol>
+<details class="- tip">
+<summary>Configurar el HTTP Request</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/http_node_connect.gif" data-title="Configurar el HTTP Request" data-desc-position="top"><img alt="Configurar el HTTP Request" loading="lazy" src="../assets/http_node_connect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="65-configurar-el-branch">6.5 Configurar el Branch</h3>
+<ol>
+<li>Agrega un nodo <strong>Branch</strong> al canvas.</li>
+<li>Conecta el nodo <strong>HTTP Request</strong> con el nodo <strong>Branch</strong>.</li>
+<li>Conecta todas las salidas del nodo <strong>HTTP Request</strong>.</li>
+<li>
+<p>Configura las ramas:</p>
+<table>
+<thead>
+<tr>
+<th>Rama</th>
+<th>Idioma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ES</code></td>
+<td>Español</td>
+</tr>
+<tr>
+<td><code>EN</code></td>
+<td>Inglés</td>
+</tr>
+<tr>
+<td><code>None of above</code></td>
+<td>Ruta predeterminada</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<details class="- tip">
+<summary>Configurar el Branch</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/branch_connect.gif" data-title="Configurar el Branch" data-desc-position="top"><img alt="Configurar el Branch" loading="lazy" src="../assets/branch_connect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="66-agregar-el-nodo-whatsapp-al-flow">6.6 Agregar el nodo WhatsApp al flow</h3>
+<p>Ahora agregaremos el nodo <code>WhatsApp</code> al flow. Este nodo enviará al paciente un mensaje con el resumen del servicio solicitado.</p>
+<ol>
+<li>En el panel de nodos del canvas, selecciona la categoría <strong>Channels</strong>.</li>
+<li>Busca y selecciona el nodo <strong>WhatsApp</strong>.</li>
+<li>Arrastra el nodo al flow.</li>
+<li>Conecta la salida <code>ES</code> del nodo <strong>Branch</strong> con el nodo <strong>WhatsApp</strong>.</li>
+</ol>
+<details class="- tip">
+<summary>Agregar el nodo WhatsApp al flow</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/whatsapp_connect.gif" data-title="Agregar el nodo WhatsApp al flow" data-desc-position="top"><img alt="Agregar el nodo WhatsApp al flow" loading="lazy" src="../assets/whatsapp_connect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="67-configurar-whatsapp-en-espanol">6.7 Configurar WhatsApp en español</h3>
+<ol>
+<li>En el panel de nodos, abre la categoría <strong>Channels</strong>.</li>
+<li>Selecciona el nodo <strong>WhatsApp</strong>.</li>
+<li>Colócalo en el canvas.</li>
+<li>Conecta la rama <code>ES</code> con el nodo <strong>WhatsApp</strong>.</li>
+<li>Abre la configuración del nodo.</li>
+<li>
+<p>Cambia el nombre a:</p>
+<div class="highlight"><pre><span></span><code>WhatsApp_ES
+</code></pre></div>
+</li>
+<li>
+<p>Configura:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Destination Type</strong></td>
+<td><code>WABA ID</code></td>
+</tr>
+<tr>
+<td><strong>Destination</strong></td>
+<td><code>$(n2.aiAgent.PersonaANI)</code></td>
+</tr>
+<tr>
+<td><strong>Message Type</strong></td>
+<td><code>TEMPLATE</code></td>
+</tr>
+<tr>
+<td><strong>Template Name</strong></td>
+<td><code>ciscoconnect_servicerequest_es</code></td>
+</tr>
+<tr>
+<td><strong>Parameter Type - Variable 1</strong></td>
+<td><code>Text</code></td>
+</tr>
+<tr>
+<td><strong>Value - Variable 1</strong></td>
+<td><code>$(n2.aiAgent.PersonaName)</code></td>
+</tr>
+<tr>
+<td><strong>Parameter Type - Variable 2</strong></td>
+<td><code>Text</code></td>
+</tr>
+<tr>
+<td><strong>Value - Variable 2</strong></td>
+<td><code>$(n2.aiAgent.Message)</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Haz clic en <strong>Save</strong>.</p>
+</li>
+</ol>
+<details class="- tip">
+<summary>Configurar WhatsApp en español</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/whatsapp_es_connect.gif" data-title="Configurar WhatsApp en español" data-desc-position="top"><img alt="Configurar WhatsApp en español" loading="lazy" src="../assets/whatsapp_es_connect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="68-configurar-whatsapp-en-ingles">6.8 Configurar WhatsApp en inglés</h3>
+<ol>
+<li>Selecciona el nodo <code>WhatsApp_ES</code>.</li>
+<li>Cópialo y pégalo para crear una copia.</li>
+<li>Conecta la rama <code>EN</code> con el nuevo nodo.</li>
+<li>Abre la configuración del nodo.</li>
+<li>
+<p>Cambia el nombre a:</p>
+<div class="highlight"><pre><span></span><code>WhatsApp_EN
+</code></pre></div>
+</li>
+<li>
+<p>Cambia únicamente el siguiente valor:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Template Name</strong></td>
+<td><code>ciscoconnect_servicerequest_en</code></td>
+</tr>
+</tbody>
+</table>
+<p>Mantén los demás parámetros configurados previamente.</p>
+</li>
+</ol>
+<details class="- tip">
+<summary>Configurar WhatsApp en inglés</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/whatsapp_en_connect.gif" data-title="Configurar WhatsApp en inglés" data-desc-position="top"><img alt="Configurar WhatsApp en inglés" loading="lazy" src="../assets/whatsapp_en_connect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="69-configurar-el-whatsapp-predeterminado">6.9 Configurar el WhatsApp predeterminado</h3>
+<ol>
+<li>Copia nuevamente un nodo <strong>WhatsApp</strong> configurado.</li>
+<li>Conéctalo a la salida <code>None of above</code> del nodo <strong>Branch</strong>.</li>
+<li>
+<p>Cambia el nombre a:</p>
+<div class="highlight"><pre><span></span><code>WhatsApp_Default
+</code></pre></div>
+</li>
+<li>
+<p>Mantén las configuraciones del nodo copiado.</p>
+<div class="admonition note">
+<p class="admonition-title">Ruta predeterminada</p>
+<p>Si copias el nodo <code>WhatsApp_ES</code>, la ruta predeterminada enviará el mensaje utilizando la plantilla en español.</p>
+</div>
+</li>
+</ol>
+<details class="- tip">
+<summary>Configurar el WhatsApp predeterminado</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/default_whatsapp_connect.gif" data-title="Configurar el WhatsApp predeterminado" data-desc-position="top"><img alt="Configurar el WhatsApp predeterminado" loading="lazy" src="../assets/default_whatsapp_connect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="610-configurar-flow-outcomes">6.10 Configurar Flow Outcomes</h3>
+<ol>
+<li>Abre <strong>Configuration</strong>.</li>
+<li>Selecciona <strong>Flow Outcomes</strong>.</li>
+<li>Verifica que <strong>Notify</strong> esté habilitado.</li>
+<li>Abre <strong>Last Execution Status</strong>.</li>
+<li>
+<p>Configura:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Notification Settings</strong></td>
+<td><code>Notify AI Agent</code></td>
+</tr>
+<tr>
+<td><strong>Define JSON</strong></td>
+<td><code>Enter JSON</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Agrega el siguiente JSON:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">"transactionID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(transid)"</span><span class="p">,</span>
+<span class="nt">"flowname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(flowname)"</span><span class="p">,</span>
+<span class="nt">"serviceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(serviceName)"</span><span class="p">,</span>
+<span class="nt">"httpStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(n4.http.statusCode)"</span><span class="p">,</span>
+<span class="nt">"httpResponse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$(n4.http.responseBody)"</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Haz clic en <strong>Save</strong>.</p>
+</li>
+</ol>
+<details class="- tip">
+<summary>Configurar Flow Outcomes</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/outcomes_flowconnect.gif" data-title="Configurar Flow Outcomes" data-desc-position="top"><img alt="Configurar Flow Outcomes" loading="lazy" src="../assets/outcomes_flowconnect.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h3 id="611-publicar-el-webex-connect-flow">6.11 Publicar el Webex Connect flow</h3>
+<ol>
+<li>En la esquina superior derecha, haz clic en <strong>Make Live</strong>.</li>
+<li>Si aparece una advertencia indicando que el nodo HTTP no tiene terminación, ignórala.</li>
+<li>Haz clic nuevamente en <strong>Make Live</strong>.</li>
+<li>Espera a que el flow termine de publicarse.</li>
+</ol>
+<p>El flow estará listo para ser utilizado por el <code>Cumulus AI Agent</code>.</p>
+<h2 id="7-crear-la-accion-send_text">7. Crear la acción send_text</h2>
+<p>Regresa a la pestaña de <code>AI Agent Studio</code>.</p>
+<ol>
+<li>Asegúrate de estar en la configuración del <code>Cumulus AI Agent</code>.</li>
+<li>Abre la pestaña <strong>Actions</strong>.</li>
+<li>Haz clic en <strong>+ Add actions</strong>.</li>
+<li>Selecciona <strong>Fulfillment</strong> en <strong>Create new action</strong>.</li>
+<li>
+<p>Configura:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Action name</strong></td>
+<td><code>send_text</code></td>
+</tr>
+<tr>
+<td><strong>Action description</strong></td>
+<td><code>Send text to patient when finishes the scheduling.</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Nombres exactos</p>
+<p>Utiliza exactamente el nombre <code>send_text</code> y los nombres de las entidades. El AI Agent utilizará estos valores para identificar la acción correcta.</p>
+</div>
+<h3 id="71-crear-la-entidad-personaname">7.1 Crear la entidad PersonaName</h3>
+<ol>
+<li>Haz clic en <strong>+ New input entity</strong>.</li>
+<li>
+<p>Configura:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity name</strong></td>
+<td><code>PersonaName</code></td>
+</tr>
+<tr>
+<td><strong>Entity Type</strong></td>
+<td><code>String</code></td>
+</tr>
+<tr>
+<td><strong>Entity description</strong></td>
+<td><code>Set with {{ PersonaName }} you had composed during instructions.</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Desactivado</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Haz clic en <strong>Add</strong>.</p>
+</li>
+</ol>
+<h3 id="72-crear-las-entidades-adicionales">7.2 Crear las entidades adicionales</h3>
+<ol>
+<li>
+<p>Agrega las siguientes entidades:</p>
+<table>
+<thead>
+<tr>
+<th>Entity name</th>
+<th>Entity type</th>
+<th>Entity description</th>
+<th>Entity examples</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Language</code></td>
+<td><code>String</code></td>
+<td><code>Use value from {{ Global_Language }}. Use es-US if you do not have this information as default.</code></td>
+<td><code>es-US; pt-BR</code></td>
+<td>Activado</td>
+</tr>
+<tr>
+<td><code>Message</code></td>
+<td><code>String</code></td>
+<td><code>Summary of the action regarding scheduling, cancellation or rescheduling. Provide a summary including action, location and date using the values from the scheduling completed. Use the correct language according to {{ Global_Language }}.</code></td>
+<td><code>Scheduling a medical appointment; agendar una cita médica</code></td>
+<td>Activado</td>
+</tr>
+<tr>
+<td><code>PersonaANI</code></td>
+<td><code>String</code></td>
+<td><code>Caller ANI. Use value {{ PersonaANI }}. Do not use the phone number returned by get_patient.</code></td>
+<td>Número de prueba del lab</td>
+<td>Activado</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h3 id="73-configurar-el-fulfillment">7.3 Configurar el Fulfillment</h3>
+<p>En la sección <strong>Fulfillment</strong>:</p>
+<ol>
+<li>Selecciona <strong>Use Webex Connect Flow Builder</strong>.</li>
+<li>
+<p>En <strong>Select service</strong>, selecciona el servicio asignado a tu Pod:</p>
+<div class="highlight"><pre><span></span><code>PODXXX
+</code></pre></div>
+</li>
+<li>
+<p>En <strong>Select flow</strong>, selecciona:</p>
+<div class="highlight"><pre><span></span><code>AIAgent_send_text
+</code></pre></div>
+</li>
+<li>
+<p>Haz clic en <strong>Add</strong>.</p>
+</li>
+</ol>
+<details class="- tip">
+<summary>Crear la acción send_text</summary>
+<p></p><figure markdown="">
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/send_text.gif" data-title="Crear la acción send_text" data-desc-position="top"><img alt="Crear la acción send_text" loading="lazy" src="../assets/send_text.gif" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"></a>
+</figure><p></p>
+</details>
+<h2 id="8-probar-el-cumulus-ai-agent">8. Probar el Cumulus AI Agent</h2>
+<ol>
+<li>Haz clic en <strong>Preview</strong>.</li>
+<li>Inicia una llamada de prueba.</li>
+<li>
+<p>Utiliza el siguiente escenario:</p>
+<div class="highlight"><pre><span></span><code>BOT: Centro de Atención al Paciente del Hospital Cumulus. Déjame saber cómo te ayudo hoy.
+
+PACIENTE: Me gustaría saber si en Cancún hay cardiología.
+
+BOT: Claro, entiendo tu interés. Sí, en Cancún hay cardiología porque esa sede ofrece todos los servicios y especialidades. Si quieres, después de identificarte puedo revisar tu cita.
+
+PACIENTE: Sí, por favor.
+
+BOT: Perfecto. Necesito tu identificación de paciente de tres cifras para continuar.
+
+PACIENTE: Es 0XX. Usa los tres dígitos de tu Pod ID.
+
+BOT: Estoy consultando tu expediente de paciente. Un momento, por favor.
+
+BOT: Gracias. Ahora necesito tu fecha de nacimiento para verificar tu identidad.
+
+PACIENTE: Es el 1 de enero de 1990.
+
+BOT: Perfecto, gracias por la información. He entendido el primero de enero de mil novecientos noventa. ¿Me confirmas si es correcta?
+
+PACIENTE: Sí, es correcta.
+
+BOT: Gracias. Tu identidad ha quedado verificada. Ya tienes una cita reservada. ¿Quieres mantenerla, cambiarla o cancelarla?
+
+PACIENTE: Quiero cancelarla.
+
+BOT: Claro. Estoy cancelando tu cita y dejando constancia en tu expediente. Dame un momento, por favor.
+
+BOT: Estoy enviando la confirmación de la cancelación de tu cita por mensaje.
+
+BOT: Tu cita ha quedado cancelada y te he enviado un mensaje de confirmación. ¿Necesitas algo más?
+
+PACIENTE: No, eso es todo. Gracias.
+
+BOT: De nada. Que tengas un buen día.
+</code></pre></div>
+</li>
+<li>
+<p>Verifica que el AI Agent:</p>
+<ul>
+<li>Solicite el <code>patient ID</code>.</li>
+<li>Ejecute <code>get_patient</code>.</li>
+<li>Solicite la fecha de nacimiento.</li>
+<li>Valide la identidad del paciente.</li>
+<li>Consulte el estado de la cita.</li>
+<li>Ejecute <code>update_patient</code> cuando corresponda.</li>
+<li>Ejecute <code>send_text</code> después de una actualización exitosa.</li>
+<li>Utilice la zona horaria del paciente.</li>
+<li>No exponga información antes de autenticar al paciente.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Publicar el AI Agent</p>
+<p>Después de finalizar las pruebas en <code>Preview</code>, publica el <code>Cumulus AI Agent</code> para que pueda utilizarse en el Lab 3.</p>
+</div>
+<hr>
+<h2 id="lab-2-completado-felicitaciones">🏁 Lab 2 Completado — Felicitaciones! 🎉</h2>
+<p>Has creado y configurado el <strong>Cumulus AI Agent</strong>, su <strong>Knowledge Base</strong>, las <strong>acciones de MCP Server* y la </strong>integración con Webex Connect**.</p>
+<hr>
+<p><em>Lab realizado para Cisco Connect Latam 2026</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../voice/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 1 - Concierge AI Agent">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lab 1 - Concierge AI Agent
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../AI_Assistant/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 3 - Integración de AI Agents con Voice Flow">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lab 3 - Integración de AI Agents con Voice Flow
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "navigation.sections", "navigation.collapse", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
