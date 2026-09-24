@@ -46,10 +46,13 @@ extra_javascript:
 plugins:
   - search
   - macros
-  # with-pdf:
-  #    cover_title: LABCOL-1217
-  #    cover_subtitle: Demystifying
-  #    cover_logo: template_assets/exclamation.png
+  - to-pdf:
+      output_path: pdf/guia-ciscoconnect.pdf
+      cover: true
+      cover_title: "LABCOL-1217"
+      cover_subtitle: "Del Voice Bot al Agente Autónomo: Domina el AI Agent en WebexCC"
+      toc_title: "Contenido"
+      cover_logo: template_assets/ciscoconnect.png
   - glightbox:
       touchNavigation: true
       loop: false
