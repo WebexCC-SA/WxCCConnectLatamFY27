@@ -2,7 +2,7 @@
 
 ---
 
-## Section Agenda
+## Agenda
 | # | Task | Duration |
 |---|---|---|
 | 1 | Crear el AI Agent autónomo `Concierge` para detectar el idioma del paciente | 20 min |

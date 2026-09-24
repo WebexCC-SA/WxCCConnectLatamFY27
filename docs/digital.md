@@ -2,7 +2,7 @@
 
 ---
 
-## Section Agenda
+## Agenda
 
 | # | Actividad | Duración |
 |---|---|---|
@@ -671,7 +671,7 @@ En la sección **Fulfillment**:
 ---
 
 ## 🏁 Lab 2 Completado — Felicitaciones! 🎉
-Has creado y configurado el `Cumulus AI Agent`, su Knowledge Base, las acciones de MCP Server y la integración con Webex Connect.
+Has creado y configurado el **Cumulus AI Agent**, su **Knowledge Base**, las **acciones de MCP Server* y la **integración con Webex Connect**.
 
 ---
 

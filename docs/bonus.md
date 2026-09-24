@@ -1,4 +1,4 @@
-# Lab 4 - Bonus: AI Analytics & Quality Management for Supervisors
+# Bonus Lab - AI Assistant: Asistencia al agente humano
 
 ---
 
