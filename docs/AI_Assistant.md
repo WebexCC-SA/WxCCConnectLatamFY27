@@ -6,7 +6,7 @@
 
 | # | Actividad | Duración |
 |---|---|---|
-| 3 | Integrar los AI Agents con un Voice Flow y realizar una llamada real | 15 minutos |
+| 3 | Integrar los AI Agents con un `Voice Flow` y realizar una llamada real | 15 minutos |
 
 ---
 
