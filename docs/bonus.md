@@ -2,246 +2,157 @@
 
 ---
 
-## Section Agenda - 15 Minutes
-| # | Task | Duration |
+## Agenda
+
+| # | Actividad | Duración |
 |---|---|---|
-| 1 | Phase 1 — Analyzing AI Assistant Dashboard | 5 min |
-| 2 | Phase 2 — Analyzing Insights from Interactions with AI Quality Management | 10 min |
+| Bonus | Habilitar `Agent handover` y utilizar `AI Assistant` con `Real-Time Assist` en Agent Desktop | 5 minutos |
 
 ---
 
-## Introduction
+## Objetivo
 
-Now that you have successfully deployed and tested your AI Agent and AI Assistant, it is time
-to transition into your role as a **Supervisor** and see **the full picture**. You will
-evaluate interactions and analyze performance.
+En escenarios reales, un AI Agent puede necesitar transferir la interacción a un agente humano cuando recibe una solicitud compleja o fuera de su alcance.
 
-???+ info "Key Learning"
-    The **AI Assistant Dashboard** gives you **real-time visibility** into AI usage and impact. <br>
-    while **AI Quality Management** turns every interaction into a **coaching opportunity**, automatically, in any language, at scale.
+En este Bonus Lab habilitarás `Agent handover` y utilizarás `AI Assistant` con `Real-Time Assist` para apoyar al agente humano durante una llamada.
 
-???+ warning "The PodID Discipline"
-    Always replace **XXX** with your assigned **3-digit ID (e.g., 001, 002)**. Your naming convention must start with the prefix **Pod** followed by your PodID **(PodXXX)**. If you do not follow this convention exactly, you will overwrite your neighbor's work. Stay disciplined with your naming convention!
+---
 
+## 1. Habilitar Agent handover
 
-## Phase 1 — Analyzing AI Assistant Dashboard
+1. Abre `AI Agent Studio`.
+2. Selecciona el `Cumulus AI Agent` creado para tu Pod:
 
-### 1.1 Launch the Supervisor Desktop
+    ```text
+    PodXXX_ConnectLatam_Cumulus
+    ```
 
-1. Open **Chrome** and select the **Supervisor_Lab** Chrome Profile.
-2. Navigate to: 
-```
-https://desktop.wxcc-us1.cisco.com/
-```
-3. Log in with your **Supervisor POD credentials** and confirm:
+3. Abre la pestaña **Actions**.
+4. Habilita la acción **Agent handover**.
+5. Haz clic en **Publish**.
+6. Agrega una nueva nota de versión, por ejemplo:
 
-    - **Role:** `Supervisor`
-    - **Handle calls using:** `Desktop`
+    ```text
+    Bonus Lab - Enable Agent Handover
+    ```
 
-4. Click **Save & Continue**.
+7. Confirma la publicación.
 
-!!! tip "Save Your Password"
-    Save the password on this Chrome Profile to make future logins easier during the lab.
-
-???- info "See how to login"
+???- tip "Habilitar Agent handover"
     <figure markdown>
-    ![Launching Supervisor Desktop](./assets/LaunchingSupervisorDesktop.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Launching the Supervisor Desktop</figcaption>
+        ![Habilitar Agent handover](./assets/enable_agent_handover.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
----
+!!! note "Agent handover"
+    Al habilitar `Agent handover`, el `Cumulus AI Agent` podrá transferir la llamada a un agente humano cuando el paciente lo solicite o cuando la interacción requiera asistencia adicional.
 
-### 1.2 Explore the Overview Dashboard
+## 2. Configurar Chrome en español
 
-1. In the left panel, click **Monitor** → **Overview**.
-2. Scroll down and explore the operational KPIs available — Service Level, Handle Time,
-   Queue details, and more.
+Para que `Agent Desktop` muestre correctamente la interfaz en español, abre una nueva ventana de Chrome utilizando el perfil correspondiente al agente.
 
----
+1. Abre una nueva ventana de Chrome con el perfil `Agent`.
+2. Haz clic en el menú de tres puntos ubicado en la esquina superior derecha.
+3. Selecciona **Settings**.
+4. En el buscador de configuración, escribe:
 
-### 1.3 Launch Analyzer
+    ```text
+    Language
+    ```
 
-1. From the Overview Dashboard, click the **three dots (⋮)** and select **Go to Analyzer**.
+5. Ubica **Spanish** en la lista de idiomas.
+6. Si Spanish no aparece como idioma principal, haz clic en los tres puntos junto a Spanish.
+7. Selecciona **Move to the top**.
 
-A second Chrome tab will open with the **Analyzer** tool.
-
-??? info "See how to launch Analyzer"
+???- tip "Configurar Chrome en español"
     <figure markdown>
-    ![Launch Analyzer](./assets/LaunchAnalyzer.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Accessing Analyzer from the Supervisor Desktop</figcaption>
+        ![Configurar Chrome en español](./assets/configure_chrome_spanish.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
----
+## 3. Iniciar sesión en Agent Desktop
 
-### 1.4 Run the Cisco Live AI Assistant Dashboard
+1. Desde Chrome, abre [Agent Desktop](https://desktop.wxcc-us1.cisco.com/).
+2. Inicia sesión utilizando las credenciales de `Agent` asignadas a tu Pod.
 
-1. In the left panel, navigate to the **Dashboard** section.
-2. Locate **Cisco Live AI Assistant Dashboard**, click the **three dots (⋮)** and select **Run**.
-3. Set the Duration filter to **This Week**.
+    ???- tip "Iniciar sesión en Agent Desktop"
+        <figure markdown>
+            ![Iniciar sesión en Agent Desktop](./assets/agent_desktop_login.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+        </figure>
 
-You will see all interactions from this lab that had **AI Assistant** running — Transcription
-volume, Handle Time, and Calls with Suggested Responses.
+3. Mantén la configuración predeterminada en la ventana de inicio de sesión.
+4. Haz clic en **Guardar y continuar**.
+5. Si el sistema solicita permiso para utilizar el sonido, habilítalo.
 
-???- info "See how it works"
+## 4. Poner el agente en estado Available
+
+1. En `Agent Desktop`, verifica que el usuario esté conectado correctamente.
+2. Cambia el estado del agente a:`Available`
+
+    El agente debe estar disponible para recibir la llamada transferida por el `Cumulus AI Agent`.
+
+???- tip "Poner el agente en estado Available"
     <figure markdown>
-    ![AI Assistant Dashboard](./assets/AIAssistantDashboard.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Cisco Live AI Assistant Dashboard — This Week view</figcaption>
+        ![Poner el agente en estado Available](./assets/agent_desktop_available.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
-    ???+ tip "Explore the Filters"
-        Filter by **TeamName**, **QueueName**, or queue language (EN/ES) to drill down into
-        specific segments. Scroll right to explore all available metrics.
+## 5. Realizar la llamada y solicitar transferencia
 
----
+1. Realiza una llamada al DID asignado a tu Pod utilizando tu teléfono celular.
+2. También puedes utilizar la `Webex App` con el usuario asignado a tu Pod.
+3. Selecciona el idioma solicitado por el Voice Flow.
+4. Interactúa con el `Cumulus AI Agent`.
+5. Utiliza uno de los escenarios practicados anteriormente, por ejemplo:
 
-## Phase 2 — Analyzing Insights from Interactions with AI Quality Management
+    `Cancelar una cita` <br>
+    `Cambiar una cita` <br>
+    `Consultar información sobre Cumulus Hospital` <br>
+    `Solicitar hablar con un agente humano` <br>
 
----
+6. Durante la conversación, solicita explícitamente la transferencia a un agente humano.
 
-### 1.1 Review Completed Interactions
+    Ejemplo: `Quiero hablar con un agente humano.`
 
-1. Go back to the **Supervisor Desktop**.
-2. In the left panel, click **Monitor** → **Interactions** → **Completed**.
+    El **Cumulus AI Agent** debe ejecutar **Agent handover** y transferir la llamada a la Queue configurada.
 
-!!! Important "New AI QM KPIs"
-    | KPI | Description |
-    |---|---|
-    | **Evaluation Score** | Automated score assigned by AI QM from the interaction transcript |
-    | **Customer Sentiment** | AI-detected customer sentiment throughout the interaction |
+## 6. Utilizar AI Assistant
 
-3. Click **Actions** to customize which KPIs are visible in this panel.
-4. Filter and sort the columns as needed.
+Cuando el agente humano reciba la llamada:
 
-???- info "See how it works"
+1. En `Agent Desktop`, abre **AI Assistant**.
+2. Haz clic en **Get Suggestion**.
+3. Permite que `Real-Time Assist` escuche la conversación entre el paciente y el agente.
+4. Continúa la conversación con el paciente.
+
+    Puedes preguntar, por ejemplo: `¿Cuáles son las ubicaciones de Cumulus Hospital?`
+
+5. Observa las sugerencias que aparecen en `AI Assistant`.
+6. Verifica que la respuesta sugerida esté basada en el Knowledge Base configurado para el caso de uso.
+
+???- tip "Utilizar AI Assistant en Agent Desktop"
     <figure markdown>
-    ![Supervisor Interactions](./assets/SupervisorInteractions.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Completed Interactions panel with AI QM KPIs</figcaption>
+        ![Utilizar AI Assistant en Agent Desktop](./assets/agent_desktop_ai_assistant.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
----
+!!! note "Real-Time Assist"
+    `Real-Time Assist` utiliza el contexto de la conversación para proporcionar sugerencias al agente humano en tiempo real.
+    Estas sugerencias pueden ayudar al agente a responder preguntas utilizando la información disponible en el Knowledge Base.
 
-### 1.2 — View an Individual Interaction (English)
+## 7 Resultado esperado
 
-1. Select one of your completed interactions and click **View**.
-2. Review the full interaction detail: **Recording**, **IVR Transcription**,
-   **Agent Transcript**, and **AI QM Evaluation**.
+Al finalizar este Bonus Lab debes haber comprobado que:
 
-???- info "See how it works"   
-    <figure markdown>
-        ![Individual Interaction](./assets/IndividualInteraction.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-        <figcaption>Viewing the full detail of a completed interaction</figcaption>
-    </figure>
-
----
-
-### 1.3 — View an Individual Interaction (Spanish)
-
-1. Repeat **Step 1.2** selecting a **Spanish interaction** from the Completed tab.
-
-!!! warning "Early Preview Feature"
-    Non-English evaluation is still an **Early Preview** feature. Spanish interactions may
-    occasionally show inconsistencies in the AI QM evaluation output.
-
-???- info "See how it works"
-    <figure markdown>
-    ![Spanish Interaction](./assets/SpanishInteraction.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Viewing a completed Spanish interaction with AI QM evaluation</figcaption>
-    </figure>
+- El `Cumulus AI Agent` puede transferir una llamada a un agente humano.
+- La llamada llega correctamente al `Agent Desktop`.
+- El agente puede utilizar `AI Assistant`.
+- `Real-Time Assist` analiza la conversación en tiempo real.
+- Las sugerencias se generan utilizando el Knowledge Base.
+- El agente humano recibe apoyo contextual durante la interacción.
 
 ---
 
-### 1.4 — Explore the Evaluation Forms
+## 🏁 Bonus Completado — Felicitaciones! 🎉
 
-1. In the left panel, navigate to **Configure**.
-2. Three Evaluation Forms were pre-created by the Proctors for this lab:
-
-    | Form | Purpose |
-    |---|---|
-    | `Cumulus_EN` | Auto-evaluation for English interactions |
-    | `Cumulus_ES` | Auto-evaluation for Spanish interactions |
-    | `Cumulus_Manual` | Manual evaluation — no queue assigned |
-
-3. Select **Cumulus_EN** and click **View**.
-4. Review the evaluation questions, the values per question, and the **Form Assignment**.<br>
-   *(Spanish queues → `Cumulus_ES` / English queues → `Cumulus_EN`)*.
-
-!!! info "How Language is Determined"
-    AI QM uses the **`Global_Language`** variable set in the voice flow. There is no
-    auto-detected language — the variable must be explicitly configured in the flow.
-
-!!! tip "Explore the Spanish Form"
-    Repeat this step selecting **Cumulus_ES** to review the Spanish evaluation form.
-
-???- info "See how it works"
-    <figure markdown>
-    ![Evaluation Form](./assets/EvaluationForm.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Exploring the Cumulus_EN Evaluation Form and its queue assignment</figcaption>
-    </figure>
+Has habilitado **Agent handover**, transferido una llamada desde el AI Agent hacia un agente humano y utilizado **AI Assistant** con **Real-Time Assist**.
 
 ---
 
-### 1.5 — Explore the Manual Form
-
-1. Still in **Configure**, click **Cumulus_Manual** and review this form.
-
-!!! note "No Queue — No Automation"
-    This form has no queue associated — no automated AI evaluation is performed using it.
-    It is designed exclusively for **manual supervisor evaluations**.
-
-???- info "See how it works"
-    <figure markdown>
-    ![Manual Form](./assets/ManualForm.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Cumulus_Manual form — configured for manual evaluation only</figcaption>
-    </figure>
-
----
-
-### 1.6 — Perform a Manual Evaluation
-
-1. Go back to **Interactions** → **Completed** and select one interaction. Click **View**.
-2. Inside **Additional Information**, go to **Evaluation Forms**.
-3. From the dropdown, select **Cumulus_Manual**.
-4. Score each question based on the **transcript** or **recording** in the same panel.
-5. Click **Submit**.
-
-???- info "See how it works"
-    <figure markdown>
-    ![Manual Evaluation](./assets/ManualEvaluation.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Performing a manual evaluation using the Cumulus_Manual form</figcaption>
-    </figure>
-
----
-
-### 1.7 — Review the Final Evaluation Score
-
-1. Note that this interaction now shows a **different Evaluation Score** — calculated from
-   **2 evaluations**: the Auto Evaluation + your Manual Evaluation.
-2. Click the **Evaluations** tab inside **Additional Information** and expand the **arrow**
-   to see each score individually.
-
-???- info "See how it works"
-    <figure markdown>
-    ![Evaluation Score](./assets/EvaluationScore.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    <figcaption>Viewing combined Auto + Manual evaluation scores</figcaption>
-    </figure>
-
-!!! tip "More AI QM Features Available"
-    Features like **Coaching** and **Sentiment Analysis** are also available on this tenant.
-    We are limited on time — but come back next year to explore them together! 😄
-
-
-## 🏁 Lab Complete — Congratulations! 🎉
-
-You have successfully completed **Bonus Lab – **AI Analytics & Quality Management for Supervisors**.
-
-| Component | Status |
-|---|---|
-| Supervisor Desktop | Launched and Overview Dashboard explored |
-| AI Assistant Dashboard | Accessed in Analyzer and explored |
-| Completed interactions | Reviewed with AI QM KPIs in English and Spanish |
-| Evaluation Forms | Cumulus_EN, Cumulus_ES, and Cumulus_Manual explored |
-| Manual evaluation | Performed and combined score reviewed |
-
----
-
-*Lab authored for Cisco Live 2026*
+*Lab realizado para Cisco Connect Latam 2026*
