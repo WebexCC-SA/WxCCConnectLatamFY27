@@ -6,7 +6,7 @@
 
 | # | Actividad | Duración |
 |---|---|---|
-| Bonus | Crear una `Transferencia customizada` para pasar `variables` del `AI Agent` al `flow` y así utilizar `AI Assistant` en el escritorio del agente con `Real-Time Assist` | 10 minutos |
+| Bonus | Crear una `Transferencia personalizada` para pasar `variables` del `AI Agent` al `flow` y así utilizar `AI Assistant` en el escritorio del agente con `Real-Time Assist` | 10 minutos |
 
 ---
 
@@ -14,7 +14,7 @@
 
 En escenarios reales, un AI Agent puede necesitar transferir la interacción a un agente humano cuando recibe una solicitud compleja o fuera de su alcance.
 
-En este Bonus Lab habilitarás una `Transferencia customizada` y utilizarás `AI Assistant` con `Real-Time Assist` para apoyar al agente humano durante una llamada.
+En este Bonus Lab habilitarás una `Transferencia personalizada` y utilizarás `AI Assistant` con `Real-Time Assist` para apoyar al agente humano durante una llamada.
 
 ---
 

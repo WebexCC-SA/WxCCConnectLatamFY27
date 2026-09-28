@@ -285,7 +285,7 @@ Si realizas la llamada desde un teléfono celular válido, recibirás un mensaje
     - La llamada pueda ser enviada a la `Queue` configurada.
 
 !!! note "Transferencia a un agente humano"
-    La experiencia de asistencia con `AI Assistant` se realizarán en el **Bonus Lab**, con la creación de un Transfer especial para poder pasar variables del AI Agent al escritorio del Agente.
+    La experiencia de asistencia con `AI Assistant` se realizarán en el **Bonus Lab**, con la creación de un `Transferencia personalizada` para poder pasar variables del AI Agent al escritorio del Agente.
 
 ---
 
