@@ -78,7 +78,7 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 
 1. Ubique la opción **AI transparency**.
 2. Desactívela.
-3. En el campo de justificación, escriba: ```text Lab```
+3. En el campo de justificación, escriba: ```Lab```
 4. Haga clic en **Keep it disabled**.
 
     ### 3.2 Configurar el Welcome Message
@@ -89,11 +89,9 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
     Gracias por contactar al Hospital Cumulus. Déjame saber si prefieres continuar esta interacción en español o en inglés.
     ```
 
-6. Haga clic en **Save changes**.
-
 ## 4. Configurar las Instrucciones
 
-1. Abra la pestaña **Instructions**.
+1. Haga click en la pestaña **Instructions**. 
 2. Copie y pegue el siguiente contenido.
 3. Al pegarlo, seleccione **Paste and match style**.
 
