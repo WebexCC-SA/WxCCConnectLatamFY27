@@ -78,7 +78,7 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 
 1. Ubique la opción **AI transparency**.
 2. Desactívela.
-3. En el campo de justificación, escriba: ```Lab```
+3. En el campo de justificación, escriba: ```Ejercicio Lab```
 4. Haga clic en **Keep it disabled**.
 
     ### 3.2 Configurar el Welcome Message
