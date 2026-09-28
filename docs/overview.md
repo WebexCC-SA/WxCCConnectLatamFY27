@@ -15,7 +15,7 @@ Construirás dos AI Agents autónomos desde cero utilizando **AI Agent Studio**:
 
 También integrarás los AI Agents con un **Knowledge Base**, **MCP Server**, **Webex Connect** y un **Voice Flow** mediante el uso de nodos `VirtualAgentV2`.
 
-Al finalizar, probarás la solución en `Preview` y realizarás una llamada real para validar la experiencia completa, incluyendo el envío de una confirmación por SMS.
+Al finalizar, probarás la solución en `Preview` y realizarás una llamada real para validar la experiencia completa, incluyendo el envío de una confirmación por Whatsapp.
 
 ## Estructura del lab
 
@@ -25,7 +25,7 @@ El lab está dividido en tres partes:
 |---|---|---|
 | **Lab 1** | Concierge AI Agent | Crear y configurar un AI Agent autónomo que detecte el idioma del paciente y transfiera la interacción a la ruta correspondiente en español o inglés. |
 | **Lab 2** | Cumulus AI Agent | Crear un AI Agent autónomo para responder preguntas sobre Cumulus Hospital, validar la identidad del paciente y gestionar citas utilizando un Knowledge Base, MCP Server y Webex Connect. |
-| **Lab 3** | Integración con Voice Flow | Integrar los AI Agents con un Voice Flow mediante el uso de los nodos `VirtualAgentV2`, realizar una llamada real y validar la experiencia bilingüe y el envío de confirmaciones por SMS. |
+| **Lab 3** | Integración con Voice Flow | Integrar los AI Agents con un Voice Flow mediante el uso de los nodos `VirtualAgentV2`, realizar una llamada real y validar la experiencia bilingüe y el envío de confirmaciones por Whatsapp. |
 | **Bonus** | AI Assistant | Escalar una llamada desde el AI Agent hacia un agente humano y observar cómo `AI Assistant` proporciona asistencia en tiempo real durante la interacción. |
 
 Al finalizar los tres labs principales, habrás creado, configurado e integrado una solución bilingüe basada en AI Agents autónomos.

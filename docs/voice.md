@@ -33,7 +33,7 @@ El agente, llamado **Concierge**, identificará si el paciente desea continuar l
 
 4. En el panel izquierdo de `Control Hub`, seleccione **Services**.
 5. Haga clic en **Contact Center**.
-6. En la página principal, ubique la sección **Quick Links**.
+6. En la parte derecha, ubique la sección **Quick Links**.
 7. Haga clic en **Webex AI Agent**.
 
     ???- tip "Cómo acceder AI Agent"
@@ -48,9 +48,8 @@ El agente, llamado **Concierge**, identificará si el paciente desea continuar l
 
 1. En `AI Agent Studio`, haga clic en **+ Create agent**.
 2. Seleccione **Start from scratch**.
-3. Haga clic en **Next**.
-4. En el tipo de agente, seleccione **Autonomous**.
-5. Configure los siguientes valores:
+3. En el tipo de agente, seleccione **Autonomous**.
+4. Configure los siguientes valores:
 
     | Campo | Valor |
     |---|---|
@@ -64,7 +63,7 @@ El agente, llamado **Concierge**, identificará si el paciente desea continuar l
     ???+ note "`Motor Speech to Speech (S2S) 1.0`"
         Es un motor activo en Beta dentro de esta organización y está basado en un modelo de puro habla a habla. S2S ayudará a obtener respuestas más rápidas y no cuenta con ElevenLabs.
 
-6. Haga clic en **Create**. 
+5. Haga clic en **Create**. 
 
 ???- tip "Cómo crear el Concierge AI Agent"
     <figure markdown>

@@ -83,6 +83,9 @@ Por favor, utiliza la siguiente opción para obtener tus credenciales: <br>
 - 🪪 Su **Pod ID**
 - 📞 Su **PSTN Channel Number**
 
+???+ note "Fecha de Nacimiento"
+      La `Fecha de Nacimiento` a utilizar en todos los Labs es el  **1 de enero de 1990**.
+
 ---
 
 ### 3.2 Realizar llamadas de prueba - Configuración de Webex App
@@ -94,6 +97,10 @@ Si no puede realizar llamadas de prueba desde su teléfono móvil, puede utiliza
 2. Inicie sesión utilizando las credenciales de **Supervisor** del archivo `LABCOL-1217_Credenciales_PODXXX.txt`.
 3. En el panel izquierdo, seleccione el menu de **Calling** .
 4. Marque el **número PSTN** asignado a su Pod para realizar una llamada de prueba al lab.
+
+???+ note "Llamadas desde Webex App"
+
+    Si utiliza la Webex App para realizar la llamada de prueba, no recibirá el mensaje de confirmación de WhatsApp en el Lab 2 ni en el Lab 3. Para validar el envío de WhatsApp, utilice un teléfono celular con un número válido.
 
 ???- info "Mira cómo hacerlo"
     <figure markdown>
