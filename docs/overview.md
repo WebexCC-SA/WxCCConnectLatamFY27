@@ -42,7 +42,7 @@ Al finalizar este lab podrás:
 3. Integrar un AI Agent con `MCP Server`, `Webex Connect` y un Voice Flow.
 4. Utilizar un Knowledge Base y acciones del MCP Server como `get_patient` y `update_patient`.
 5. Validar la identidad del paciente y gestionar citas respetando las reglas de privacidad.
-6. Probar una llamada completa y confirmar el resultado mediante SMS.
+6. Probar una llamada completa y confirmar el resultado mediante Whatsapp.
 7. Escalar una interacción desde un AI Agent hacia un agente humano.
 8. Utilizar las capacidades de `AI Assistant` para apoyar al agente durante una llamada en tiempo real.
 
