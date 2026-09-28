@@ -77,7 +77,7 @@ Configurarás un Voice Flow para:
 2. Busca el primer nodo `VAV2` llamado:
 
     ```text
-    VirtualAgentConcierge
+    Concierge
     ```
 
 3. Haz clic en el nodo para editarlo.
@@ -144,8 +144,7 @@ Configurarás un Voice Flow para:
 
     Este nodo recibe variables del AI Agent cuando la interacción regresa al Voice Flow.
 
-    En este caso, se configuran las siguientes variables: `patient_name` y `requirement`. <br>
-
+    En este caso, se configuran las siguientes variables: `patient_name` y `Request`. <br>
 
     Estas variables se utilizarán para mostrar información en el `Agent Desktop`.
 
@@ -286,7 +285,7 @@ Si realizas la llamada desde un teléfono celular válido, recibirás un mensaje
     - La llamada pueda ser enviada a la `Queue` configurada.
 
 !!! note "Transferencia a un agente humano"
-    La habilitación de `Agent handover` y la experiencia de asistencia con `AI Assistant` se realizarán en el **Bonus Lab**.
+    La experiencia de asistencia con `AI Assistant` se realizarán en el **Bonus Lab**, con la creación de un Transfer especial para poder pasar variables del AI Agent al escritorio del Agente.
 
 ---
 

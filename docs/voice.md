@@ -38,7 +38,7 @@ El agente, llamado **Concierge**, identificará si el paciente desea continuar l
 
     ???- tip "Cómo acceder AI Agent"
         <figure markdown>
-            ![Collaboration Control Hub AI Agent Launch](./assets/ControlHubAIAgentLaunch.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+            ![Collaboration Control Hub AI Agent Launch](./assets/ControlHubAIAgentLaunch2.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
         </figure>
 
 8. Se abrirá `AI Agent Studio` en una nueva pestaña del navegador.
@@ -92,8 +92,7 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 ## 4. Configurar las Instrucciones
 
 1. Haga click en la pestaña **Instructions**. 
-2. Copie y pegue el siguiente contenido.
-3. Al pegarlo, seleccione **Paste and match style**.
+2. Copie y pegue el siguiente contenido, Al pegarlo, seleccione **Paste and match style** para que el texto se pegue correctamente.
 
 
     ```text
@@ -135,7 +134,7 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 
 ## 5. Configurar el idioma y la voz
 
-1. Abra la pestaña **Conversation**.
+1. Haga click en la pestaña **Conversation**.
 2. Configure únicamente las siguientes opciones:
 
     | Campo | Valor |
@@ -152,7 +151,7 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 
 ## 6. Crear las acciones de transferencia
 
-1. Abra la pestaña **Actions**.
+1. Haga click en la pestaña **Actions**.
 2. Desactive la acción predeterminada **Agent handover**.
 
 !!! note "Transferencia del Concierge"
@@ -165,10 +164,14 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 2. En **Add new**, seleccione **Transfer**.
 3. Configure los siguientes valores:
 
-    | Campo | Valor |
-    |---|---|
-    | **Action name** | `Transfer_English` |
-    | **Transfer condition** | `To be used when you detect customer wants to continue in English` |
+    - **Action name**: 
+    ```text 
+    Transfer_English 
+    ```
+    - **Transfer condition**:
+     ```text 
+     To be used when you detect customer wants to continue in English
+     ``` 
 
 4. Haga clic en **Add**.
 
@@ -176,10 +179,14 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 
 1. Repita el procedimiento anterior con los siguientes valores:
 
-    | Campo | Valor |
-    |---|---|
-    | **Action name** | `Transfer_Spanish` |
-    | **Transfer condition** | `To be used when you detect customer wants to continue in Spanish` |
+    -  **Action name**:
+     ``` text
+     Transfer_Spanish
+     ```
+    - **Transfer condition**:
+     ``` text
+     To be used when you detect customer wants to continue in Spanish
+     ``` 
 
 2. Haga clic en **Add**.
 

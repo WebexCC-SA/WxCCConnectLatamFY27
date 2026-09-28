@@ -31,9 +31,8 @@ Permanece en la pestaña de `AI Agent Studio`.
 
 1. Haz clic en **+ Create agent**.
 2. Selecciona **Start from scratch**.
-3. Haz clic en **Next**.
-4. Selecciona **Autonomous**.
-5. Configura los siguientes campos:
+3. Selecciona **Autonomous**.
+4. Configura los siguientes campos:
 
     | Campo | Valor |
     |---|---|
@@ -46,7 +45,7 @@ Permanece en la pestaña de `AI Agent Studio`.
     !!! note "AI engine"
         `Webex AI Pro-US 2.0` se encuentra en etapa Beta para idiomas diferentes al inglés. Sin embargo, proporciona voces y capacidades de lenguaje más modernas para este caso de uso.
 
-6. Haz clic en **Create**.
+5. Haz clic en **Create**.
 
 ## 2. Configurar el perfil del agente
 
@@ -65,157 +64,89 @@ Permanece en la pestaña **Profile**.
 
 ### 2.2 Configurar el Welcome Message
 
-En el campo **Welcome Message**, escribe exactamente:
+1. En el campo **Welcome Message**, copie el siguiente texto:
 
-    ```text
-    {{WelcomeMsg}}
-    ```
+```text
+{% raw %} {{WelcomeMsg}} {% endraw %}
+```
+
 
 !!! note "Welcome Message dinámico"
-    `{{WelcomeMsg}}` es una variable que recibe el mensaje inicial enviado desde el `Voice Flow`.
+    {% raw %}`{{WelcomeMsg}}`{% endraw %} es una variable que recibe el mensaje inicial enviado desde el `Voice Flow`.
 
     Esto permite que el AI Agent reciba el mensaje inicial en el idioma seleccionado por el paciente, sin tener que solicitar nuevamente esta información.
 
 ## 3. Configurar las Instructions
 
-1. Abre la pestaña **Instructions**.
-2. Copia y pega el siguiente contenido.
-3. Selecciona **Paste and match style**.
-4. Haz clic en **Save changes**.
+1. Haga click en la pestaña **Instructions**.
+2. Copia y pega el siguiente contenido. Al pegarlo, seleccione **Paste and match style** para que el texto se pegue correctamente. 
+
+    ```text
+    Goal: You are a friendly and professional AI healthcare assistant for Cumulus Hospital, focused on answering general clinic questions based on the KB as far as providing patient information about appointments and helping patients manage their scheduled appointments.
+    
+    INSTRUCTIONS: 
+    ## Step 1: MANDATORY INITIAL STEP - DO NOT OFFER ANY INFORMATION OR ACTION BEFORE EXECUTE THIS STEP -  Fetch the Patient Record 
+     - After Welcome Message, you MUST INITIALLY  ask for patient Id (you need say something similar to “please provide your patient identification of 3 digits). Confirm if patient had provided 3 digits (ex.: 010). 
+    -	If patient provide different information, ask him/her to retry with 3 digits. 
+    -	Use the provided 3 digits to compose with value “Pod” in front and use this combination as value of ‘patientId’ (ex: if customer provide “010” the patientId value is “Pod010”).
+    
+    Execute action `get_patient` using ‘patientId’ and get patient information:
+    - If patient not found, inform the caller and ask again.
+    - Do not proceed until `get_patient` succeeds with a patient record.
+    From  ‘get_patient’, use `firstName``lastName` as name and set variable {{PersonaName}} using this combination. Skip the name when talking to patient if you cannot compose {{PersonaName}}. Thakks patient for the information, use {{PersonaName}} for personalized thank you. Proceed to step 2 bellow.
+    
+    ## Step 2: Authenticate the Caller (Sequential) - Authenticate using date of birth:
+    1. Ask for **date of birth** and compare to record customer information you get from action ‘get_patient’. If wrong, re-ask date of birth.
+    - Set `authenticated = true` if  value has matched; `authenticated = false` if fails or the caller declines.
+    - Don't provide patient details, scheduling, or updates while `authenticated=false`.
+    - Allow up to 3 attempts. Call `Agent_Escalation` if fails.
+    
+    ## Step 3: Provide Information Only After Authentication
+    Once `authenticated = true`:
+    - Answer the caller's original request (e.g., appointment status, hospital information based on KB).
+    - When patient ask for book an appointment, use information `appointmentStatus`/`nextAppointmentDate` you got from action ‘get_patient’  according:
+    . If already `Booked`/`Confirmed`, state that date/time, ask to keep, reschedule, or cancel — never silently book a second one.
+    - if ‘Cancelled’ or patient does not have next appointment, continue bellow
+    - ask about specialty, location and schedule time required for Book the appointment. ALWAYS use KB to verify valid hour of operation per location and specialty per location required from patient. The patient must inform the location, specialty, date and time and you need to verify if those information are according to KB. Guide the patient according.
+    
+    ## Step 4: Timezone Handling
+    MCP tools always return/expect date-times in **ISO 8601 UTC** (e.g., `2026-07-09T14:30:00.000Z`).
+    The patient record includes a `timezone` field (e.g., `America/New_York`) — the source of truth. **Never ask the caller for their timezone** unless missing or null.
+    - Convert ISO 8601 UTC into patient's `timezone`, speak naturally (e.g., "Thursday, July 9th at 10:30 AM Eastern Time"), never raw ISO.
+    - Interpret caller-given date/time using `timezone`, convert to ISO 8601 UTC (`Z`) before any MCP call, confirm back in local time.
+    
+    ## Step 5: Update Restrictions (PII Guardrail)
+    - `update_patient` may only touch `nextAppointmentDate`/`appointmentStatus`. DO NOT update others parameters.
+    - **Cancel:** set `appointmentStatus`=`Cancelled` AND `nextAppointmentDate`=null together — never leave the old date.
+    - **Book/Reschedule:** set `nextAppointmentDate` to the new ISO time AND `appointmentStatus`=`Booked` together.
+    Continue
+    
+    ## Step 6: Text Appointment Confirmation
+    After a **booking, cancellation, or update** via `update_patient` succeeds, execute action `send_text` to the patient's using {{PersonaANI}}. DO NOT use ‘phoneNumber’ .
+    - One SMS per successful change; never on failures.
+    - Message states action/date/time in `timezone`, never raw ISO.
+    - If `send_text` fails, tell caller the appointment saved but text failed.
+    
+    ## General Behavior
+    - If `get_patient` errors, inform the caller politely; call `Agent_Escalation`. Don't attempt authentication.
+    - Never guess/fabricate date of birth, zip, or patient data — verify against MCP response.
+    - If a caller asks for a representative/an expert or a human agent, call the action`Agent_Escalation` to allow patient be transfered.
+    - `Agent_Escalation` is callable, not narration — invoke it
+    - Always provide a personalized attention using {{PersonaName}} to say patient name
+    
+    ## Example Flow
+    1. Caller: "I want to book an appointment."
+    2. Agent calls `get_patient`, then asks date of birth to authenticate him/her
+    3. If ` nextAppointmentDate’  has valid information (not null) → states that date/time, asks to keep, reschedule, or cancel.
+    4. Once confirmed → `update_patient` (elapsed time, KB checked), confirms local, specialty and date/time, calls `send_text`.
+    5. IF customer wants to be trasnferred to a human, invoke action 'Agent_Escalation'
+    ```
+    3. Haz clic en **Save changes**.
 
     !!! note "Idioma de Goal e Instructions"
         Para facilitar el soporte de los proctors en este caso de uso multilingüe, el contenido de los campos `Goal` e `Instructions` se mantiene en inglés.
 
         Sin embargo, en un entorno de producción estos campos pueden configurarse completamente en español sin ningún problema.
-
-    ```text
-    Goal:
-
-    You are a friendly and professional AI healthcare assistant for Cumulus Hospital. You are focused on answering general clinic questions based on the Knowledge Base, providing patient information about appointments, and helping patients manage their scheduled appointments.
-
-    INSTRUCTIONS:
-
-    ## Step 1: MANDATORY INITIAL STEP - FETCH THE PATIENT RECORD
-
-    Do not offer any information or perform any action before completing this step.
-
-    - After the Welcome Message, ask the patient for their 3-digit patient ID.
-    - Confirm that the patient provided exactly 3 digits, for example: 010.
-    - If the patient provides a different value, ask them to try again using 3 digits.
-    - Add the prefix "Pod" to the provided value and use the resulting value as `patientId`.
-    - For example, if the patient provides 010, use `Pod010` as the value of `patientId`.
-
-    Execute the `get_patient` action using `patientId`.
-
-    - If the patient is not found, inform the patient and ask them to provide the ID again.
-    - Do not continue until `get_patient` returns a patient record.
-    - From the response, use `firstName` and `lastName` to compose the patient's name.
-    - Set the variable `{{PersonaName}}` using the patient's first and last name.
-    - If you cannot compose `{{PersonaName}}`, do not use the patient's name when speaking to the patient.
-    - Thank the patient for the information and use `{{PersonaName}}` when possible.
-
-    ## Step 2: AUTHENTICATE THE PATIENT
-
-    Authenticate the patient using their date of birth.
-
-    1. Ask for the patient's date of birth.
-    2. Compare the response with the date of birth returned by `get_patient`.
-    3. If the date of birth is incorrect, ask the patient to try again.
-    4. Set `authenticated = true` when the value matches.
-    5. Set `authenticated = false` when the value does not match or the patient declines.
-    6. Do not provide patient details, appointment information, or perform updates while `authenticated = false`.
-    7. Allow a maximum of three attempts.
-    8. If authentication fails after three attempts, invoke `Agent_Escalation`.
-
-    ## Step 3: PROVIDE INFORMATION AFTER AUTHENTICATION
-
-    Only after `authenticated = true`:
-
-    - Answer the patient's original request.
-    - Use the Knowledge Base to answer general questions about the hospital.
-    - Use the patient information returned by `get_patient` to answer appointment-related questions.
-
-    When the patient requests an appointment:
-
-    - Check the values of `appointmentStatus` and `nextAppointmentDate`.
-    - If the appointment status is `Booked` or `Confirmed`, provide the existing date and time.
-    - Ask whether the patient wants to keep, reschedule, or cancel the appointment.
-    - Never silently create a second appointment.
-    - If the appointment is `Cancelled` or there is no next appointment, continue with the booking process.
-    - Ask for the specialty, location, date, and time.
-    - Use the Knowledge Base to verify the specialty, location, and operating hours.
-    - Confirm that the requested information is valid before updating the appointment.
-
-    ## Step 4: TIMEZONE HANDLING
-
-    MCP tools always return and expect date-time values in ISO 8601 UTC format, for example:
-
-    2026-07-09T14:30:00.000Z
-
-    The patient record includes a `timezone` field, such as `America/New_York`. This field is the source of truth.
-
-    - Do not ask the patient for their timezone unless the value is missing or null.
-    - Convert UTC date and time values into the patient's timezone.
-    - Speak naturally to the patient. Never read the raw ISO value.
-    - Interpret the date and time provided by the patient using the patient's timezone.
-    - Convert the value to ISO 8601 UTC before calling an MCP action.
-    - Confirm the appointment using the patient's local date and time.
-
-    ## Step 5: UPDATE RESTRICTIONS
-
-    The `update_patient` action may update only:
-
-    - `nextAppointmentDate`
-    - `appointmentStatus`
-
-    Do not update any other patient information.
-
-    For cancellations:
-
-    - Set `appointmentStatus` to `Cancelled`.
-    - Set `nextAppointmentDate` to `null`.
-    - Perform both updates together.
-    - Never leave the previous appointment date active.
-
-    For new appointments or rescheduling:
-
-    - Set `nextAppointmentDate` to the new ISO 8601 UTC value.
-    - Set `appointmentStatus` to `Booked`.
-    - Perform both updates together.
-
-    ## Step 6: SEND THE APPOINTMENT CONFIRMATION
-
-    After a booking, cancellation, or rescheduling is successfully completed through `update_patient`:
-
-    - Execute the `send_text` action.
-    - Send the message using `{{PersonaANI}}`.
-    - Do not use `phoneNumber`.
-    - Send only one message for each successful update.
-    - Do not send a message when the update fails.
-    - Include the action, date, and time in the patient's timezone.
-    - Never include the raw ISO value in the message.
-    - If `send_text` fails, inform the patient that the appointment was saved but the confirmation message could not be sent.
-
-    ## GENERAL BEHAVIOR
-
-    - `Agent_Escalation` is an action. Invoke it when required; do not only describe it.
-    - If `get_patient` returns an error, inform the patient politely and invoke `Agent_Escalation`.
-    - Do not attempt authentication if the patient record cannot be retrieved.
-    - Never guess or create patient information.
-    - Always verify date of birth, ZIP code, and patient information using the MCP response.
-    - If the patient asks for a human representative, invoke `Agent_Escalation`.
-    - Use `{{PersonaName}}` to provide personalized assistance whenever possible.
-
-    ## Example Flow
-
-    1. The patient requests an appointment.
-    2. The agent executes `get_patient`.
-    3. The agent asks for the patient's date of birth.
-    4. The agent authenticates the patient.
-    5. The agent verifies the current appointment information.
-    6. The agent executes `update_patient` when required.
-    7. The agent confirms the result and executes `send_text`.
-    ```
 
 ## 4. Crear el Knowledge Base
 
@@ -265,19 +196,19 @@ Este documento contiene información general sobre Cumulus Hospital, incluyendo:
 3. Desactiva **Agent handover**.
 4. Haz clic en **+ Add actions**.
 5. Selecciona **Select available**.
-6. Selecciona **Browser actions**.
-7. En el buscador, escribe:
+6. Selecciona **Browser actions** y en el buscador, escribe:
 
     ```text
     cumulus
     ```
 
-8. Selecciona únicamente:
+7. Selecciona únicamente:
 
     ```text
     get_patient
     update_patient
     ```
+8. Haz clic en **Añadir**
 
     !!! warning "Acciones requeridas"
         Selecciona únicamente `get_patient` y `update_patient`. Estas son las acciones de MCP Server utilizadas en este lab.
@@ -333,9 +264,7 @@ En esta actividad crearás el flow `AIAgent_send_text`. Este flow enviará al pa
 ### 6.3 Configurar el AI Agent Event
 
 1. En la ventana **Integrations**, selecciona **AI Agent**.
-2. En **Configure AI Agent Event**, copia el siguiente JSON.
-3. Haz clic en **Parse**.
-4. Haz clic en **Save**.
+2. En **Configure AI Agent Event**, Copia el siguiente JSON y remplaza el existente.
 
     ```json
     {
@@ -345,6 +274,9 @@ En esta actividad crearás el flow `AIAgent_send_text`. Este flow enviará al pa
     "Message": "Cita confirmada"
     }
     ```
+3. Haz clic en **Parse**.
+4. Haz clic en **Save**.
+
 
 !!! note "Valores de prueba"
     Utiliza los valores de prueba proporcionados para el ambiente del lab. No utilices información real de pacientes.
@@ -407,27 +339,18 @@ En esta actividad crearás el flow `AIAgent_send_text`. Este flow enviará al pa
         ![Configurar el Branch](./assets/branch_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
-### 6.6 Agregar el nodo WhatsApp al flow
 
-Ahora agregaremos el nodo `WhatsApp` al flow. Este nodo enviará al paciente un mensaje con el resumen del servicio solicitado.
-
-1. En el panel de nodos del canvas, selecciona la categoría **Channels**.
-2. Busca y selecciona el nodo **WhatsApp**.
-3. Arrastra el nodo al flow.
-4. Conecta la salida `ES` del nodo **Branch** con el nodo **WhatsApp**.
-
-???- tip "Agregar el nodo WhatsApp al flow"
-    <figure markdown>
-        ![Agregar el nodo WhatsApp al flow](./assets/whatsapp_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
-
-
-### 6.7 Configurar WhatsApp en español
+### 6.6 Configurar WhatsApp en español
 
 1. En el panel de nodos, abre la categoría **Channels**.
 2. Selecciona el nodo **WhatsApp**.
 3. Colócalo en el canvas.
 4. Conecta la rama `ES` con el nodo **WhatsApp**.
+
+    ???- tip "Agregar el nodo WhatsApp español al flow"
+        <figure markdown>
+            ![Agregar el nodo WhatsApp al flow](./assets/whatsapp_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+        </figure>
 5. Abre la configuración del nodo.
 6. Cambia el nombre a:
 
@@ -455,7 +378,7 @@ Ahora agregaremos el nodo `WhatsApp` al flow. Este nodo enviará al paciente un 
         ![Configurar WhatsApp en español](./assets/whatsapp_es_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
-### 6.8 Configurar WhatsApp en inglés
+### 6.7 Configurar WhatsApp en inglés
 
 1. Selecciona el nodo `WhatsApp_ES`.
 2. Cópialo y pégalo para crear una copia.
@@ -473,7 +396,7 @@ Ahora agregaremos el nodo `WhatsApp` al flow. Este nodo enviará al paciente un 
     |---|---|
     | **Template Name** | `ciscoconnect_servicerequest_en` |
 
-    Mantén los demás parámetros configurados previamente.
+    Configurar los demás parámetros de acuerdo al ítem anterior de WhatsApp_ES.
 
 ???- tip "Configurar WhatsApp en inglés"
     <figure markdown>
@@ -481,7 +404,7 @@ Ahora agregaremos el nodo `WhatsApp` al flow. Este nodo enviará al paciente un 
     </figure>
 
 
-### 6.9 Configurar el WhatsApp predeterminado
+### 6.8 Configurar el WhatsApp predeterminado
 
 1. Copia nuevamente un nodo **WhatsApp** configurado.
 2. Conéctalo a la salida `None of above` del nodo **Branch**.
@@ -501,7 +424,7 @@ Ahora agregaremos el nodo `WhatsApp` al flow. Este nodo enviará al paciente un 
         ![Configurar el WhatsApp predeterminado](./assets/default_whatsapp_connect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
-### 6.10 Configurar Flow Outcomes
+### 6.9 Configurar Flow Outcomes
 
 1. Abre **Configuration**.
 2. Selecciona **Flow Outcomes**.
@@ -533,12 +456,13 @@ Ahora agregaremos el nodo `WhatsApp` al flow. Este nodo enviará al paciente un 
         ![Configurar Flow Outcomes](./assets/outcomes_flowconnect.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
-### 6.11 Publicar el Webex Connect flow
+### 6.10 Publicar el Webex Connect flow
 
 1. En la esquina superior derecha, haz clic en **Make Live**.
 2. Si aparece una advertencia indicando que el nodo HTTP no tiene terminación, ignórala.
-3. Haz clic nuevamente en **Make Live**.
-4. Espera a que el flow termine de publicarse.
+3. Seleciona **Cisdemo 2** en Application.
+4. Haz clic nuevamente en **Make Live**.
+5. Espera a que el flow termine de publicarse.
 
 El flow estará listo para ser utilizado por el `Cumulus AI Agent`.
 
@@ -549,8 +473,8 @@ Regresa a la pestaña de `AI Agent Studio`.
 1. Asegúrate de estar en la configuración del `Cumulus AI Agent`.
 2. Abre la pestaña **Actions**.
 3. Haz clic en **+ Add actions**.
-4. Selecciona **Fulfillment** en **Create new action**.
-5. Configura:
+4. Selecciona **Fulfillment**. 
+5. Configura con la siguiente información:
 
     | Campo | Valor |
     |---|---|
@@ -580,7 +504,7 @@ Regresa a la pestaña de `AI Agent Studio`.
 
     | Entity name | Entity type | Entity description | Entity examples | Required |
     |---|---|---|---|---|
-    | `Language` | `String` | `Use value from {{Global_Language}}. Use es-US if you do not have this information as default.` | `es-US; pt-BR` | Activado |
+    | `Language` | `String` | `Use value from {{Global_Language}}. Use es-US if you do not have this information as default.` | `es-US; en-US` | Activado |
     | `Message` | `String` | `Summary of the action regarding scheduling, cancellation or rescheduling. Provide a summary including action, location and date using the values from the scheduling completed. Use the correct language according to {{Global_Language}}.` | `Scheduling a medical appointment; agendar una cita médica` | Activado |
     | `PersonaANI` | `String` | `Caller ANI. Use value {{PersonaANI}}. Do not use the phone number returned by get_patient.` | Número de prueba del lab | Activado |
 
@@ -610,6 +534,10 @@ En la sección **Fulfillment**:
     </figure>
 
 ## 8. Probar el Cumulus AI Agent
+
+!!! note "Idioma de la conversación en Preview en el AI Agent Studio"
+    Por defecto el AI Agent viene configurado en idioma inglés, por lo que si no se hacen cambios esta primera prueba será en Ingles, esto es un comportamiento **Normal**. <br>
+    Si se desea hacer la prueba en **Español**, se debe Ir al menú de "Conversation" y selecionar el idioma "Spanish es-US" y luego seleccionar una voz de las disponibles para este idioma. 
 
 1. Haz clic en **Preview**.
 2. Inicia una llamada de prueba.
@@ -661,7 +589,7 @@ En la sección **Fulfillment**:
     - Valide la identidad del paciente.
     - Consulte el estado de la cita.
     - Ejecute `update_patient` cuando corresponda.
-    - Ejecute `send_text` después de una actualización exitosa.
+    - Ejecute `send_text` después de una actualización exitosa. **Nota:** esta acción no se realizará **aún**, ya que no se tiene el **ANI** correspondiente en este momento.
     - Utilice la zona horaria del paciente.
     - No exponga información antes de autenticar al paciente.
 
