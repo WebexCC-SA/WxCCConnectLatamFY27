@@ -328,11 +328,11 @@ En esta actividad crearás el flow `AIAgent_send_text`. Este flow enviará al pa
 3. Conecta todas las salidas del nodo **HTTP Request**.
 4. Configura las ramas:
 
-    | Rama | Idioma |
-    |---|---|
-    | `ES` | Español |
-    | `EN` | Inglés |
-    | `None of above` | Ruta predeterminada |
+    | Nombre | Variable | Condition |  Value |
+    |---|---|---|---|
+    | `ES` | aiAgent.language | equals ingnore case | Español |
+    | `ES` | aiAgent.language | equals ingnore case | Ingles |
+    | `None of above` |  |  | Ruta predeterminada |
 
 ???- tip "Configurar el Branch"
     <figure markdown>
