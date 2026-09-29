@@ -86,7 +86,7 @@ Estas **variables** estarán disponibles para utilizarse en **Agent Desktop** cu
 7. Haga clic en **Add** para terminar de configurar el **Action**
 
 
-    ???- tip "Video 29b – Actions Creation"
+    ???- tip "Cómo crear entidades dentro de la acción"
         <figure markdown>
             ![Configurar las entidades de transferencia](./assets/configure_agent_escalation_entities.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
         </figure>
