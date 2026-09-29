@@ -20,31 +20,69 @@ En este Bonus Lab habilitarás una `Transferencia personalizada` y utilizarás `
 
 ## 1. Habilitar Transferencia Customizada
 
-1. Abre `AI Agent Studio`.
-2. Selecciona el `Cumulus AI Agent` creado para tu Pod:
+1. En `AI Agent Studio`, haga clic en la pestaña **Actions** de su AI Agent `PodXXX_ConnectLatam_Cumulus` y cree una nueva action que permita hacer una transferencia personalizada, para que  la llamada vaya de regreso al flow y enviar variables durante dicha transferencia.
 
-    ```text
-    PodXXX_ConnectLatam_Cumulus
+Estas **variables** estarán disponibles para utilizarse en **Agent Desktop** cuando se realice el handover.
+
+2. Haga clic en **+ Add actions**.
+
+3. Haga clic en **Add new** y seleccione **Transfer**.
+
+4. Configure los siguientes valores:
+
+    - **Action name:** `Agent_Escalation`
+    - **Transfer condition:** `To be used to transfer to a human agent.`
+    - Habilite **Announce Transfer**.
+
+    ???- tip "Cómo configurar la acción de Agent_Escalation"
+        <figure markdown>
+            ![Crear la acción Agent_Escalation](./assets/create_agent_escalation.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+        </figure>
+
+4. Haga clic en **Add new entity** y configure:
+
+    - **Entity Name:** 
+    ``` text
+    Action
     ```
+    - **Entity Type:** `String`
+    - **Entity description:**
 
-3. Abre la pestaña **Actions**.
-4. Habilita la acción **Agent handover**.
-5. Haz clic en **Publish**.
-6. Agrega una nueva nota de versión, por ejemplo:
+      ``` text
+      Summary of the updated action regarding scheduling or cancelling an appointment according to the patient's request. Include it in the correct language. For example: "Reserva de Cita" or "Cancelación de Cita" in Spanish; "Scheduling Cancellation" or "Scheduling update" in English.
+      ```
 
-    ```text
-    Bonus Lab - Enable Agent Handover
+    - **Entity examples:**
+        ``` text
+        Reserva de Cita; Cancelación de Cita; Scheduling Cancellation; Update Scheduling; Actualización de Cita
+        ```
+    - Haga clic en **Add**
+
+5. Haga clic en **Add** para terminar de configurar el **Action**.
+
+6. Haga clic en **Add new entity** y configure:
+
+    - **Entity Name:** 
+    ``` text
+    PersonaName
     ```
+    - **Entity Type:** `String`
+    - **Entity description:**
+    ```text
+    Use the value of {{PersonaName}} created in the Instructions.
+    ```
+    - Haga clic en **Add**.
 
-7. Confirma la publicación.
+7. Haga clic en **Add** para terminar de configurar el **Action**
 
-???- tip "Habilitar Agent handover"
-    <figure markdown>
-        ![Habilitar Agent handover](./assets/enable_agent_handover.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-    </figure>
 
-!!! note "Agent handover"
-    Al habilitar `Agent handover`, el `Cumulus AI Agent` podrá transferir la llamada a un agente humano cuando el paciente lo solicite o cuando la interacción requiera asistencia adicional.
+    ???- tip "Video 29b – Actions Creation"
+        <figure markdown>
+            ![Configurar las entidades de transferencia](./assets/configure_agent_escalation_entities.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
+        </figure>
+
+8. Haga clic en **Publish** y cree una nueva versión de este AI Agent.
+
 
 ## 2. Configurar Chrome en español
 

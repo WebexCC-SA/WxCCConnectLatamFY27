@@ -1,5 +1,5 @@
 # Before You Go – Share Your Feedback!
 
 <figure markdown>
-  ![Cisco Live 2026 – Mobile App Session Files & Survey Instructions](./assets/surveyinstructions.png){ width="1000" }
+  ![Cisco Connect 2026 – Surveys](./assets/survey_connect.png){ width="1000" }
 </figure>
