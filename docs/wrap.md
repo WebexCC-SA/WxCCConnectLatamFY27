@@ -1,4 +1,4 @@
-# Before You Go – Share Your Feedback!
+# Antes de irse – Compártanos su opinión!
 
 <figure markdown>
   ![Cisco Connect 2026 – Surveys](./assets/survey_connect.png){ width="1000" }
