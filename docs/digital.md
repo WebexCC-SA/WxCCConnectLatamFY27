@@ -331,7 +331,7 @@ En esta actividad crearás el flow `AIAgent_send_text`. Este flow enviará al pa
     | Nombre | Variable | Condition |  Value |
     |---|---|---|---|
     | `ES` | aiAgent.language | equals ingnore case | Español |
-    | `ES` | aiAgent.language | equals ingnore case | Ingles |
+    | `EN` | aiAgent.language | equals ingnore case | Ingles |
     | `None of above` |  |  | Ruta predeterminada |
 
 ???- tip "Configurar el Branch"
