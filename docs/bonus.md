@@ -130,14 +130,14 @@ Para que `Agent Desktop` muestre correctamente la interfaz en español, abre una
 4. Haz clic en **Guardar y continuar**.
 5. Si el sistema solicita permiso para utilizar el sonido, habilítalo.
 
-## 4. Poner el agente en estado Available
+## 4. Poner el agente en estado Disponible
 
 1. En `Agent Desktop`, verifica que el usuario esté conectado correctamente.
-2. Cambia el estado del agente a:`Available`
+2. Cambia el estado del agente a: `Disponible`
 
     El agente debe estar disponible para recibir la llamada transferida por el `Cumulus AI Agent`.
 
-???- tip "Poner el agente en estado Available"
+???- tip "Poner el agente en estado Disponible"
     <figure markdown>
         ![Poner el agente en estado Available](./assets/agent_desktop_available.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
@@ -199,7 +199,7 @@ Al finalizar este Bonus Lab debes haber comprobado que:
 
 ## 🏁 Bonus Completado — Felicitaciones! 🎉
 
-Has habilitado **Agent handover**, transferido una llamada desde el AI Agent hacia un agente humano y utilizado **AI Assistant** con **Real-Time Assist**.
+Has habilitado **Transferencia personalizada**, para pasar una llamada desde el AI Agent hacia un agente humano con variables y has utilizado **AI Assistant** con **Real-Time Assist**.
 
 ---
 
