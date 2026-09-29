@@ -460,7 +460,7 @@ En esta actividad crearás el flow `AIAgent_send_text`. Este flow enviará al pa
 
 1. En la esquina superior derecha, haz clic en **Make Live**.
 2. Si aparece una advertencia indicando que el nodo HTTP no tiene terminación, ignórala.
-3. Seleciona **Cisdemo 2** en Application.
+3. Seleciona **Cisco demo 2** en Application.
 4. Haz clic nuevamente en **Make Live**.
 5. Espera a que el flow termine de publicarse.
 
