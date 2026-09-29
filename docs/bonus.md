@@ -52,13 +52,23 @@ Estas **variables** estarán disponibles para utilizarse en **Agent Desktop** cu
       Summary of the updated action regarding scheduling or cancelling an appointment according to the patient's request. Include it in the correct language. For example: "Reserva de Cita" or "Cancelación de Cita" in Spanish; "Scheduling Cancellation" or "Scheduling update" in English.
       ```
 
-    - **Entity examples:**
+    - **Entity examples:** Introduzca cada uno de los siguientes valores y presione **Add** después de cada uno:
         ``` text
-        Reserva de Cita; Cancelación de Cita; Scheduling Cancellation; Update Scheduling; Actualización de Cita
+        Reserva de Cita
         ```
+        ``` text
+        Cancelación de Cita
+        ```
+        ``` text
+        Scheduling Cancellation
+        ```
+        ``` text
+         Update Scheduling
+        ```
+        ``` text
+          Actualización de Cita
+        ``` 
     - Haga clic en **Add**
-
-5. Haga clic en **Add** para terminar de configurar el **Action**.
 
 6. Haga clic en **Add new entity** y configure:
 
