@@ -55,7 +55,7 @@ El agente, llamado **Concierge**, identificará si el paciente desea continuar l
     |---|---|
     | **Agent name** | `PodXXX_ConnectLatam_Concierge` |
     | **System ID** | Deje el valor generado automáticamente |
-    | **AI engine** | `Webex AI Speech-to-Speech 1.0` |
+    | **AI engine** | `Webex AI Experimiental 1.0` |
 
     ???+ warning "Recordatorio"
         Reemplace `XXX` por el número de tres dígitos de su `Pod ID`.
@@ -132,24 +132,8 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 
         Sin embargo, en un entorno de producción estos campos pueden configurarse completamente en español, de acuerdo con las necesidades del negocio y el idioma de atención seleccionado.
 
-## 5. Configurar el idioma y la voz
 
-1. Haga click en la pestaña **Conversation**.
-2. Configure únicamente las siguientes opciones:
-
-    | Campo | Valor |
-    |---|---|
-    | **Language** | `Spanish (US) es-US` |
-    | **Select voice** | `es-US-Elena` |
-
-3. Haga clic en **Save changes**.
-
-    ???- tip "Cómo configurar el Concierge AI Agent"
-        <figure markdown>
-            ![Configure Concierge AI Agent](./assets/configurarelConciergeAIAgent.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
-        </figure>
-
-## 6. Crear las acciones de transferencia
+## 5. Crear las acciones de transferencia
 
 1. Haga click en la pestaña **Actions**.
 2. Desactive la acción predeterminada **Agent handover**.
@@ -158,7 +142,7 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 
     El Concierge no realizará escalaciones hacia agentes humanos. En su lugar, utilizará acciones específicas para transferir la llamada de regreso al `flow` según el idioma seleccionado por el paciente.
 
-### 6.1 Crear Transfer_English
+### 5.1 Crear Transfer_English
 
 1. Haga clic en **+ Add actions**.
 2. En **Add new**, seleccione **Transfer**.
@@ -175,7 +159,7 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
 
 4. Haga clic en **Add**.
 
-### 6.2 Crear Transfer_Spanish
+### 5.2 Crear Transfer_Spanish
 
 1. Repita el procedimiento anterior con los siguientes valores:
 
@@ -199,12 +183,16 @@ Después de crear el agente, permanezca en la pestaña **Profile**.
         ![Configure Concierge Actions](./assets/concierge_actions.gif){ loading=lazy style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" }
     </figure>
 
-## 7. Probar el Concierge en Preview
+## 6. Probar el Concierge en Preview
 
 Antes de publicar el agente, pruébelo utilizando `Preview`.
 
 1. Haga clic en **Preview** en la parte superior de `AI Agent Studio`.
 2. En la ventana emergente, haga clic en **Start a call**.
+
+???+ Note "Idioma Preview"
+    El AI Agent Concierge al inicio les hablará en ingles, pueden comenzar a hablarle en español para cambiar el idioma
+    
 3. Utilice audífonos para reducir el ruido y evitar afectar a otros participantes.
 4. Pruebe algunas de las siguientes frases:
 
